@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IT Tools – Microlab</title>
+
+<style>
+body {
+    background: #0f172a;
+    color: #e2e8f0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 6px;
+    border: none;
+}
+
+button {
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 6px;
+    background: #3b82f6;
+    color: white;
+    cursor: pointer;
+}
+
+.card {
+    background: #1e293b;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    border-left: 4px solid #3b82f6;
+}
+
+a { color: #94a3b8; }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🖥️ IT Support Tools</h1>
+<p>Search for common error codes and troubleshooting steps.</p>
+
+<select id="categoryFilter">
+<option value="all">All Categories</option>
+<option value="windows">Windows</option>
+<option value="network">Network</option>
+<option value="printer">Printer</option>
+</select>
+
+<input type="text" id="searchInput" placeholder="Search error code or issue...">
+<button onclick="searchErrors()">Search</button>
+
+<div id="results"></div>
+
+<br>
+<a href="index.html">← Back to Home</a>
+
+</div>
+    
+    <script>
+
+document.addEventListener("DOMContentLoaded", () => {
+
+let errorDatabase = [];
+const searchInput = document.getElementById("searchInput");
+const categoryFilter = document.getElementById("categoryFilter");
+const results = document.getElementById("results");
+
+// ✅ Robust JSON loader (works with custom domain)
+fetch("/errors.json")
+  .then(response => {
+      if (!response.ok) {
+          throw new Error("HTTP status " + response.status);
+      }
+      return response.json();
+  })
+  .then(data => {
+      errorDatabase = data;
+      console.log("Database loaded:", errorDatabase.length, "entries");
+  })
+  .catch(err => {
+      console.error("Database load failed:", err);
+      results.innerHTML =
+        "<div class='card'>Database failed to load. Check console.</div>";
+  });
+
+// Levenshtein distance
+function levenshtein(a,b){
+const matrix=[];
+for(let i=0;i<=b.length;i++){matrix[i]=[i]}
+for(let j=0;j<=a.length;j++){matrix[0][j]=j}
+for(let i=1;i<=b.length;i++){
+for(let j=1;j<=a.length;j++){
+matrix[i][j]=b[i-1]==a[j-1]
+?matrix[i-1][j-1]
+:Math.min(matrix[i-1][j-1]+1,matrix[i][j-1]+1,matrix[i-1][j]+1);
+}}
+return matrix[b.length][a.length];
+}
+
+// Scoring system
+function calculateScore(entry, inputWords) {
+    let score = 0;
+
+    inputWords.forEach(word => {
+        entry.keywords.forEach(keyword => {
+            const k = keyword.toLowerCase();
+
+            if(k.includes(word)) score += 5;
+            else if(word.includes(k)) score += 4;
+            else if(levenshtein(word, k) <= 2) score += 3;
+        });
+
+        if(entry.title.toLowerCase().includes(word)) score += 2;
+        if(entry.cause.toLowerCase().includes(word)) score += 1;
+    });
+
+    return score;
+}
+
+// Search function
+function searchErrors(){
+
+    if(!errorDatabase.length) return;
+
+    const inputRaw = searchInput.value.toLowerCase().trim();
+    const category = categoryFilter.value;
+    results.innerHTML = "";
+
+    if(!inputRaw){
+        return;
+    }
+
+    const inputWords = inputRaw.split(/\s+/);
+
+    let matches = errorDatabase
+        .filter(e => category === "all" || e.category === category)
+        .map(e => ({
+            ...e,
+            score: calculateScore(e, inputWords)
+        }))
+        .filter(e => e.score > 0)
+        .sort((a,b) => b.score - a.score);
+
+    if(matches.length === 0){
+        results.innerHTML = "<div class='card'>No results found.</div>";
+        return;
+    }
+
+    matches.slice(0, 10).forEach(e=>{
+        results.innerHTML += `
+        <div class="card">
+            <strong>${e.title}</strong><br><br>
+            <b>Cause:</b> ${e.cause}<br><br>
+            <b>Resolution:</b> ${e.fix}
+        </div>`;
+    });
+}
+
+// 🔥 Live search with debounce
+let timeout = null;
+
+searchInput.addEventListener("input", () => {
+    clearTimeout(timeout);
+    timeout = setTimeout(searchErrors, 200);
+});
+
+categoryFilter.addEventListener("change", searchErrors);
+
+});
+
+</script>
+
+</body>
+</html>
