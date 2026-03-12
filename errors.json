@@ -1,0 +1,720 @@
+[
+  {
+    "title": "0x80070005 – Access Denied",
+    "category": "windows",
+    "keywords": ["0x80070005", "access denied"],
+    "cause": "User lacks required permissions.",
+    "fix": "Run as administrator and verify NTFS permissions."
+  },
+  {
+    "title": "0x80004005 – Unspecified Error",
+    "category": "windows",
+    "keywords": ["0x80004005", "unspecified error"],
+    "cause": "Generic Windows error.",
+    "fix": "Restart system and check Windows Updates."
+  },
+  {
+    "title": "0x80070057 – Invalid Parameter",
+    "category": "windows",
+    "keywords": ["0x80070057", "invalid parameter"],
+    "cause": "Incorrect system configuration.",
+    "fix": "Run sfc /scannow and check disk integrity."
+  },
+  {
+    "title": "0x8024402C – Windows Update Error",
+    "category": "windows",
+    "keywords": ["0x8024402C", "windows update error"],
+    "cause": "Network configuration issue.",
+    "fix": "Check proxy settings and reset Windows Update components."
+  },
+  {
+    "title": "0x800F081F – Missing Files",
+    "category": "windows",
+    "keywords": ["0x800F081F", "missing files"],
+    "cause": "Required system files not found.",
+    "fix": "Use DISM /Online /Cleanup-Image /RestoreHealth."
+  },
+
+  {
+    "title": "Blue Screen – CRITICAL_PROCESS_DIED",
+    "category": "windows",
+    "keywords": ["critical_process_died", "blue screen"],
+    "cause": "Critical system process failed.",
+    "fix": "Run system file check and update drivers."
+  },
+  {
+    "title": "Blue Screen – MEMORY_MANAGEMENT",
+    "category": "windows",
+    "keywords": ["memory_management", "bsod memory"],
+    "cause": "RAM or driver corruption.",
+    "fix": "Run Windows Memory Diagnostic."
+  },
+  {
+    "title": "Application Not Responding",
+    "category": "windows",
+    "keywords": ["not responding", "app freeze"],
+    "cause": "Application crash or overload.",
+    "fix": "End task and reinstall application if recurring."
+  },
+  {
+    "title": "DLL File Missing",
+    "category": "windows",
+    "keywords": ["dll missing", "missing dll"],
+    "cause": "Corrupted or deleted file.",
+    "fix": "Reinstall application or restore from system backup."
+  },
+  {
+    "title": "Windows Activation Error 0xC004F074",
+    "category": "windows",
+    "keywords": ["0xC004F074", "activation error"],
+    "cause": "KMS server not reachable.",
+    "fix": "Check network and run activation command again."
+  },
+
+  {
+    "title": "No Internet Connection",
+    "category": "network",
+    "keywords": ["no internet", "limited connectivity"],
+    "cause": "Router or DHCP issue.",
+    "fix": "Restart router and run ipconfig /renew."
+  },
+  {
+    "title": "DNS Server Not Responding",
+    "category": "network",
+    "keywords": ["dns not responding", "dns error"],
+    "cause": "DNS server unreachable.",
+    "fix": "Switch to 8.8.8.8 or flush DNS cache."
+  },
+  {
+    "title": "VPN Not Connecting",
+    "category": "network",
+    "keywords": ["vpn not connecting", "vpn error"],
+    "cause": "Authentication or firewall issue.",
+    "fix": "Verify credentials and check firewall rules."
+  },
+  {
+    "title": "IP Conflict Detected",
+    "category": "network",
+    "keywords": ["ip conflict", "duplicate ip"],
+    "cause": "Duplicate IP address on network.",
+    "fix": "Release and renew IP address."
+  },
+  {
+    "title": "Network Path Not Found",
+    "category": "network",
+    "keywords": ["network path not found"],
+    "cause": "Incorrect path or server offline.",
+    "fix": "Verify server name and network connectivity."
+  },
+
+  {
+    "title": "Printer Offline",
+    "category": "printer",
+    "keywords": ["printer offline"],
+    "cause": "Printer disconnected from network.",
+    "fix": "Restart printer and verify WiFi connection."
+  },
+  {
+    "title": "Printer Driver Unavailable",
+    "category": "printer",
+    "keywords": ["driver unavailable", "printer driver error"],
+    "cause": "Corrupt or missing driver.",
+    "fix": "Reinstall latest printer driver."
+  },
+  {
+    "title": "Paper Jam Error",
+    "category": "printer",
+    "keywords": ["paper jam"],
+    "cause": "Paper stuck in printer.",
+    "fix": "Remove jammed paper carefully."
+  },
+  {
+    "title": "Printer Spooler Error",
+    "category": "printer",
+    "keywords": ["print spooler error"],
+    "cause": "Spooler service stopped.",
+    "fix": "Restart Print Spooler service."
+  },
+  {
+    "title": "Printer Not Found",
+    "category": "printer",
+    "keywords": ["printer not found"],
+    "cause": "Device not detected on network.",
+    "fix": "Check network discovery settings."
+  },
+
+  {
+    "title": "Outlook Cannot Connect to Server",
+    "category": "network",
+    "keywords": ["outlook cannot connect"],
+    "cause": "Exchange server unreachable.",
+    "fix": "Verify internet and account settings."
+  },
+  {
+    "title": "Teams Microphone Not Working",
+    "category": "windows",
+    "keywords": ["teams microphone not working"],
+    "cause": "Microphone permissions disabled.",
+    "fix": "Enable microphone access in privacy settings."
+  },
+  {
+    "title": "Laptop Overheating",
+    "category": "windows",
+    "keywords": ["overheating", "fan loud"],
+    "cause": "Dust buildup or high CPU usage.",
+    "fix": "Clean vents and check task manager."
+  },
+  {
+    "title": "Hard Drive Not Detected",
+    "category": "windows",
+    "keywords": ["hard drive not detected"],
+    "cause": "Loose SATA cable or disk failure.",
+    "fix": "Check BIOS and physical connections."
+  },
+  {
+    "title": "User Account Locked",
+    "category": "windows",
+    "keywords": ["account locked"],
+    "cause": "Multiple failed login attempts.",
+    "fix": "Unlock account in Active Directory."
+  }
+,
+  {
+    "title": "0x80072EFD – Cannot Connect to Server",
+    "category": "windows",
+    "keywords": ["0x80072efd", "cannot connect server"],
+    "cause": "Firewall or proxy blocking connection.",
+    "fix": "Disable proxy temporarily and verify firewall settings."
+  },
+  {
+    "title": "0x80070002 – File Not Found",
+    "category": "windows",
+    "keywords": ["0x80070002", "file not found"],
+    "cause": "Missing or deleted system file.",
+    "fix": "Run Windows Update troubleshooter."
+  },
+  {
+    "title": "0xC000021A – Fatal System Error",
+    "category": "windows",
+    "keywords": ["0xc000021a", "fatal system error"],
+    "cause": "Critical system process failure.",
+    "fix": "Boot into safe mode and uninstall recent updates."
+  },
+  {
+    "title": "0x0000007B – Inaccessible Boot Device",
+    "category": "windows",
+    "keywords": ["0x0000007b", "inaccessible boot device"],
+    "cause": "Storage driver or disk failure.",
+    "fix": "Check BIOS settings and disk health."
+  },
+  {
+    "title": "0x0000001A – Memory Management BSOD",
+    "category": "windows",
+    "keywords": ["0x0000001a", "memory management bsod"],
+    "cause": "Faulty RAM or driver corruption.",
+    "fix": "Run memory diagnostic tool."
+  },
+  {
+    "title": "Windows Update Stuck at 0%",
+    "category": "windows",
+    "keywords": ["update stuck", "windows update stuck"],
+    "cause": "Corrupted update cache.",
+    "fix": "Clear SoftwareDistribution folder."
+  },
+  {
+    "title": "Windows Explorer Keeps Crashing",
+    "category": "windows",
+    "keywords": ["explorer crashing"],
+    "cause": "Corrupted system files.",
+    "fix": "Run sfc /scannow."
+  },
+  {
+    "title": "Taskbar Not Responding",
+    "category": "windows",
+    "keywords": ["taskbar not responding"],
+    "cause": "Explorer process failure.",
+    "fix": "Restart Windows Explorer from Task Manager."
+  },
+  {
+    "title": "Black Screen After Login",
+    "category": "windows",
+    "keywords": ["black screen login"],
+    "cause": "Driver or update conflict.",
+    "fix": "Boot in safe mode and update display drivers."
+  },
+  {
+    "title": "BitLocker Recovery Required",
+    "category": "windows",
+    "keywords": ["bitlocker recovery"],
+    "cause": "Hardware change detected.",
+    "fix": "Enter recovery key from Microsoft account."
+  },
+
+  {
+    "title": "WiFi Connected but No Internet",
+    "category": "network",
+    "keywords": ["wifi no internet"],
+    "cause": "DNS or gateway issue.",
+    "fix": "Flush DNS and restart router."
+  },
+  {
+    "title": "Ethernet Not Recognized",
+    "category": "network",
+    "keywords": ["ethernet not recognized"],
+    "cause": "Driver missing or cable faulty.",
+    "fix": "Reinstall network driver."
+  },
+  {
+    "title": "Slow Network Speed",
+    "category": "network",
+    "keywords": ["slow internet"],
+    "cause": "Bandwidth congestion.",
+    "fix": "Test via wired connection."
+  },
+  {
+    "title": "Remote Desktop Cannot Connect",
+    "category": "network",
+    "keywords": ["rdp cannot connect"],
+    "cause": "Port 3389 blocked or service disabled.",
+    "fix": "Enable Remote Desktop and check firewall."
+  },
+  {
+    "title": "Hostname Cannot Be Resolved",
+    "category": "network",
+    "keywords": ["hostname not resolved"],
+    "cause": "DNS resolution failure.",
+    "fix": "Check DNS settings and flush cache."
+  },
+
+  {
+    "title": "Printer Printing Blank Pages",
+    "category": "printer",
+    "keywords": ["printing blank pages"],
+    "cause": "Empty ink cartridge.",
+    "fix": "Replace ink cartridge."
+  },
+  {
+    "title": "Printer Queue Stuck",
+    "category": "printer",
+    "keywords": ["print queue stuck"],
+    "cause": "Spooler service issue.",
+    "fix": "Clear spooler queue and restart service."
+  },
+  {
+    "title": "Scanner Not Detected",
+    "category": "printer",
+    "keywords": ["scanner not detected"],
+    "cause": "Driver or USB issue.",
+    "fix": "Reconnect device and reinstall driver."
+  },
+  {
+    "title": "Cannot Print PDF",
+    "category": "printer",
+    "keywords": ["cannot print pdf"],
+    "cause": "Corrupted PDF file.",
+    "fix": "Open and print from another PDF reader."
+  },
+  {
+    "title": "Default Printer Keeps Changing",
+    "category": "printer",
+    "keywords": ["default printer changing"],
+    "cause": "Windows managing default printer.",
+    "fix": "Disable 'Let Windows manage my default printer'."
+  },
+
+  {
+    "title": "Account Expired",
+    "category": "windows",
+    "keywords": ["account expired"],
+    "cause": "User account expiration date reached.",
+    "fix": "Extend account validity in Active Directory."
+  },
+  {
+    "title": "Mapped Drive Not Showing",
+    "category": "network",
+    "keywords": ["mapped drive missing"],
+    "cause": "Network reconnect issue.",
+    "fix": "Remap drive manually."
+  },
+  {
+    "title": "Cannot Join Domain",
+    "category": "network",
+    "keywords": ["cannot join domain"],
+    "cause": "DNS misconfiguration.",
+    "fix": "Verify DNS points to domain controller."
+  },
+  {
+    "title": "Bluetooth Not Working",
+    "category": "windows",
+    "keywords": ["bluetooth not working"],
+    "cause": "Driver disabled.",
+    "fix": "Enable Bluetooth service and update drivers."
+  },
+  {
+    "title": "USB Device Not Recognized",
+    "category": "windows",
+    "keywords": ["usb not recognized"],
+    "cause": "Power or driver issue.",
+    "fix": "Try another USB port and update drivers."
+  }
+,
+  {
+    "title": "0x80070570 – File or Directory Corrupted",
+    "category": "windows",
+    "keywords": ["0x80070570", "file corrupted"],
+    "cause": "Corrupted file system or bad sectors.",
+    "fix": "Run chkdsk /f /r on the affected drive."
+  },
+  {
+    "title": "0x80070103 – Driver Update Failed",
+    "category": "windows",
+    "keywords": ["0x80070103", "driver update failed"],
+    "cause": "Driver already installed or incompatible.",
+    "fix": "Hide update or install latest driver manually."
+  },
+  {
+    "title": "0x80073712 – Component Store Corruption",
+    "category": "windows",
+    "keywords": ["0x80073712"],
+    "cause": "Corrupted Windows component store.",
+    "fix": "Run DISM /Online /Cleanup-Image /RestoreHealth."
+  },
+  {
+    "title": "0x00000050 – PAGE_FAULT_IN_NONPAGED_AREA",
+    "category": "windows",
+    "keywords": ["0x00000050", "page fault"],
+    "cause": "Faulty RAM or driver issue.",
+    "fix": "Run memory diagnostics and update drivers."
+  },
+  {
+    "title": "0x0000009F – DRIVER_POWER_STATE_FAILURE",
+    "category": "windows",
+    "keywords": ["0x0000009f", "driver power state"],
+    "cause": "Driver not responding during sleep transition.",
+    "fix": "Update or reinstall problematic drivers."
+  },
+  {
+    "title": "Windows Search Not Working",
+    "category": "windows",
+    "keywords": ["search not working"],
+    "cause": "Search service stopped.",
+    "fix": "Restart Windows Search service."
+  },
+  {
+    "title": "System Restore Failed",
+    "category": "windows",
+    "keywords": ["system restore failed"],
+    "cause": "Antivirus interference.",
+    "fix": "Temporarily disable antivirus and retry."
+  },
+  {
+    "title": "High CPU Usage",
+    "category": "windows",
+    "keywords": ["high cpu"],
+    "cause": "Background process overload.",
+    "fix": "Check Task Manager and disable startup apps."
+  },
+  {
+    "title": "Disk Usage 100%",
+    "category": "windows",
+    "keywords": ["disk 100%"],
+    "cause": "Superfetch or indexing issue.",
+    "fix": "Disable SysMain service temporarily."
+  },
+  {
+    "title": "Windows License Will Expire Soon",
+    "category": "windows",
+    "keywords": ["license expire"],
+    "cause": "Volume license expired.",
+    "fix": "Reactivate Windows with valid key."
+  },
+
+  {
+    "title": "Gateway Not Available",
+    "category": "network",
+    "keywords": ["default gateway not available"],
+    "cause": "Router misconfiguration.",
+    "fix": "Restart router and reset network adapter."
+  },
+  {
+    "title": "VPN Authentication Failed",
+    "category": "network",
+    "keywords": ["vpn authentication failed"],
+    "cause": "Incorrect credentials.",
+    "fix": "Verify username/password and MFA."
+  },
+  {
+    "title": "Firewall Blocking Connection",
+    "category": "network",
+    "keywords": ["firewall blocked"],
+    "cause": "Port not allowed.",
+    "fix": "Add firewall rule for application."
+  },
+  {
+    "title": "Network Adapter Disabled",
+    "category": "network",
+    "keywords": ["adapter disabled"],
+    "cause": "Adapter manually disabled.",
+    "fix": "Enable adapter in Network Settings."
+  },
+  {
+    "title": "IP Configuration Failed",
+    "category": "network",
+    "keywords": ["ip configuration failed"],
+    "cause": "DHCP server not responding.",
+    "fix": "Release and renew IP address."
+  },
+
+  {
+    "title": "Printer Driver Incompatible",
+    "category": "printer",
+    "keywords": ["driver incompatible"],
+    "cause": "Driver not compatible with OS.",
+    "fix": "Download correct version from manufacturer."
+  },
+  {
+    "title": "Printer Not Sharing",
+    "category": "printer",
+    "keywords": ["printer not shared"],
+    "cause": "Sharing disabled.",
+    "fix": "Enable printer sharing in settings."
+  },
+  {
+    "title": "Low Ink Warning",
+    "category": "printer",
+    "keywords": ["low ink"],
+    "cause": "Ink cartridge nearly empty.",
+    "fix": "Replace cartridge."
+  },
+  {
+    "title": "Cannot Connect to Network Printer",
+    "category": "printer",
+    "keywords": ["network printer connect failed"],
+    "cause": "Printer IP changed.",
+    "fix": "Update printer port settings."
+  },
+  {
+    "title": "Print Job Paused",
+    "category": "printer",
+    "keywords": ["print job paused"],
+    "cause": "Paused in queue.",
+    "fix": "Resume job in print queue."
+  },
+
+  {
+    "title": "User Profile Cannot Be Loaded",
+    "category": "windows",
+    "keywords": ["profile cannot be loaded"],
+    "cause": "Corrupted user profile.",
+    "fix": "Create new profile and transfer data."
+  },
+  {
+    "title": "Group Policy Not Applying",
+    "category": "network",
+    "keywords": ["group policy not applying"],
+    "cause": "Domain controller unreachable.",
+    "fix": "Run gpupdate /force and verify domain connectivity."
+  },
+  {
+    "title": "Mapped Drive Requires Reconnect",
+    "category": "network",
+    "keywords": ["drive reconnect"],
+    "cause": "Credential mismatch.",
+    "fix": "Disconnect and remap drive."
+  },
+  {
+    "title": "Screen Flickering",
+    "category": "windows",
+    "keywords": ["screen flicker"],
+    "cause": "Display driver issue.",
+    "fix": "Update graphics driver."
+  },
+  {
+    "title": "Audio Service Not Running",
+    "category": "windows",
+    "keywords": ["audio service not running"],
+    "cause": "Windows Audio service stopped.",
+    "fix": "Restart Windows Audio service."
+  }
+,
+  {
+    "title": "0x8007001F – Audio Device Error",
+    "category": "windows",
+    "keywords": ["0x8007001f", "audio device error"],
+    "cause": "Audio driver corruption.",
+    "fix": "Reinstall audio drivers."
+  },
+  {
+    "title": "0x80070422 – Service Cannot Be Started",
+    "category": "windows",
+    "keywords": ["0x80070422"],
+    "cause": "Required Windows service disabled.",
+    "fix": "Enable Windows Update service."
+  },
+  {
+    "title": "0xC1900101 – Windows Upgrade Failed",
+    "category": "windows",
+    "keywords": ["0xc1900101"],
+    "cause": "Driver compatibility issue.",
+    "fix": "Update drivers before upgrading."
+  },
+  {
+    "title": "INACCESSIBLE_BOOT_DEVICE",
+    "category": "windows",
+    "keywords": ["inaccessible boot device"],
+    "cause": "Storage driver mismatch.",
+    "fix": "Boot into recovery and repair startup."
+  },
+  {
+    "title": "IRQL_NOT_LESS_OR_EQUAL",
+    "category": "windows",
+    "keywords": ["irql_not_less_or_equal"],
+    "cause": "Faulty driver or RAM.",
+    "fix": "Update drivers and test memory."
+  },
+
+  {
+    "title": "Network Cable Unplugged",
+    "category": "network",
+    "keywords": ["network cable unplugged"],
+    "cause": "Ethernet cable disconnected.",
+    "fix": "Reconnect or replace cable."
+  },
+  {
+    "title": "Cannot Reach DHCP Server",
+    "category": "network",
+    "keywords": ["dhcp server unreachable"],
+    "cause": "DHCP service offline.",
+    "fix": "Restart DHCP server or router."
+  },
+  {
+    "title": "Proxy Server Error",
+    "category": "network",
+    "keywords": ["proxy error"],
+    "cause": "Incorrect proxy configuration.",
+    "fix": "Disable or correct proxy settings."
+  },
+  {
+    "title": "SSL Certificate Error",
+    "category": "network",
+    "keywords": ["ssl certificate error"],
+    "cause": "Expired or invalid certificate.",
+    "fix": "Update system time or renew certificate."
+  },
+  {
+    "title": "Port Already in Use",
+    "category": "network",
+    "keywords": ["port already in use"],
+    "cause": "Application conflict.",
+    "fix": "Identify process with netstat and stop it."
+  },
+
+  {
+    "title": "Printer Not Responding",
+    "category": "printer",
+    "keywords": ["printer not responding"],
+    "cause": "Printer powered off or offline.",
+    "fix": "Power cycle printer."
+  },
+  {
+    "title": "Printer Access Denied",
+    "category": "printer",
+    "keywords": ["printer access denied"],
+    "cause": "Permission issue.",
+    "fix": "Grant user print permissions."
+  },
+  {
+    "title": "Unable to Install Printer",
+    "category": "printer",
+    "keywords": ["cannot install printer"],
+    "cause": "Driver package blocked.",
+    "fix": "Run installer as administrator."
+  },
+  {
+    "title": "Printer IP Conflict",
+    "category": "printer",
+    "keywords": ["printer ip conflict"],
+    "cause": "Duplicate IP on network.",
+    "fix": "Assign static IP outside DHCP range."
+  },
+  {
+    "title": "Printer Driver Signature Error",
+    "category": "printer",
+    "keywords": ["driver signature error"],
+    "cause": "Unsigned driver blocked by Windows.",
+    "fix": "Disable driver signature enforcement temporarily."
+  },
+
+  {
+    "title": "OneDrive Sync Error",
+    "category": "windows",
+    "keywords": ["onedrive sync error"],
+    "cause": "Account authentication failure.",
+    "fix": "Sign out and sign in again."
+  },
+  {
+    "title": "Microsoft Store Not Opening",
+    "category": "windows",
+    "keywords": ["store not opening"],
+    "cause": "Corrupted cache.",
+    "fix": "Run wsreset command."
+  },
+  {
+    "title": "Camera Not Detected",
+    "category": "windows",
+    "keywords": ["camera not detected"],
+    "cause": "Privacy settings blocking camera.",
+    "fix": "Enable camera access in privacy settings."
+  },
+  {
+    "title": "Keyboard Not Typing",
+    "category": "windows",
+    "keywords": ["keyboard not typing"],
+    "cause": "Driver issue or hardware fault.",
+    "fix": "Reconnect keyboard and reinstall driver."
+  },
+  {
+    "title": "Mouse Not Working",
+    "category": "windows",
+    "keywords": ["mouse not working"],
+    "cause": "USB or driver problem.",
+    "fix": "Try different USB port."
+  },
+  {
+    "title": "VPN Connection Timeout",
+    "category": "network",
+    "keywords": ["vpn timeout"],
+    "cause": "Server unreachable.",
+    "fix": "Check internet connection."
+  },
+  {
+    "title": "Cannot Access Shared Folder",
+    "category": "network",
+    "keywords": ["shared folder access denied"],
+    "cause": "Permission mismatch.",
+    "fix": "Verify share and NTFS permissions."
+  },
+  {
+    "title": "Domain Trust Relationship Failed",
+    "category": "network",
+    "keywords": ["trust relationship failed"],
+    "cause": "Machine account password mismatch.",
+    "fix": "Rejoin computer to domain."
+  },
+  {
+    "title": "Temporary Profile Loaded",
+    "category": "windows",
+    "keywords": ["temporary profile"],
+    "cause": "Corrupt user profile.",
+    "fix": "Fix registry profile path or create new profile."
+  },
+  {
+    "title": "Windows Defender Disabled",
+    "category": "windows",
+    "keywords": ["defender disabled"],
+    "cause": "Third-party antivirus installed.",
+    "fix": "Uninstall conflicting antivirus."
+  }
+]
+  
+]
