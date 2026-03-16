@@ -1773,4 +1773,39 @@
 "cause": "Duplex printing motor malfunction.",
 "fix": "Disable duplex printing or service printer."
 }
+  {
+"title": "Blue Screen – WHEA_UNCORRECTABLE_ERROR",
+"category": "windows",
+"keywords": ["whea_uncorrectable_error","bsod","0x00000124"],
+"cause": "Serious hardware error reported by the CPU or motherboard.",
+"fix": "Check CPU, RAM, and motherboard components for hardware faults."
+},
+{
+"title": "Windows Credential Manager Corrupted",
+"category": "windows",
+"keywords": ["credential manager corrupted"],
+"cause": "Stored credentials database damaged.",
+"fix": "Clear stored credentials and restart Credential Manager service."
+},
+{
+"title": "Network ARP Cache Corruption",
+"category": "network",
+"keywords": ["arp cache corrupted"],
+"cause": "Invalid entries in ARP cache causing routing issues.",
+"fix": "Clear ARP cache using arp -d command."
+},
+{
+"title": "Printer Printhead Alignment Failed",
+"category": "printer",
+"keywords": ["printhead alignment failed"],
+"cause": "Printer unable to correctly align printhead.",
+"fix": "Run printhead alignment utility from printer software."
+},
+{
+"title": "Laptop Cooling Fan Obstructed",
+"category": "hardware",
+"keywords": ["fan obstructed","cooling blocked"],
+"cause": "Dust or debris blocking cooling fan.",
+"fix": "Clean internal fan and air vents."
+}
 ]
