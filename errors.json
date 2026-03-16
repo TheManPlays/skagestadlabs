@@ -70,7 +70,6 @@
     "cause": "KMS server not reachable.",
     "fix": "Check network and run activation command again."
   },
-
   {
     "title": "No Internet Connection",
     "category": "network",
@@ -106,7 +105,6 @@
     "cause": "Incorrect path or server offline.",
     "fix": "Verify server name and network connectivity."
   },
-
   {
     "title": "Printer Offline",
     "category": "printer",
@@ -142,7 +140,6 @@
     "cause": "Device not detected on network.",
     "fix": "Check network discovery settings."
   },
-
   {
     "title": "Outlook Cannot Connect to Server",
     "category": "network",
@@ -177,8 +174,7 @@
     "keywords": ["account locked"],
     "cause": "Multiple failed login attempts.",
     "fix": "Unlock account in Active Directory."
-  }
-,
+  },
   {
     "title": "0x80072EFD – Cannot Connect to Server",
     "category": "windows",
@@ -249,7 +245,6 @@
     "cause": "Hardware change detected.",
     "fix": "Enter recovery key from Microsoft account."
   },
-
   {
     "title": "WiFi Connected but No Internet",
     "category": "network",
@@ -285,7 +280,6 @@
     "cause": "DNS resolution failure.",
     "fix": "Check DNS settings and flush cache."
   },
-
   {
     "title": "Printer Printing Blank Pages",
     "category": "printer",
@@ -356,8 +350,7 @@
     "keywords": ["usb not recognized"],
     "cause": "Power or driver issue.",
     "fix": "Try another USB port and update drivers."
-  }
-,
+  },
   {
     "title": "0x80070570 – File or Directory Corrupted",
     "category": "windows",
@@ -428,7 +421,6 @@
     "cause": "Volume license expired.",
     "fix": "Reactivate Windows with valid key."
   },
-
   {
     "title": "Gateway Not Available",
     "category": "network",
@@ -464,7 +456,6 @@
     "cause": "DHCP server not responding.",
     "fix": "Release and renew IP address."
   },
-
   {
     "title": "Printer Driver Incompatible",
     "category": "printer",
@@ -500,7 +491,6 @@
     "cause": "Paused in queue.",
     "fix": "Resume job in print queue."
   },
-
   {
     "title": "User Profile Cannot Be Loaded",
     "category": "windows",
@@ -535,8 +525,7 @@
     "keywords": ["audio service not running"],
     "cause": "Windows Audio service stopped.",
     "fix": "Restart Windows Audio service."
-  }
-,
+  },
   {
     "title": "0x8007001F – Audio Device Error",
     "category": "windows",
@@ -572,7 +561,6 @@
     "cause": "Faulty driver or RAM.",
     "fix": "Update drivers and test memory."
   },
-
   {
     "title": "Network Cable Unplugged",
     "category": "network",
@@ -608,7 +596,6 @@
     "cause": "Application conflict.",
     "fix": "Identify process with netstat and stop it."
   },
-
   {
     "title": "Printer Not Responding",
     "category": "printer",
@@ -644,7 +631,6 @@
     "cause": "Unsigned driver blocked by Windows.",
     "fix": "Disable driver signature enforcement temporarily."
   },
-
   {
     "title": "OneDrive Sync Error",
     "category": "windows",
