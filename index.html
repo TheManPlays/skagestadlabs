@@ -7,6 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
+
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
@@ -26,18 +27,38 @@ h1 {
     font-size: 14px;
 }
 
+/* sections */
+
+.section {
+    margin-top: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-title {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #94a3b8;
+    margin-bottom: 12px;
+}
+
+/* card grid */
+
 .menu {
-    margin-top: 50px;
     display: grid;
-    gap: 20px;
+    gap: 18px;
     max-width: 520px;
     margin-left: auto;
     margin-right: auto;
 }
 
+/* cards */
+
 .card {
     background: #1e293b;
-    padding: 25px;
+    padding: 22px;
     border-radius: 14px;
     text-decoration: none;
     color: white;
@@ -63,20 +84,7 @@ h1 {
     color: #cbd5e1;
 }
 
-.section {
-    margin-top: 70px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.section-title {
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #94a3b8;
-    margin-bottom: 15px;
-}
+/* about box */
 
 .about-box {
     background: #1e293b;
@@ -88,84 +96,102 @@ h1 {
     color: #cbd5e1;
 }
 
+/* footer */
+
 .footer {
-    margin-top: 80px;
+    margin-top: 70px;
     font-size: 13px;
     opacity: 0.6;
 }
+
 </style>
 </head>
 
 <body>
 
 <h1>Skagestad Labs</h1>
-<div class="subtitle">Small digital tools built by an IT support nerd with a passion for coding</div>
+<div class="subtitle">
+Small digital tools built by an IT support nerd with a passion for coding
+</div>
 
-<div class="menu">
+<!-- Useful IT Tools -->
 
 <div class="section">
 <div class="section-title">Useful IT Tools</div>
+
 <div class="menu">
+
 <a href="it-tools.html" class="card">
-    <div class="card-title">🖥️ IT Support Tools</div>
-    <div class="card-desc">Error codes, troubleshooting and internal utilities</div>
+<div class="card-title">🖥️ IT Support Tools</div>
+<div class="card-desc">Error codes, troubleshooting and internal utilities</div>
 </a>
+
 <a href="password-analyzer.html" class="card">
-    <div class="card-title">🔐 Password Entropy Analyzer</div>
-    <div class="card-desc">Analyze password strength, entropy & crack time</div>
+<div class="card-title">🔐 Password Entropy Analyzer</div>
+<div class="card-desc">Analyze password strength, entropy & crack time</div>
 </a>
 
+<a href="#" class="card">
+<div class="card-title">More tools coming soon</div>
+<div class="card-desc">More tools coming soon</div>
+</a>
+    
 </div>
 </div>
 
-    <div class="section">
+<!-- For Fun -->
+
+<div class="section">
 <div class="section-title">For Fun</div>
 
 <div class="menu">
 
 <a href="split-cost.html" class="card">
-    <div class="card-title">💸 Split Cost Calculator</div>
-    <div class="card-desc">Quickly calculate how much each person should pay</div>
+<div class="card-title">💸 Split Cost Calculator</div>
+<div class="card-desc">Quickly calculate how much each person should pay</div>
 </a>
 
-<a href="https://energidrikkteller.net" class="card">
-    <div class="card-title">⚡ Energidrikk Teller</div>
-    <div class="card-desc">Energy drink counter</div>
+<a href="#" class="card">
+<div class="card-title">More tools coming soon</div>
+<div class="card-desc">More tools coming soon</div>
 </a>
 
 </div>
 </div>
 
-    <div class="section">
+<!-- Web Pages -->
+
+<div class="section">
 <div class="section-title">Web Pages</div>
 
 <div class="menu">
 
 <a href="https://skagestadfoto.net" class="card">
-    <div class="card-title">📷 Skagestad Foto</div>
-    <div class="card-desc">My photography portfolio</div>
+<div class="card-title">📷 Skagestad Foto</div>
+<div class="card-desc">My photography portfolio</div>
 </a>
 
-<a href="#" class="card">
-    <div class="card-title">More tools coming soon</div>
-    <div class="card-desc">More tools coming soon</div>
+<a href="https://energidrikkteller.net" class="card">
+<div class="card-title">⚡ Energidrikk Teller</div>
+<div class="card-desc">Energy drink counter</div>
 </a>
 
 </div>
 </div>
 
-
-    
+<!-- About -->
 
 <div class="section">
-    <div class="section-title">About</div>
-    <div class="about-box">
-        Hi — I'm an IT support technician who genuinely enjoys solving problems.
-        <br><br>
-        Microlab is a small side project where I build lightweight tools that make everyday IT work a little easier and more structured.
-        <br><br>
-        I spend most of my time troubleshooting systems and helping users — but I also have a nerdy passion for writing small pieces of code that solve real support challenges.
-    </div>
+<div class="section-title">About</div>
+
+<div class="about-box">
+Hi — I'm an IT support technician who genuinely enjoys solving problems.
+<br><br>
+Microlab is a small side project where I build lightweight tools that make everyday IT work a little easier and more structured.
+<br><br>
+I spend most of my time troubleshooting systems and helping users — but I also have a nerdy passion for writing small pieces of code that solve real support challenges.
+</div>
+
 </div>
 
 <div class="footer">
