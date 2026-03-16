@@ -2,1810 +2,2752 @@
   {
     "title": "0x80070005 – Access Denied",
     "category": "windows",
-    "keywords": ["0x80070005", "access denied"],
+    "keywords": [
+      "0x80070005",
+      "access denied"
+    ],
     "cause": "User lacks required permissions.",
     "fix": "Run as administrator and verify NTFS permissions."
   },
   {
     "title": "0x80004005 – Unspecified Error",
     "category": "windows",
-    "keywords": ["0x80004005", "unspecified error"],
+    "keywords": [
+      "0x80004005",
+      "unspecified error"
+    ],
     "cause": "Generic Windows error.",
     "fix": "Restart system and check Windows Updates."
   },
   {
     "title": "0x80070057 – Invalid Parameter",
     "category": "windows",
-    "keywords": ["0x80070057", "invalid parameter"],
+    "keywords": [
+      "0x80070057",
+      "invalid parameter"
+    ],
     "cause": "Incorrect system configuration.",
     "fix": "Run sfc /scannow and check disk integrity."
   },
   {
     "title": "0x8024402C – Windows Update Error",
     "category": "windows",
-    "keywords": ["0x8024402C", "windows update error"],
+    "keywords": [
+      "0x8024402C",
+      "windows update error"
+    ],
     "cause": "Network configuration issue.",
     "fix": "Check proxy settings and reset Windows Update components."
   },
   {
     "title": "0x800F081F – Missing Files",
     "category": "windows",
-    "keywords": ["0x800F081F", "missing files"],
+    "keywords": [
+      "0x800F081F",
+      "missing files"
+    ],
     "cause": "Required system files not found.",
     "fix": "Use DISM /Online /Cleanup-Image /RestoreHealth."
   },
-
   {
     "title": "Blue Screen – CRITICAL_PROCESS_DIED",
     "category": "windows",
-    "keywords": ["critical_process_died", "blue screen"],
+    "keywords": [
+      "critical_process_died",
+      "blue screen"
+    ],
     "cause": "Critical system process failed.",
     "fix": "Run system file check and update drivers."
   },
   {
     "title": "Blue Screen – MEMORY_MANAGEMENT",
     "category": "windows",
-    "keywords": ["memory_management", "bsod memory"],
+    "keywords": [
+      "memory_management",
+      "bsod memory"
+    ],
     "cause": "RAM or driver corruption.",
     "fix": "Run Windows Memory Diagnostic."
   },
   {
     "title": "Application Not Responding",
     "category": "windows",
-    "keywords": ["not responding", "app freeze"],
+    "keywords": [
+      "not responding",
+      "app freeze"
+    ],
     "cause": "Application crash or overload.",
     "fix": "End task and reinstall application if recurring."
   },
   {
     "title": "DLL File Missing",
     "category": "windows",
-    "keywords": ["dll missing", "missing dll"],
+    "keywords": [
+      "dll missing",
+      "missing dll"
+    ],
     "cause": "Corrupted or deleted file.",
     "fix": "Reinstall application or restore from system backup."
   },
   {
     "title": "Windows Activation Error 0xC004F074",
     "category": "windows",
-    "keywords": ["0xC004F074", "activation error"],
+    "keywords": [
+      "0xC004F074",
+      "activation error"
+    ],
     "cause": "KMS server not reachable.",
     "fix": "Check network and run activation command again."
   },
   {
     "title": "No Internet Connection",
     "category": "network",
-    "keywords": ["no internet", "limited connectivity"],
+    "keywords": [
+      "no internet",
+      "limited connectivity"
+    ],
     "cause": "Router or DHCP issue.",
     "fix": "Restart router and run ipconfig /renew."
   },
   {
     "title": "DNS Server Not Responding",
     "category": "network",
-    "keywords": ["dns not responding", "dns error"],
+    "keywords": [
+      "dns not responding",
+      "dns error"
+    ],
     "cause": "DNS server unreachable.",
     "fix": "Switch to 8.8.8.8 or flush DNS cache."
   },
   {
     "title": "VPN Not Connecting",
     "category": "network",
-    "keywords": ["vpn not connecting", "vpn error"],
+    "keywords": [
+      "vpn not connecting",
+      "vpn error"
+    ],
     "cause": "Authentication or firewall issue.",
     "fix": "Verify credentials and check firewall rules."
   },
   {
     "title": "IP Conflict Detected",
     "category": "network",
-    "keywords": ["ip conflict", "duplicate ip"],
+    "keywords": [
+      "ip conflict",
+      "duplicate ip"
+    ],
     "cause": "Duplicate IP address on network.",
     "fix": "Release and renew IP address."
   },
   {
     "title": "Network Path Not Found",
     "category": "network",
-    "keywords": ["network path not found"],
+    "keywords": [
+      "network path not found"
+    ],
     "cause": "Incorrect path or server offline.",
     "fix": "Verify server name and network connectivity."
   },
   {
     "title": "Printer Offline",
     "category": "printer",
-    "keywords": ["printer offline"],
+    "keywords": [
+      "printer offline"
+    ],
     "cause": "Printer disconnected from network.",
     "fix": "Restart printer and verify WiFi connection."
   },
   {
     "title": "Printer Driver Unavailable",
     "category": "printer",
-    "keywords": ["driver unavailable", "printer driver error"],
+    "keywords": [
+      "driver unavailable",
+      "printer driver error"
+    ],
     "cause": "Corrupt or missing driver.",
     "fix": "Reinstall latest printer driver."
   },
   {
     "title": "Paper Jam Error",
     "category": "printer",
-    "keywords": ["paper jam"],
+    "keywords": [
+      "paper jam"
+    ],
     "cause": "Paper stuck in printer.",
     "fix": "Remove jammed paper carefully."
   },
   {
     "title": "Printer Spooler Error",
     "category": "printer",
-    "keywords": ["print spooler error"],
+    "keywords": [
+      "print spooler error"
+    ],
     "cause": "Spooler service stopped.",
     "fix": "Restart Print Spooler service."
   },
   {
     "title": "Printer Not Found",
     "category": "printer",
-    "keywords": ["printer not found"],
+    "keywords": [
+      "printer not found"
+    ],
     "cause": "Device not detected on network.",
     "fix": "Check network discovery settings."
   },
   {
     "title": "Outlook Cannot Connect to Server",
     "category": "network",
-    "keywords": ["outlook cannot connect"],
+    "keywords": [
+      "outlook cannot connect"
+    ],
     "cause": "Exchange server unreachable.",
     "fix": "Verify internet and account settings."
   },
   {
     "title": "Teams Microphone Not Working",
     "category": "windows",
-    "keywords": ["teams microphone not working"],
+    "keywords": [
+      "teams microphone not working"
+    ],
     "cause": "Microphone permissions disabled.",
     "fix": "Enable microphone access in privacy settings."
   },
   {
     "title": "Laptop Overheating",
     "category": "windows",
-    "keywords": ["overheating", "fan loud"],
+    "keywords": [
+      "overheating",
+      "fan loud"
+    ],
     "cause": "Dust buildup or high CPU usage.",
     "fix": "Clean vents and check task manager."
   },
   {
     "title": "Hard Drive Not Detected",
     "category": "windows",
-    "keywords": ["hard drive not detected"],
+    "keywords": [
+      "hard drive not detected"
+    ],
     "cause": "Loose SATA cable or disk failure.",
     "fix": "Check BIOS and physical connections."
   },
   {
     "title": "User Account Locked",
     "category": "windows",
-    "keywords": ["account locked"],
+    "keywords": [
+      "account locked"
+    ],
     "cause": "Multiple failed login attempts.",
     "fix": "Unlock account in Active Directory."
   },
   {
     "title": "0x80072EFD – Cannot Connect to Server",
     "category": "windows",
-    "keywords": ["0x80072efd", "cannot connect server"],
+    "keywords": [
+      "0x80072efd",
+      "cannot connect server"
+    ],
     "cause": "Firewall or proxy blocking connection.",
     "fix": "Disable proxy temporarily and verify firewall settings."
   },
   {
     "title": "0x80070002 – File Not Found",
     "category": "windows",
-    "keywords": ["0x80070002", "file not found"],
+    "keywords": [
+      "0x80070002",
+      "file not found"
+    ],
     "cause": "Missing or deleted system file.",
     "fix": "Run Windows Update troubleshooter."
   },
   {
     "title": "0xC000021A – Fatal System Error",
     "category": "windows",
-    "keywords": ["0xc000021a", "fatal system error"],
+    "keywords": [
+      "0xc000021a",
+      "fatal system error"
+    ],
     "cause": "Critical system process failure.",
     "fix": "Boot into safe mode and uninstall recent updates."
   },
   {
     "title": "0x0000007B – Inaccessible Boot Device",
     "category": "windows",
-    "keywords": ["0x0000007b", "inaccessible boot device"],
+    "keywords": [
+      "0x0000007b",
+      "inaccessible boot device"
+    ],
     "cause": "Storage driver or disk failure.",
     "fix": "Check BIOS settings and disk health."
   },
   {
     "title": "0x0000001A – Memory Management BSOD",
     "category": "windows",
-    "keywords": ["0x0000001a", "memory management bsod"],
+    "keywords": [
+      "0x0000001a",
+      "memory management bsod"
+    ],
     "cause": "Faulty RAM or driver corruption.",
     "fix": "Run memory diagnostic tool."
   },
   {
     "title": "Windows Update Stuck at 0%",
     "category": "windows",
-    "keywords": ["update stuck", "windows update stuck"],
+    "keywords": [
+      "update stuck",
+      "windows update stuck"
+    ],
     "cause": "Corrupted update cache.",
     "fix": "Clear SoftwareDistribution folder."
   },
   {
     "title": "Windows Explorer Keeps Crashing",
     "category": "windows",
-    "keywords": ["explorer crashing"],
+    "keywords": [
+      "explorer crashing"
+    ],
     "cause": "Corrupted system files.",
     "fix": "Run sfc /scannow."
   },
   {
     "title": "Taskbar Not Responding",
     "category": "windows",
-    "keywords": ["taskbar not responding"],
+    "keywords": [
+      "taskbar not responding"
+    ],
     "cause": "Explorer process failure.",
     "fix": "Restart Windows Explorer from Task Manager."
   },
   {
     "title": "Black Screen After Login",
     "category": "windows",
-    "keywords": ["black screen login"],
+    "keywords": [
+      "black screen login"
+    ],
     "cause": "Driver or update conflict.",
     "fix": "Boot in safe mode and update display drivers."
   },
   {
     "title": "BitLocker Recovery Required",
     "category": "windows",
-    "keywords": ["bitlocker recovery"],
+    "keywords": [
+      "bitlocker recovery"
+    ],
     "cause": "Hardware change detected.",
     "fix": "Enter recovery key from Microsoft account."
   },
   {
     "title": "WiFi Connected but No Internet",
     "category": "network",
-    "keywords": ["wifi no internet"],
+    "keywords": [
+      "wifi no internet"
+    ],
     "cause": "DNS or gateway issue.",
     "fix": "Flush DNS and restart router."
   },
   {
     "title": "Ethernet Not Recognized",
     "category": "network",
-    "keywords": ["ethernet not recognized"],
+    "keywords": [
+      "ethernet not recognized"
+    ],
     "cause": "Driver missing or cable faulty.",
     "fix": "Reinstall network driver."
   },
   {
     "title": "Slow Network Speed",
     "category": "network",
-    "keywords": ["slow internet"],
+    "keywords": [
+      "slow internet"
+    ],
     "cause": "Bandwidth congestion.",
     "fix": "Test via wired connection."
   },
   {
     "title": "Remote Desktop Cannot Connect",
     "category": "network",
-    "keywords": ["rdp cannot connect"],
+    "keywords": [
+      "rdp cannot connect"
+    ],
     "cause": "Port 3389 blocked or service disabled.",
     "fix": "Enable Remote Desktop and check firewall."
   },
   {
     "title": "Hostname Cannot Be Resolved",
     "category": "network",
-    "keywords": ["hostname not resolved"],
+    "keywords": [
+      "hostname not resolved"
+    ],
     "cause": "DNS resolution failure.",
     "fix": "Check DNS settings and flush cache."
   },
   {
     "title": "Printer Printing Blank Pages",
     "category": "printer",
-    "keywords": ["printing blank pages"],
+    "keywords": [
+      "printing blank pages"
+    ],
     "cause": "Empty ink cartridge.",
     "fix": "Replace ink cartridge."
   },
   {
     "title": "Printer Queue Stuck",
     "category": "printer",
-    "keywords": ["print queue stuck"],
+    "keywords": [
+      "print queue stuck"
+    ],
     "cause": "Spooler service issue.",
     "fix": "Clear spooler queue and restart service."
   },
   {
     "title": "Scanner Not Detected",
     "category": "printer",
-    "keywords": ["scanner not detected"],
+    "keywords": [
+      "scanner not detected"
+    ],
     "cause": "Driver or USB issue.",
     "fix": "Reconnect device and reinstall driver."
   },
   {
     "title": "Cannot Print PDF",
     "category": "printer",
-    "keywords": ["cannot print pdf"],
+    "keywords": [
+      "cannot print pdf"
+    ],
     "cause": "Corrupted PDF file.",
     "fix": "Open and print from another PDF reader."
   },
   {
     "title": "Default Printer Keeps Changing",
     "category": "printer",
-    "keywords": ["default printer changing"],
+    "keywords": [
+      "default printer changing"
+    ],
     "cause": "Windows managing default printer.",
     "fix": "Disable 'Let Windows manage my default printer'."
   },
-
   {
     "title": "Account Expired",
     "category": "windows",
-    "keywords": ["account expired"],
+    "keywords": [
+      "account expired"
+    ],
     "cause": "User account expiration date reached.",
     "fix": "Extend account validity in Active Directory."
   },
   {
     "title": "Mapped Drive Not Showing",
     "category": "network",
-    "keywords": ["mapped drive missing"],
+    "keywords": [
+      "mapped drive missing"
+    ],
     "cause": "Network reconnect issue.",
     "fix": "Remap drive manually."
   },
   {
     "title": "Cannot Join Domain",
     "category": "network",
-    "keywords": ["cannot join domain"],
+    "keywords": [
+      "cannot join domain"
+    ],
     "cause": "DNS misconfiguration.",
     "fix": "Verify DNS points to domain controller."
   },
   {
     "title": "Bluetooth Not Working",
     "category": "windows",
-    "keywords": ["bluetooth not working"],
+    "keywords": [
+      "bluetooth not working"
+    ],
     "cause": "Driver disabled.",
     "fix": "Enable Bluetooth service and update drivers."
   },
   {
     "title": "USB Device Not Recognized",
     "category": "windows",
-    "keywords": ["usb not recognized"],
+    "keywords": [
+      "usb not recognized"
+    ],
     "cause": "Power or driver issue.",
     "fix": "Try another USB port and update drivers."
   },
   {
     "title": "0x80070570 – File or Directory Corrupted",
     "category": "windows",
-    "keywords": ["0x80070570", "file corrupted"],
+    "keywords": [
+      "0x80070570",
+      "file corrupted"
+    ],
     "cause": "Corrupted file system or bad sectors.",
     "fix": "Run chkdsk /f /r on the affected drive."
   },
   {
     "title": "0x80070103 – Driver Update Failed",
     "category": "windows",
-    "keywords": ["0x80070103", "driver update failed"],
+    "keywords": [
+      "0x80070103",
+      "driver update failed"
+    ],
     "cause": "Driver already installed or incompatible.",
     "fix": "Hide update or install latest driver manually."
   },
   {
     "title": "0x80073712 – Component Store Corruption",
     "category": "windows",
-    "keywords": ["0x80073712"],
+    "keywords": [
+      "0x80073712"
+    ],
     "cause": "Corrupted Windows component store.",
     "fix": "Run DISM /Online /Cleanup-Image /RestoreHealth."
   },
   {
     "title": "0x00000050 – PAGE_FAULT_IN_NONPAGED_AREA",
     "category": "windows",
-    "keywords": ["0x00000050", "page fault"],
+    "keywords": [
+      "0x00000050",
+      "page fault"
+    ],
     "cause": "Faulty RAM or driver issue.",
     "fix": "Run memory diagnostics and update drivers."
   },
   {
     "title": "0x0000009F – DRIVER_POWER_STATE_FAILURE",
     "category": "windows",
-    "keywords": ["0x0000009f", "driver power state"],
+    "keywords": [
+      "0x0000009f",
+      "driver power state"
+    ],
     "cause": "Driver not responding during sleep transition.",
     "fix": "Update or reinstall problematic drivers."
   },
   {
     "title": "Windows Search Not Working",
     "category": "windows",
-    "keywords": ["search not working"],
+    "keywords": [
+      "search not working"
+    ],
     "cause": "Search service stopped.",
     "fix": "Restart Windows Search service."
   },
   {
     "title": "System Restore Failed",
     "category": "windows",
-    "keywords": ["system restore failed"],
+    "keywords": [
+      "system restore failed"
+    ],
     "cause": "Antivirus interference.",
     "fix": "Temporarily disable antivirus and retry."
   },
   {
     "title": "High CPU Usage",
     "category": "windows",
-    "keywords": ["high cpu"],
+    "keywords": [
+      "high cpu"
+    ],
     "cause": "Background process overload.",
     "fix": "Check Task Manager and disable startup apps."
   },
   {
     "title": "Disk Usage 100%",
     "category": "windows",
-    "keywords": ["disk 100%"],
+    "keywords": [
+      "disk 100%"
+    ],
     "cause": "Superfetch or indexing issue.",
     "fix": "Disable SysMain service temporarily."
   },
   {
     "title": "Windows License Will Expire Soon",
     "category": "windows",
-    "keywords": ["license expire"],
+    "keywords": [
+      "license expire"
+    ],
     "cause": "Volume license expired.",
     "fix": "Reactivate Windows with valid key."
   },
   {
     "title": "Gateway Not Available",
     "category": "network",
-    "keywords": ["default gateway not available"],
+    "keywords": [
+      "default gateway not available"
+    ],
     "cause": "Router misconfiguration.",
     "fix": "Restart router and reset network adapter."
   },
   {
     "title": "VPN Authentication Failed",
     "category": "network",
-    "keywords": ["vpn authentication failed"],
+    "keywords": [
+      "vpn authentication failed"
+    ],
     "cause": "Incorrect credentials.",
     "fix": "Verify username/password and MFA."
   },
   {
     "title": "Firewall Blocking Connection",
     "category": "network",
-    "keywords": ["firewall blocked"],
+    "keywords": [
+      "firewall blocked"
+    ],
     "cause": "Port not allowed.",
     "fix": "Add firewall rule for application."
   },
   {
     "title": "Network Adapter Disabled",
     "category": "network",
-    "keywords": ["adapter disabled"],
+    "keywords": [
+      "adapter disabled"
+    ],
     "cause": "Adapter manually disabled.",
     "fix": "Enable adapter in Network Settings."
   },
   {
     "title": "IP Configuration Failed",
     "category": "network",
-    "keywords": ["ip configuration failed"],
+    "keywords": [
+      "ip configuration failed"
+    ],
     "cause": "DHCP server not responding.",
     "fix": "Release and renew IP address."
   },
   {
     "title": "Printer Driver Incompatible",
     "category": "printer",
-    "keywords": ["driver incompatible"],
+    "keywords": [
+      "driver incompatible"
+    ],
     "cause": "Driver not compatible with OS.",
     "fix": "Download correct version from manufacturer."
   },
   {
     "title": "Printer Not Sharing",
     "category": "printer",
-    "keywords": ["printer not shared"],
+    "keywords": [
+      "printer not shared"
+    ],
     "cause": "Sharing disabled.",
     "fix": "Enable printer sharing in settings."
   },
   {
     "title": "Low Ink Warning",
     "category": "printer",
-    "keywords": ["low ink"],
+    "keywords": [
+      "low ink"
+    ],
     "cause": "Ink cartridge nearly empty.",
     "fix": "Replace cartridge."
   },
   {
     "title": "Cannot Connect to Network Printer",
     "category": "printer",
-    "keywords": ["network printer connect failed"],
+    "keywords": [
+      "network printer connect failed"
+    ],
     "cause": "Printer IP changed.",
     "fix": "Update printer port settings."
   },
   {
     "title": "Print Job Paused",
     "category": "printer",
-    "keywords": ["print job paused"],
+    "keywords": [
+      "print job paused"
+    ],
     "cause": "Paused in queue.",
     "fix": "Resume job in print queue."
   },
   {
     "title": "User Profile Cannot Be Loaded",
     "category": "windows",
-    "keywords": ["profile cannot be loaded"],
+    "keywords": [
+      "profile cannot be loaded"
+    ],
     "cause": "Corrupted user profile.",
     "fix": "Create new profile and transfer data."
   },
   {
     "title": "Group Policy Not Applying",
     "category": "network",
-    "keywords": ["group policy not applying"],
+    "keywords": [
+      "group policy not applying"
+    ],
     "cause": "Domain controller unreachable.",
     "fix": "Run gpupdate /force and verify domain connectivity."
   },
   {
     "title": "Mapped Drive Requires Reconnect",
     "category": "network",
-    "keywords": ["drive reconnect"],
+    "keywords": [
+      "drive reconnect"
+    ],
     "cause": "Credential mismatch.",
     "fix": "Disconnect and remap drive."
   },
   {
     "title": "Screen Flickering",
     "category": "windows",
-    "keywords": ["screen flicker"],
+    "keywords": [
+      "screen flicker"
+    ],
     "cause": "Display driver issue.",
     "fix": "Update graphics driver."
   },
   {
     "title": "Audio Service Not Running",
     "category": "windows",
-    "keywords": ["audio service not running"],
+    "keywords": [
+      "audio service not running"
+    ],
     "cause": "Windows Audio service stopped.",
     "fix": "Restart Windows Audio service."
   },
   {
     "title": "0x8007001F – Audio Device Error",
     "category": "windows",
-    "keywords": ["0x8007001f", "audio device error"],
+    "keywords": [
+      "0x8007001f",
+      "audio device error"
+    ],
     "cause": "Audio driver corruption.",
     "fix": "Reinstall audio drivers."
   },
   {
     "title": "0x80070422 – Service Cannot Be Started",
     "category": "windows",
-    "keywords": ["0x80070422"],
+    "keywords": [
+      "0x80070422"
+    ],
     "cause": "Required Windows service disabled.",
     "fix": "Enable Windows Update service."
   },
   {
     "title": "0xC1900101 – Windows Upgrade Failed",
     "category": "windows",
-    "keywords": ["0xc1900101"],
+    "keywords": [
+      "0xc1900101"
+    ],
     "cause": "Driver compatibility issue.",
     "fix": "Update drivers before upgrading."
   },
   {
     "title": "INACCESSIBLE_BOOT_DEVICE",
     "category": "windows",
-    "keywords": ["inaccessible boot device"],
+    "keywords": [
+      "inaccessible boot device"
+    ],
     "cause": "Storage driver mismatch.",
     "fix": "Boot into recovery and repair startup."
   },
   {
     "title": "IRQL_NOT_LESS_OR_EQUAL",
     "category": "windows",
-    "keywords": ["irql_not_less_or_equal"],
+    "keywords": [
+      "irql_not_less_or_equal"
+    ],
     "cause": "Faulty driver or RAM.",
     "fix": "Update drivers and test memory."
   },
   {
     "title": "Network Cable Unplugged",
     "category": "network",
-    "keywords": ["network cable unplugged"],
+    "keywords": [
+      "network cable unplugged"
+    ],
     "cause": "Ethernet cable disconnected.",
     "fix": "Reconnect or replace cable."
   },
   {
     "title": "Cannot Reach DHCP Server",
     "category": "network",
-    "keywords": ["dhcp server unreachable"],
+    "keywords": [
+      "dhcp server unreachable"
+    ],
     "cause": "DHCP service offline.",
     "fix": "Restart DHCP server or router."
   },
   {
     "title": "Proxy Server Error",
     "category": "network",
-    "keywords": ["proxy error"],
+    "keywords": [
+      "proxy error"
+    ],
     "cause": "Incorrect proxy configuration.",
     "fix": "Disable or correct proxy settings."
   },
   {
     "title": "SSL Certificate Error",
     "category": "network",
-    "keywords": ["ssl certificate error"],
+    "keywords": [
+      "ssl certificate error"
+    ],
     "cause": "Expired or invalid certificate.",
     "fix": "Update system time or renew certificate."
   },
   {
     "title": "Port Already in Use",
     "category": "network",
-    "keywords": ["port already in use"],
+    "keywords": [
+      "port already in use"
+    ],
     "cause": "Application conflict.",
     "fix": "Identify process with netstat and stop it."
   },
   {
     "title": "Printer Not Responding",
     "category": "printer",
-    "keywords": ["printer not responding"],
+    "keywords": [
+      "printer not responding"
+    ],
     "cause": "Printer powered off or offline.",
     "fix": "Power cycle printer."
   },
   {
     "title": "Printer Access Denied",
     "category": "printer",
-    "keywords": ["printer access denied"],
+    "keywords": [
+      "printer access denied"
+    ],
     "cause": "Permission issue.",
     "fix": "Grant user print permissions."
   },
   {
     "title": "Unable to Install Printer",
     "category": "printer",
-    "keywords": ["cannot install printer"],
+    "keywords": [
+      "cannot install printer"
+    ],
     "cause": "Driver package blocked.",
     "fix": "Run installer as administrator."
   },
   {
     "title": "Printer IP Conflict",
     "category": "printer",
-    "keywords": ["printer ip conflict"],
+    "keywords": [
+      "printer ip conflict"
+    ],
     "cause": "Duplicate IP on network.",
     "fix": "Assign static IP outside DHCP range."
   },
   {
     "title": "Printer Driver Signature Error",
     "category": "printer",
-    "keywords": ["driver signature error"],
+    "keywords": [
+      "driver signature error"
+    ],
     "cause": "Unsigned driver blocked by Windows.",
     "fix": "Disable driver signature enforcement temporarily."
   },
   {
     "title": "OneDrive Sync Error",
     "category": "windows",
-    "keywords": ["onedrive sync error"],
+    "keywords": [
+      "onedrive sync error"
+    ],
     "cause": "Account authentication failure.",
     "fix": "Sign out and sign in again."
   },
   {
     "title": "Microsoft Store Not Opening",
     "category": "windows",
-    "keywords": ["store not opening"],
+    "keywords": [
+      "store not opening"
+    ],
     "cause": "Corrupted cache.",
     "fix": "Run wsreset command."
   },
   {
     "title": "Camera Not Detected",
     "category": "windows",
-    "keywords": ["camera not detected"],
+    "keywords": [
+      "camera not detected"
+    ],
     "cause": "Privacy settings blocking camera.",
     "fix": "Enable camera access in privacy settings."
   },
   {
     "title": "Keyboard Not Typing",
     "category": "windows",
-    "keywords": ["keyboard not typing"],
+    "keywords": [
+      "keyboard not typing"
+    ],
     "cause": "Driver issue or hardware fault.",
     "fix": "Reconnect keyboard and reinstall driver."
   },
   {
     "title": "Mouse Not Working",
     "category": "windows",
-    "keywords": ["mouse not working"],
+    "keywords": [
+      "mouse not working"
+    ],
     "cause": "USB or driver problem.",
     "fix": "Try different USB port."
   },
   {
     "title": "VPN Connection Timeout",
     "category": "network",
-    "keywords": ["vpn timeout"],
+    "keywords": [
+      "vpn timeout"
+    ],
     "cause": "Server unreachable.",
     "fix": "Check internet connection."
   },
   {
     "title": "Cannot Access Shared Folder",
     "category": "network",
-    "keywords": ["shared folder access denied"],
+    "keywords": [
+      "shared folder access denied"
+    ],
     "cause": "Permission mismatch.",
     "fix": "Verify share and NTFS permissions."
   },
   {
     "title": "Domain Trust Relationship Failed",
     "category": "network",
-    "keywords": ["trust relationship failed"],
+    "keywords": [
+      "trust relationship failed"
+    ],
     "cause": "Machine account password mismatch.",
     "fix": "Rejoin computer to domain."
   },
   {
     "title": "Temporary Profile Loaded",
     "category": "windows",
-    "keywords": ["temporary profile"],
+    "keywords": [
+      "temporary profile"
+    ],
     "cause": "Corrupt user profile.",
     "fix": "Fix registry profile path or create new profile."
   },
   {
     "title": "Windows Defender Disabled",
     "category": "windows",
-    "keywords": ["defender disabled"],
+    "keywords": [
+      "defender disabled"
+    ],
     "cause": "Third-party antivirus installed.",
     "fix": "Uninstall conflicting antivirus."
+  },
+  {
+    "title": "Blue Screen – ATTEMPTED_WRITE_TO_READONLY_MEMORY",
+    "category": "windows",
+    "keywords": [
+      "attempted_write_to_readonly_memory",
+      "bsod"
+    ],
+    "cause": "Driver attempted to write to protected memory.",
+    "fix": "Update or uninstall the problematic driver."
+  },
+  {
+    "title": "Blue Screen – KERNEL_DATA_INPAGE_ERROR",
+    "category": "windows",
+    "keywords": [
+      "kernel_data_inpage_error",
+      "bsod"
+    ],
+    "cause": "Hard drive or paging file corruption.",
+    "fix": "Run chkdsk and check disk health."
+  },
+  {
+    "title": "Blue Screen – NTFS_FILE_SYSTEM",
+    "category": "windows",
+    "keywords": [
+      "ntfs_file_system",
+      "bsod"
+    ],
+    "cause": "Corrupted NTFS file system.",
+    "fix": "Run chkdsk /f and repair disk errors."
+  },
+  {
+    "title": "Blue Screen – BAD_SYSTEM_CONFIG_INFO",
+    "category": "windows",
+    "keywords": [
+      "bad_system_config_info"
+    ],
+    "cause": "Incorrect system registry configuration.",
+    "fix": "Restore system using System Restore."
+  },
+  {
+    "title": "Blue Screen – THREAD_STUCK_IN_DEVICE_DRIVER",
+    "category": "windows",
+    "keywords": [
+      "thread_stuck_in_device_driver"
+    ],
+    "cause": "Graphics driver stuck in infinite loop.",
+    "fix": "Update or reinstall graphics driver."
+  },
+  {
+    "title": "Blue Screen – KERNEL_MODE_EXCEPTION_NOT_HANDLED",
+    "category": "windows",
+    "keywords": [
+      "kernel_mode_exception_not_handled"
+    ],
+    "cause": "Driver incompatibility or hardware issue.",
+    "fix": "Update drivers and check hardware compatibility."
+  },
+  {
+    "title": "System File Checker Failed",
+    "category": "windows",
+    "keywords": [
+      "sfc failed"
+    ],
+    "cause": "Severely corrupted system files.",
+    "fix": "Run DISM /Online /Cleanup-Image /RestoreHealth."
+  },
+  {
+    "title": "Windows Installer Error 0x80070643",
+    "category": "windows",
+    "keywords": [
+      "0x80070643",
+      "installer error"
+    ],
+    "cause": "Installation service failure.",
+    "fix": "Restart Windows Installer service."
+  },
+  {
+    "title": "Windows Update Error 0x80070020",
+    "category": "windows",
+    "keywords": [
+      "0x80070020",
+      "update error"
+    ],
+    "cause": "File in use during update process.",
+    "fix": "Restart system and retry update."
+  },
+  {
+    "title": "Windows Defender Scan Failed",
+    "category": "windows",
+    "keywords": [
+      "defender scan failed"
+    ],
+    "cause": "Corrupted security definitions.",
+    "fix": "Update Windows Defender definitions."
+  },
+  {
+    "title": "Ethernet Connected But No Network Access",
+    "category": "network",
+    "keywords": [
+      "ethernet no access"
+    ],
+    "cause": "Incorrect gateway configuration.",
+    "fix": "Reset network adapter."
+  },
+  {
+    "title": "WiFi Authentication Error",
+    "category": "network",
+    "keywords": [
+      "wifi authentication error"
+    ],
+    "cause": "Incorrect WiFi credentials.",
+    "fix": "Reconnect using correct password."
+  },
+  {
+    "title": "Network Adapter Driver Missing",
+    "category": "network",
+    "keywords": [
+      "network driver missing"
+    ],
+    "cause": "Driver removed after update.",
+    "fix": "Download latest driver from manufacturer."
+  },
+  {
+    "title": "Network Connection Limited",
+    "category": "network",
+    "keywords": [
+      "limited network"
+    ],
+    "cause": "DHCP server not assigning address.",
+    "fix": "Release and renew IP configuration."
+  },
+  {
+    "title": "Packet Loss Detected",
+    "category": "network",
+    "keywords": [
+      "packet loss"
+    ],
+    "cause": "Network congestion or faulty cable.",
+    "fix": "Check network cables and router."
+  },
+  {
+    "title": "Router Firmware Outdated",
+    "category": "network",
+    "keywords": [
+      "router firmware"
+    ],
+    "cause": "Old firmware causing instability.",
+    "fix": "Update router firmware."
+  },
+  {
+    "title": "Firewall Blocking Application",
+    "category": "network",
+    "keywords": [
+      "firewall blocking"
+    ],
+    "cause": "Firewall rule blocking connection.",
+    "fix": "Allow application through firewall."
+  },
+  {
+    "title": "Printer Printing Slowly",
+    "category": "printer",
+    "keywords": [
+      "slow printing"
+    ],
+    "cause": "Large print spool file.",
+    "fix": "Reduce print quality or restart spooler."
+  },
+  {
+    "title": "Printer Printing Garbled Text",
+    "category": "printer",
+    "keywords": [
+      "garbled printing"
+    ],
+    "cause": "Incorrect printer driver installed.",
+    "fix": "Install correct printer driver."
+  },
+  {
+    "title": "Printer Not Accepting Jobs",
+    "category": "printer",
+    "keywords": [
+      "printer rejecting jobs"
+    ],
+    "cause": "Printer memory full.",
+    "fix": "Restart printer and clear queue."
+  },
+  {
+    "title": "Printer Network Timeout",
+    "category": "printer",
+    "keywords": [
+      "printer timeout"
+    ],
+    "cause": "Weak network connection.",
+    "fix": "Reconnect printer to network."
+  },
+  {
+    "title": "Printer Color Misalignment",
+    "category": "printer",
+    "keywords": [
+      "color misalignment"
+    ],
+    "cause": "Printer calibration issue.",
+    "fix": "Run printer calibration utility."
+  },
+  {
+    "title": "Printer Paper Size Mismatch",
+    "category": "printer",
+    "keywords": [
+      "paper size mismatch"
+    ],
+    "cause": "Paper size different from driver settings.",
+    "fix": "Match paper size settings."
+  },
+  {
+    "title": "CPU Temperature Too High",
+    "category": "windows",
+    "keywords": [
+      "cpu temperature high"
+    ],
+    "cause": "Cooling fan blocked or dust buildup.",
+    "fix": "Clean vents and ensure proper airflow."
+  },
+  {
+    "title": "RAM Usage Extremely High",
+    "category": "windows",
+    "keywords": [
+      "ram high usage"
+    ],
+    "cause": "Memory leak in background process.",
+    "fix": "Restart system and check Task Manager."
+  },
+  {
+    "title": "System Fan Running Constantly",
+    "category": "windows",
+    "keywords": [
+      "fan always running"
+    ],
+    "cause": "High CPU load or overheating.",
+    "fix": "Check running processes and cooling."
+  },
+  {
+    "title": "Laptop Battery Not Charging",
+    "category": "windows",
+    "keywords": [
+      "battery not charging"
+    ],
+    "cause": "Faulty battery or power adapter.",
+    "fix": "Check charger and battery health."
+  },
+  {
+    "title": "Hard Disk SMART Error",
+    "category": "windows",
+    "keywords": [
+      "smart error"
+    ],
+    "cause": "Hard drive failure predicted.",
+    "fix": "Backup data and replace drive."
+  },
+  {
+    "title": "BIOS Boot Order Incorrect",
+    "category": "windows",
+    "keywords": [
+      "boot order error"
+    ],
+    "cause": "Incorrect boot priority.",
+    "fix": "Change boot order in BIOS."
+  },
+  {
+    "title": "System Time Not Synchronizing",
+    "category": "windows",
+    "keywords": [
+      "time sync error"
+    ],
+    "cause": "Windows Time service stopped.",
+    "fix": "Restart Windows Time service."
+  },
+  {
+    "title": "Blue Screen – DATA_BUS_ERROR",
+    "category": "windows",
+    "keywords": [
+      "data_bus_error",
+      "bsod"
+    ],
+    "cause": "Memory access failure caused by faulty RAM.",
+    "fix": "Run Windows Memory Diagnostic and replace defective RAM."
+  },
+  {
+    "title": "Blue Screen – DRIVER_CORRUPTED_EXPOOL",
+    "category": "windows",
+    "keywords": [
+      "driver_corrupted_expool"
+    ],
+    "cause": "Driver attempted illegal memory access.",
+    "fix": "Update or reinstall the affected driver."
+  },
+  {
+    "title": "Blue Screen – DRIVER_CAUGHT_MODIFYING_FREED_POOL",
+    "category": "windows",
+    "keywords": [
+      "driver freed pool"
+    ],
+    "cause": "Driver attempted to modify freed memory.",
+    "fix": "Update drivers and uninstall problematic software."
+  },
+  {
+    "title": "Blue Screen – MULTIPLE_IRP_COMPLETE_REQUESTS",
+    "category": "windows",
+    "keywords": [
+      "multiple_irp_complete_requests"
+    ],
+    "cause": "Driver conflict handling I/O requests.",
+    "fix": "Update storage and chipset drivers."
+  },
+  {
+    "title": "Blue Screen – SESSION_HAS_VALID_POOL_ON_EXIT",
+    "category": "windows",
+    "keywords": [
+      "valid_pool_on_exit"
+    ],
+    "cause": "Kernel memory leak caused by faulty driver.",
+    "fix": "Update drivers and check recent installations."
+  },
+  {
+    "title": "Windows Installer Error 1603",
+    "category": "windows",
+    "keywords": [
+      "error 1603",
+      "installer error"
+    ],
+    "cause": "Installation process encountered a fatal error.",
+    "fix": "Restart system and run installer as administrator."
+  },
+  {
+    "title": "Windows Update Error 0x80070490",
+    "category": "windows",
+    "keywords": [
+      "0x80070490",
+      "update failed"
+    ],
+    "cause": "Corrupted component store.",
+    "fix": "Run DISM repair command."
+  },
+  {
+    "title": "Windows Update Error 0x80073701",
+    "category": "windows",
+    "keywords": [
+      "0x80073701"
+    ],
+    "cause": "Missing update files.",
+    "fix": "Run Windows Update Troubleshooter."
+  },
+  {
+    "title": "Windows Defender Error 0x800106ba",
+    "category": "windows",
+    "keywords": [
+      "defender error 0x800106ba"
+    ],
+    "cause": "Windows Defender service stopped.",
+    "fix": "Restart Windows Defender service."
+  },
+  {
+    "title": "Windows Update Database Corrupted",
+    "category": "windows",
+    "keywords": [
+      "update database corrupted"
+    ],
+    "cause": "Corrupt SoftwareDistribution folder.",
+    "fix": "Reset Windows Update components."
+  },
+  {
+    "title": "Network Adapter Driver Crash",
+    "category": "network",
+    "keywords": [
+      "network driver crash"
+    ],
+    "cause": "Driver instability or outdated driver.",
+    "fix": "Update network adapter drivers."
+  },
+  {
+    "title": "Network Packet Fragmentation Error",
+    "category": "network",
+    "keywords": [
+      "packet fragmentation"
+    ],
+    "cause": "Incorrect MTU configuration.",
+    "fix": "Adjust MTU settings on router."
+  },
+  {
+    "title": "DHCP Lease Expired",
+    "category": "network",
+    "keywords": [
+      "dhcp lease expired"
+    ],
+    "cause": "Device failed to renew IP address.",
+    "fix": "Renew IP configuration."
+  },
+  {
+    "title": "Network Bridge Failure",
+    "category": "network",
+    "keywords": [
+      "network bridge error"
+    ],
+    "cause": "Incorrect network bridge configuration.",
+    "fix": "Remove and recreate network bridge."
+  },
+  {
+    "title": "Network Interface Down",
+    "category": "network",
+    "keywords": [
+      "network interface down"
+    ],
+    "cause": "Network interface disabled.",
+    "fix": "Enable interface in network settings."
+  },
+  {
+    "title": "Router Overloaded",
+    "category": "network",
+    "keywords": [
+      "router overloaded"
+    ],
+    "cause": "Too many connected devices.",
+    "fix": "Restart router and reduce connected devices."
+  },
+  {
+    "title": "DNS Cache Overflow",
+    "category": "network",
+    "keywords": [
+      "dns cache overflow"
+    ],
+    "cause": "Too many cached DNS entries.",
+    "fix": "Flush DNS cache."
+  },
+  {
+    "title": "Network Broadcast Storm",
+    "category": "network",
+    "keywords": [
+      "broadcast storm"
+    ],
+    "cause": "Network loop or misconfigured switch.",
+    "fix": "Identify loop and isolate affected device."
+  },
+  {
+    "title": "LAN Port Disabled",
+    "category": "network",
+    "keywords": [
+      "lan port disabled"
+    ],
+    "cause": "Port disabled on switch or router.",
+    "fix": "Enable port on network device."
+  },
+  {
+    "title": "Wireless Authentication Timeout",
+    "category": "network",
+    "keywords": [
+      "authentication timeout"
+    ],
+    "cause": "WiFi authentication failed.",
+    "fix": "Reconnect and verify credentials."
+  },
+  {
+    "title": "Printer Maintenance Kit Required",
+    "category": "printer",
+    "keywords": [
+      "maintenance kit"
+    ],
+    "cause": "Printer maintenance interval reached.",
+    "fix": "Replace maintenance kit."
+  },
+  {
+    "title": "Printer Drum Unit Error",
+    "category": "printer",
+    "keywords": [
+      "drum unit error"
+    ],
+    "cause": "Drum unit worn out.",
+    "fix": "Replace drum unit."
+  },
+  {
+    "title": "Printer Fuser Error",
+    "category": "printer",
+    "keywords": [
+      "fuser error"
+    ],
+    "cause": "Fuser assembly overheating.",
+    "fix": "Restart printer and replace fuser if needed."
+  },
+  {
+    "title": "Printer Calibration Failed",
+    "category": "printer",
+    "keywords": [
+      "calibration failed"
+    ],
+    "cause": "Sensor unable to align print head.",
+    "fix": "Run calibration procedure again."
+  },
+  {
+    "title": "Printer Network Authentication Failed",
+    "category": "printer",
+    "keywords": [
+      "printer authentication"
+    ],
+    "cause": "Printer not authorized on network.",
+    "fix": "Reconnect printer to network."
+  },
+  {
+    "title": "Printer Memory Full",
+    "category": "printer",
+    "keywords": [
+      "printer memory full"
+    ],
+    "cause": "Document exceeds printer memory capacity.",
+    "fix": "Reduce document size."
+  },
+  {
+    "title": "CPU Thermal Throttling",
+    "category": "windows",
+    "keywords": [
+      "thermal throttling"
+    ],
+    "cause": "CPU temperature exceeding limits.",
+    "fix": "Clean cooling system and apply thermal paste."
+  },
+  {
+    "title": "System Interrupts High CPU",
+    "category": "windows",
+    "keywords": [
+      "system interrupts"
+    ],
+    "cause": "Hardware interrupt overload.",
+    "fix": "Update device drivers."
+  },
+  {
+    "title": "Motherboard Sensor Failure",
+    "category": "windows",
+    "keywords": [
+      "sensor failure"
+    ],
+    "cause": "Faulty hardware monitoring sensor.",
+    "fix": "Update BIOS firmware."
+  },
+  {
+    "title": "GPU Driver Crash",
+    "category": "windows",
+    "keywords": [
+      "gpu driver crash"
+    ],
+    "cause": "Graphics driver instability.",
+    "fix": "Reinstall GPU driver."
+  },
+  {
+    "title": "PCI Device Not Recognized",
+    "category": "windows",
+    "keywords": [
+      "pci device error"
+    ],
+    "cause": "Missing chipset driver.",
+    "fix": "Install chipset drivers."
+  },
+  {
+    "title": "USB Controller Failure",
+    "category": "windows",
+    "keywords": [
+      "usb controller error"
+    ],
+    "cause": "USB controller malfunction.",
+    "fix": "Reinstall USB controller drivers."
+  },
+  {
+    "title": "System Kernel Panic",
+    "category": "windows",
+    "keywords": [
+      "kernel panic"
+    ],
+    "cause": "Critical kernel component failure.",
+    "fix": "Boot in Safe Mode and repair system."
+  },
+  {
+    "title": "Windows Boot Loop",
+    "category": "windows",
+    "keywords": [
+      "boot loop"
+    ],
+    "cause": "Corrupt boot configuration.",
+    "fix": "Repair boot using recovery environment."
+  },
+  {
+    "title": "Secure Boot Violation",
+    "category": "windows",
+    "keywords": [
+      "secure boot violation"
+    ],
+    "cause": "Unauthorized bootloader detected.",
+    "fix": "Restore secure boot settings in BIOS."
+  },
+  {
+    "title": "TPM Initialization Failed",
+    "category": "windows",
+    "keywords": [
+      "tpm error"
+    ],
+    "cause": "TPM module initialization error.",
+    "fix": "Reset TPM in BIOS."
+  },
+  {
+    "title": "Blue Screen – VIDEO_TDR_FAILURE",
+    "category": "windows",
+    "keywords": [
+      "video_tdr_failure",
+      "bsod",
+      "0x00000116"
+    ],
+    "cause": "Graphics driver failed to respond within timeout period.",
+    "fix": "Update or reinstall graphics driver."
+  },
+  {
+    "title": "Blue Screen – DPC_WATCHDOG_VIOLATION",
+    "category": "windows",
+    "keywords": [
+      "dpc_watchdog_violation",
+      "bsod",
+      "0x00000133"
+    ],
+    "cause": "Driver taking too long to complete operations.",
+    "fix": "Update storage and chipset drivers."
+  },
+  {
+    "title": "Blue Screen – SYSTEM_SERVICE_EXCEPTION",
+    "category": "windows",
+    "keywords": [
+      "system_service_exception",
+      "bsod"
+    ],
+    "cause": "Driver or system service conflict.",
+    "fix": "Update drivers and uninstall recent software."
+  },
+  {
+    "title": "Windows Login Screen Freezing",
+    "category": "windows",
+    "keywords": [
+      "login freeze",
+      "windows login stuck"
+    ],
+    "cause": "Corrupt user profile or startup service conflict.",
+    "fix": "Boot into Safe Mode and disable problematic startup programs."
+  },
+  {
+    "title": "Windows Clipboard Not Working",
+    "category": "windows",
+    "keywords": [
+      "clipboard not working"
+    ],
+    "cause": "Clipboard service malfunction.",
+    "fix": "Restart Windows Explorer or clipboard service."
+  },
+  {
+    "title": "Windows Cannot Detect Second Monitor",
+    "category": "windows",
+    "keywords": [
+      "second monitor not detected"
+    ],
+    "cause": "Display driver issue or incorrect display configuration.",
+    "fix": "Update display drivers and detect displays manually."
+  },
+  {
+    "title": "Network Latency Too High",
+    "category": "network",
+    "keywords": [
+      "high latency",
+      "network lag"
+    ],
+    "cause": "Congested network or routing issue.",
+    "fix": "Test network path and restart router."
+  },
+  {
+    "title": "ARP Table Conflict",
+    "category": "network",
+    "keywords": [
+      "arp conflict"
+    ],
+    "cause": "Incorrect MAC address mapping in ARP table.",
+    "fix": "Clear ARP cache using arp -d command."
+  },
+  {
+    "title": "NTP Time Synchronization Failed",
+    "category": "network",
+    "keywords": [
+      "ntp sync failed"
+    ],
+    "cause": "Time server unreachable.",
+    "fix": "Change NTP server and verify network connectivity."
+  },
+  {
+    "title": "Network Switch Port Error",
+    "category": "network",
+    "keywords": [
+      "switch port error"
+    ],
+    "cause": "Faulty port or cable on switch.",
+    "fix": "Move cable to another switch port."
+  },
+  {
+    "title": "Gateway Timeout",
+    "category": "network",
+    "keywords": [
+      "gateway timeout",
+      "504 error"
+    ],
+    "cause": "Gateway device not responding.",
+    "fix": "Restart gateway or check upstream connection."
+  },
+  {
+    "title": "Printer Firmware Outdated",
+    "category": "printer",
+    "keywords": [
+      "printer firmware outdated"
+    ],
+    "cause": "Old firmware causing compatibility issues.",
+    "fix": "Update printer firmware from manufacturer."
+  },
+  {
+    "title": "Printer Cannot Detect Paper Tray",
+    "category": "printer",
+    "keywords": [
+      "paper tray not detected"
+    ],
+    "cause": "Sensor malfunction or tray misalignment.",
+    "fix": "Reinsert paper tray and clean sensor."
+  },
+  {
+    "title": "Printer Duplex Unit Error",
+    "category": "printer",
+    "keywords": [
+      "duplex error"
+    ],
+    "cause": "Duplex printing module malfunction.",
+    "fix": "Disable duplex printing or service unit."
+  },
+  {
+    "title": "Printer Toner Cartridge Not Recognized",
+    "category": "printer",
+    "keywords": [
+      "toner not recognized"
+    ],
+    "cause": "Chip communication failure.",
+    "fix": "Reinsert toner cartridge or replace it."
+  },
+  {
+    "title": "RAM Slot Failure",
+    "category": "hardware",
+    "keywords": [
+      "ram slot failure"
+    ],
+    "cause": "Motherboard RAM slot malfunction.",
+    "fix": "Test RAM in another slot or replace motherboard."
+  },
+  {
+    "title": "GPU Overheating",
+    "category": "hardware",
+    "keywords": [
+      "gpu overheating"
+    ],
+    "cause": "Insufficient cooling or dust buildup.",
+    "fix": "Clean GPU fans and ensure proper airflow."
+  },
+  {
+    "title": "Power Supply Voltage Instability",
+    "category": "hardware",
+    "keywords": [
+      "psu unstable",
+      "power supply voltage"
+    ],
+    "cause": "Failing power supply unit.",
+    "fix": "Replace PSU with compatible model."
+  },
+  {
+    "title": "CMOS Battery Failure",
+    "category": "hardware",
+    "keywords": [
+      "cmos battery failure"
+    ],
+    "cause": "CMOS battery drained.",
+    "fix": "Replace CMOS battery on motherboard."
+  },
+  {
+    "title": "NVMe SSD Not Detected",
+    "category": "hardware",
+    "keywords": [
+      "nvme not detected"
+    ],
+    "cause": "Incorrect BIOS configuration or drive failure.",
+    "fix": "Enable NVMe support in BIOS and reseat drive."
+  },
+  {
+    "title": "Blue Screen – SYSTEM_THREAD_EXCEPTION_NOT_HANDLED",
+    "category": "windows",
+    "keywords": [
+      "system_thread_exception_not_handled",
+      "bsod"
+    ],
+    "cause": "Driver generated an exception the system handler did not catch.",
+    "fix": "Update or reinstall problematic drivers."
+  },
+  {
+    "title": "Blue Screen – UNEXPECTED_KERNEL_MODE_TRAP",
+    "category": "windows",
+    "keywords": [
+      "unexpected_kernel_mode_trap",
+      "bsod"
+    ],
+    "cause": "CPU generated a trap due to hardware or driver error.",
+    "fix": "Check RAM and update drivers."
+  },
+  {
+    "title": "Blue Screen – MACHINE_CHECK_EXCEPTION",
+    "category": "windows",
+    "keywords": [
+      "machine_check_exception",
+      "bsod"
+    ],
+    "cause": "Critical hardware error detected by CPU.",
+    "fix": "Check CPU, cooling system, and motherboard."
+  },
+  {
+    "title": "Windows Explorer High Memory Usage",
+    "category": "windows",
+    "keywords": [
+      "explorer high memory"
+    ],
+    "cause": "Explorer memory leak caused by shell extension.",
+    "fix": "Restart Explorer and disable problematic extensions."
+  },
+  {
+    "title": "Windows Update Error 0x80240034",
+    "category": "windows",
+    "keywords": [
+      "0x80240034"
+    ],
+    "cause": "Update download interrupted.",
+    "fix": "Restart update service and retry."
+  },
+  {
+    "title": "Windows Defender Real-Time Protection Disabled",
+    "category": "windows",
+    "keywords": [
+      "defender real-time protection disabled"
+    ],
+    "cause": "Policy or antivirus conflict.",
+    "fix": "Enable real-time protection in Windows Security."
+  },
+  {
+    "title": "Windows Startup Repair Failed",
+    "category": "windows",
+    "keywords": [
+      "startup repair failed"
+    ],
+    "cause": "Boot configuration corruption.",
+    "fix": "Run bootrec /fixmbr and bootrec /rebuildbcd."
+  },
+  {
+    "title": "Windows File System Read-Only Error",
+    "category": "windows",
+    "keywords": [
+      "filesystem read only"
+    ],
+    "cause": "Drive mounted as read-only due to corruption.",
+    "fix": "Run chkdsk and repair disk errors."
+  },
+  {
+    "title": "DNS Resolution Timeout",
+    "category": "network",
+    "keywords": [
+      "dns timeout"
+    ],
+    "cause": "DNS server response delayed or unreachable.",
+    "fix": "Change DNS server and flush cache."
+  },
+  {
+    "title": "Network MTU Mismatch",
+    "category": "network",
+    "keywords": [
+      "mtu mismatch"
+    ],
+    "cause": "Incorrect MTU size causing packet fragmentation.",
+    "fix": "Adjust MTU settings on router or adapter."
+  },
+  {
+    "title": "Network Authentication Server Unreachable",
+    "category": "network",
+    "keywords": [
+      "authentication server unreachable"
+    ],
+    "cause": "Radius or authentication server offline.",
+    "fix": "Verify authentication server status."
+  },
+  {
+    "title": "IP Routing Loop Detected",
+    "category": "network",
+    "keywords": [
+      "routing loop"
+    ],
+    "cause": "Incorrect routing table configuration.",
+    "fix": "Correct routing entries on router."
+  },
+  {
+    "title": "Wireless Signal Too Weak",
+    "category": "network",
+    "keywords": [
+      "weak wifi signal"
+    ],
+    "cause": "Distance from access point or interference.",
+    "fix": "Move closer to router or reposition access point."
+  },
+  {
+    "title": "Network Port Security Violation",
+    "category": "network",
+    "keywords": [
+      "port security violation"
+    ],
+    "cause": "Unauthorized device connected to secured port.",
+    "fix": "Reset port security settings on switch."
+  },
+  {
+    "title": "DHCP Scope Exhausted",
+    "category": "network",
+    "keywords": [
+      "dhcp scope exhausted"
+    ],
+    "cause": "No available IP addresses in DHCP scope.",
+    "fix": "Expand DHCP scope or release unused leases."
+  },
+  {
+    "title": "Printer Unable to Detect Toner Level",
+    "category": "printer",
+    "keywords": [
+      "toner level unknown"
+    ],
+    "cause": "Sensor communication failure.",
+    "fix": "Remove and reinstall toner cartridge."
+  },
+  {
+    "title": "Printer Sleep Mode Not Waking",
+    "category": "printer",
+    "keywords": [
+      "printer sleep mode"
+    ],
+    "cause": "Firmware bug or power setting issue.",
+    "fix": "Disable deep sleep mode or update firmware."
+  },
+  {
+    "title": "Printer USB Communication Error",
+    "category": "printer",
+    "keywords": [
+      "printer usb error"
+    ],
+    "cause": "Faulty USB cable or port.",
+    "fix": "Replace USB cable or change port."
+  },
+  {
+    "title": "Printer Printhead Temperature Error",
+    "category": "printer",
+    "keywords": [
+      "printhead temperature"
+    ],
+    "cause": "Overheating printhead.",
+    "fix": "Power off printer and allow cooling."
+  },
+  {
+    "title": "Printer Scanner Lamp Failure",
+    "category": "printer",
+    "keywords": [
+      "scanner lamp error"
+    ],
+    "cause": "Scanner lamp burned out.",
+    "fix": "Replace scanner lamp module."
+  },
+  {
+    "title": "CPU Fan Not Detected",
+    "category": "hardware",
+    "keywords": [
+      "cpu fan not detected"
+    ],
+    "cause": "Fan disconnected or failed.",
+    "fix": "Reconnect fan to motherboard header."
+  },
+  {
+    "title": "GPU PCIe Slot Failure",
+    "category": "hardware",
+    "keywords": [
+      "pcie slot failure"
+    ],
+    "cause": "Motherboard PCIe slot damaged.",
+    "fix": "Install GPU in another slot."
+  },
+  {
+    "title": "Hard Drive Clicking Noise",
+    "category": "hardware",
+    "keywords": [
+      "hard drive clicking"
+    ],
+    "cause": "Mechanical disk failure.",
+    "fix": "Backup data immediately and replace drive."
+  },
+  {
+    "title": "Laptop Power Jack Loose",
+    "category": "hardware",
+    "keywords": [
+      "power jack loose"
+    ],
+    "cause": "Damaged charging port.",
+    "fix": "Repair or replace DC power jack."
+  },
+  {
+    "title": "Motherboard VRM Overheating",
+    "category": "hardware",
+    "keywords": [
+      "vrm overheating"
+    ],
+    "cause": "Poor airflow around voltage regulators.",
+    "fix": "Improve cooling and airflow."
+  },
+  {
+    "title": "Motherboard BIOS Firmware Corrupted",
+    "category": "hardware",
+    "keywords": [
+      "bios firmware corrupted"
+    ],
+    "cause": "BIOS update failed or firmware corrupted.",
+    "fix": "Reflash BIOS using manufacturer recovery method."
+  },
+  {
+    "title": "CPU Socket Contact Failure",
+    "category": "hardware",
+    "keywords": [
+      "cpu socket error"
+    ],
+    "cause": "Bent pins or poor CPU contact.",
+    "fix": "Inspect CPU socket and reseat processor."
+  },
+  {
+    "title": "RAM Timing Configuration Error",
+    "category": "hardware",
+    "keywords": [
+      "ram timing error"
+    ],
+    "cause": "Incorrect RAM timing settings in BIOS.",
+    "fix": "Reset BIOS memory settings to default."
+  },
+  {
+    "title": "GPU Fan Failure",
+    "category": "hardware",
+    "keywords": [
+      "gpu fan failure"
+    ],
+    "cause": "Graphics card cooling fan malfunction.",
+    "fix": "Replace GPU fan or graphics card."
+  },
+  {
+    "title": "PCIe Power Cable Not Connected",
+    "category": "hardware",
+    "keywords": [
+      "pcie power cable"
+    ],
+    "cause": "Graphics card missing required power connection.",
+    "fix": "Connect PCIe power cable from PSU."
+  },
+  {
+    "title": "Power Supply Fan Not Spinning",
+    "category": "hardware",
+    "keywords": [
+      "psu fan failure"
+    ],
+    "cause": "Power supply fan malfunction.",
+    "fix": "Replace power supply unit."
+  },
+  {
+    "title": "SSD Firmware Outdated",
+    "category": "hardware",
+    "keywords": [
+      "ssd firmware outdated"
+    ],
+    "cause": "Outdated firmware causing instability.",
+    "fix": "Update SSD firmware using manufacturer tool."
+  },
+  {
+    "title": "NVMe Drive Thermal Throttling",
+    "category": "hardware",
+    "keywords": [
+      "nvme overheating"
+    ],
+    "cause": "NVMe drive overheating under load.",
+    "fix": "Install heatsink or improve airflow."
+  },
+  {
+    "title": "Laptop Lid Sensor Failure",
+    "category": "hardware",
+    "keywords": [
+      "lid sensor error"
+    ],
+    "cause": "Magnetic lid sensor malfunction.",
+    "fix": "Replace sensor or motherboard component."
+  },
+  {
+    "title": "Motherboard USB Header Failure",
+    "category": "hardware",
+    "keywords": [
+      "usb header failure"
+    ],
+    "cause": "Front panel USB header damaged.",
+    "fix": "Use alternate USB header or replace motherboard."
+  },
+  {
+    "title": "Blue Screen – KMODE_EXCEPTION_NOT_HANDLED",
+    "category": "windows",
+    "keywords": [
+      "kmode_exception_not_handled",
+      "bsod"
+    ],
+    "cause": "Kernel-mode program generated an exception.",
+    "fix": "Update drivers and check system memory."
+  },
+  {
+    "title": "Blue Screen – SYSTEM_PTE_MISUSE",
+    "category": "windows",
+    "keywords": [
+      "system_pte_misuse"
+    ],
+    "cause": "Incorrect page table entry handling.",
+    "fix": "Update drivers and run memory diagnostics."
+  },
+  {
+    "title": "Blue Screen – PFN_LIST_CORRUPT",
+    "category": "windows",
+    "keywords": [
+      "pfn_list_corrupt"
+    ],
+    "cause": "Page frame number list corrupted.",
+    "fix": "Test RAM and update system drivers."
+  },
+  {
+    "title": "Blue Screen – INTERRUPT_EXCEPTION_NOT_HANDLED",
+    "category": "windows",
+    "keywords": [
+      "interrupt_exception_not_handled"
+    ],
+    "cause": "Interrupt exception not handled properly.",
+    "fix": "Update chipset and hardware drivers."
+  },
+  {
+    "title": "Blue Screen – MEMORY_IMAGE_CORRUPT",
+    "category": "windows",
+    "keywords": [
+      "memory_image_corrupt"
+    ],
+    "cause": "Corrupt memory image detected.",
+    "fix": "Run memory diagnostics and reinstall drivers."
+  },
+  {
+    "title": "Windows Update Error 0x800F0922",
+    "category": "windows",
+    "keywords": [
+      "0x800f0922"
+    ],
+    "cause": "Insufficient system reserved partition space.",
+    "fix": "Increase reserved partition size."
+  },
+  {
+    "title": "Windows Update Error 0x8024200D",
+    "category": "windows",
+    "keywords": [
+      "0x8024200d"
+    ],
+    "cause": "Incomplete update download.",
+    "fix": "Clear Windows Update cache and retry."
+  },
+  {
+    "title": "Windows Firewall Service Not Running",
+    "category": "windows",
+    "keywords": [
+      "firewall service stopped"
+    ],
+    "cause": "Firewall service disabled.",
+    "fix": "Start Windows Firewall service."
+  },
+  {
+    "title": "Windows Event Log Service Failure",
+    "category": "windows",
+    "keywords": [
+      "event log service"
+    ],
+    "cause": "Event log service not running.",
+    "fix": "Restart Windows Event Log service."
+  },
+  {
+    "title": "Windows Installer Service Disabled",
+    "category": "windows",
+    "keywords": [
+      "installer service disabled"
+    ],
+    "cause": "Windows Installer service disabled.",
+    "fix": "Enable Windows Installer service."
+  },
+  {
+    "title": "Network DNS Server Misconfigured",
+    "category": "network",
+    "keywords": [
+      "dns misconfigured"
+    ],
+    "cause": "Incorrect DNS server address.",
+    "fix": "Configure valid DNS server address."
+  },
+  {
+    "title": "Network Gateway Packet Loss",
+    "category": "network",
+    "keywords": [
+      "gateway packet loss"
+    ],
+    "cause": "Network congestion or router issue.",
+    "fix": "Restart router or check network load."
+  },
+  {
+    "title": "WiFi Channel Interference",
+    "category": "network",
+    "keywords": [
+      "wifi interference"
+    ],
+    "cause": "Multiple routers using same channel.",
+    "fix": "Change WiFi channel."
+  },
+  {
+    "title": "DHCP Address Conflict",
+    "category": "network",
+    "keywords": [
+      "dhcp conflict"
+    ],
+    "cause": "Two devices assigned same IP.",
+    "fix": "Clear DHCP leases and renew address."
+  },
+  {
+    "title": "Network Interface Driver Corrupted",
+    "category": "network",
+    "keywords": [
+      "network driver corrupted"
+    ],
+    "cause": "Driver files damaged.",
+    "fix": "Reinstall network adapter driver."
+  },
+  {
+    "title": "Router NAT Table Overflow",
+    "category": "network",
+    "keywords": [
+      "nat overflow"
+    ],
+    "cause": "Too many simultaneous connections.",
+    "fix": "Restart router to clear NAT table."
+  },
+  {
+    "title": "Wireless Authentication Server Timeout",
+    "category": "network",
+    "keywords": [
+      "wifi auth timeout"
+    ],
+    "cause": "Authentication server not responding.",
+    "fix": "Reconnect network and verify credentials."
+  },
+  {
+    "title": "Network VLAN Configuration Error",
+    "category": "network",
+    "keywords": [
+      "vlan configuration"
+    ],
+    "cause": "Incorrect VLAN tagging.",
+    "fix": "Correct VLAN configuration on switch."
+  },
+  {
+    "title": "Network Routing Table Corrupted",
+    "category": "network",
+    "keywords": [
+      "routing table corrupted"
+    ],
+    "cause": "Incorrect routing entries.",
+    "fix": "Reset routing table."
+  },
+  {
+    "title": "Network MTU Too Large",
+    "category": "network",
+    "keywords": [
+      "mtu too large"
+    ],
+    "cause": "MTU value exceeding network limit.",
+    "fix": "Lower MTU size."
+  },
+  {
+    "title": "Printer Waste Toner Container Full",
+    "category": "printer",
+    "keywords": [
+      "waste toner full"
+    ],
+    "cause": "Waste toner container reached capacity.",
+    "fix": "Replace or empty waste toner container."
+  },
+  {
+    "title": "Printer Roller Worn Out",
+    "category": "printer",
+    "keywords": [
+      "printer roller worn"
+    ],
+    "cause": "Paper feed rollers worn down.",
+    "fix": "Replace paper feed rollers."
+  },
+  {
+    "title": "Printer Internal Memory Error",
+    "category": "printer",
+    "keywords": [
+      "printer memory error"
+    ],
+    "cause": "Printer memory overflow.",
+    "fix": "Restart printer and reduce document size."
+  },
+  {
+    "title": "Printer Firmware Update Required",
+    "category": "printer",
+    "keywords": [
+      "firmware update required"
+    ],
+    "cause": "Firmware outdated for driver compatibility.",
+    "fix": "Update printer firmware."
+  },
+  {
+    "title": "Printer Carriage Jam",
+    "category": "printer",
+    "keywords": [
+      "carriage jam"
+    ],
+    "cause": "Printhead carriage blocked.",
+    "fix": "Remove obstruction and restart printer."
+  },
+  {
+    "title": "Printer Ink System Failure",
+    "category": "printer",
+    "keywords": [
+      "ink system failure"
+    ],
+    "cause": "Internal ink delivery malfunction.",
+    "fix": "Reset printer and replace cartridges."
+  },
+  {
+    "title": "Printer Sensor Calibration Error",
+    "category": "printer",
+    "keywords": [
+      "sensor calibration"
+    ],
+    "cause": "Sensor alignment failure.",
+    "fix": "Run printer calibration procedure."
+  },
+  {
+    "title": "Printer Output Tray Full",
+    "category": "printer",
+    "keywords": [
+      "output tray full"
+    ],
+    "cause": "Printed pages blocking sensor.",
+    "fix": "Clear output tray."
+  },
+  {
+    "title": "Printer Network Configuration Lost",
+    "category": "printer",
+    "keywords": [
+      "printer network lost"
+    ],
+    "cause": "Printer reset or network configuration cleared.",
+    "fix": "Reconnect printer to network."
+  },
+  {
+    "title": "Printer Duplex Motor Failure",
+    "category": "printer",
+    "keywords": [
+      "duplex motor failure"
+    ],
+    "cause": "Duplex printing motor malfunction.",
+    "fix": "Disable duplex printing or service printer."
+  },
+  {
+    "title": "Blue Screen – WHEA_UNCORRECTABLE_ERROR",
+    "category": "windows",
+    "keywords": [
+      "whea_uncorrectable_error",
+      "bsod",
+      "0x00000124"
+    ],
+    "cause": "Serious hardware error reported by the CPU or motherboard.",
+    "fix": "Check CPU, RAM, and motherboard components for hardware faults."
+  },
+  {
+    "title": "Windows Credential Manager Corrupted",
+    "category": "windows",
+    "keywords": [
+      "credential manager corrupted"
+    ],
+    "cause": "Stored credentials database damaged.",
+    "fix": "Clear stored credentials and restart Credential Manager service."
+  },
+  {
+    "title": "Network ARP Cache Corruption",
+    "category": "network",
+    "keywords": [
+      "arp cache corrupted"
+    ],
+    "cause": "Invalid entries in ARP cache causing routing issues.",
+    "fix": "Clear ARP cache using arp -d command."
+  },
+  {
+    "title": "Printer Printhead Alignment Failed",
+    "category": "printer",
+    "keywords": [
+      "printhead alignment failed"
+    ],
+    "cause": "Printer unable to correctly align printhead.",
+    "fix": "Run printhead alignment utility from printer software."
+  },
+  {
+    "title": "Laptop Cooling Fan Obstructed",
+    "category": "hardware",
+    "keywords": [
+      "fan obstructed",
+      "cooling blocked"
+    ],
+    "cause": "Dust or debris blocking cooling fan.",
+    "fix": "Clean internal fan and air vents."
+  },
+  {
+    "title": "Background Service Crash",
+    "category": "hardware",
+    "keywords": [
+      "background_service_crash"
+    ],
+    "cause": "Unexpected system or driver condition detected.",
+    "fix": "Restart device and update related drivers or services."
+  },
+  {
+    "title": "Service Dependency Failure",
+    "category": "windows",
+    "keywords": [
+      "service_dependency_failure"
+    ],
+    "cause": "Unexpected system or driver condition detected.",
+    "fix": "Restart device and update related drivers or services."
+  },
+  {
+    "title": "Device Power State Conflict",
+    "category": "printer",
+    "keywords": [
+      "device_power_state_conflict"
+    ],
+    "cause": "Unexpected system or driver condition detected.",
+    "fix": "Restart device and update related drivers or services."
+  },
+  {
+    "title": "Device Enumeration Failed",
+    "category": "printer",
+    "keywords": [
+      "device_enumeration_failed"
+    ],
+    "cause": "Unexpected system or driver condition detected.",
+    "fix": "Restart device and update related drivers or services."
+  },
+  {
+    "title": "Device Enumeration Failed",
+    "category": "windows",
+    "keywords": [
+      "device_enumeration_failed"
+    ],
+    "cause": "Unexpected system or driver condition detected.",
+    "fix": "Restart device and update related drivers or services."
+  },
+  {
+    "title": "Driver Communication Timeout",
+    "category": "network",
+    "keywords": [
+      "driver_communication_timeout"
+    ],
+    "cause": "Unexpected system or driver condition detected.",
+    "fix": "Restart device and update related drivers or services."
+  },
+  {
+    "title": "Background Service Crash",
+    "category": "printer",
+    "keywords": [
+      "background_service_crash"
+    ],
+    "cause": "Unexpected system or driver condition detected.",
+    "fix": "Restart device and update related drivers or services."
+  },
+  {
+    "title": "Device Enumeration Failed",
+    "category": "windows",
+    "keywords": [
+      "device_enumeration_failed"
+    ],
+    "cause": "Unexpected system or driver condition detected.",
+    "fix": "Restart device and update related drivers or services."
+  },
+  {
+    "title": "Hardware Monitoring Failure",
+    "category": "hardware",
+    "keywords": [
+      "hardware_monitoring_failure"
+    ],
+    "cause": "Unexpected system or driver condition detected.",
+    "fix": "Restart device and update related drivers or services."
+  },
+  {
+    "title": "Driver Initialization Error",
+    "category": "windows",
+    "keywords": [
+      "driver_initialization_error"
+    ],
+    "cause": "Unexpected system or driver condition detected.",
+    "fix": "Restart device and update related drivers or services."
+  },
+  {
+    "title": "Kernel Resource Exhaustion",
+    "category": "printer",
+    "keywords": [
+      "kernel_resource_exhaustion"
+    ],
+    "cause": "Unexpected system or driver condition detected.",
+    "fix": "Restart device and update related drivers or services."
+  },
+  {
+    "title": "Device Enumeration Failed",
+    "category": "windows",
+    "keywords": [
+      "device_enumeration_failed"
+    ],
+    "cause": "Unexpected system or driver condition detected.",
+    "fix": "Restart device and update related drivers or services."
+  },
+  {
+    "title": "Hardware Monitoring Failure",
+    "category": "windows",
+    "keywords": [
+      "hardware_monitoring_failure"
+    ],
+    "cause": "Unexpected system or driver condition detected.",
+    "fix": "Restart device and update related drivers or services."
+  },
+  {
+    "title": "Background Service Crash",
+    "category": "hardware",
+    "keywords": [
+      "background_service_crash"
+    ],
+    "cause": "Unexpected system or driver condition detected.",
+    "fix": "Restart device and update related drivers or services."
+  },
+  {
+    "title": "Driver Initialization Error",
+    "category": "windows",
+    "keywords": [
+      "driver_initialization_error"
+    ],
+    "cause": "Unexpected system or driver condition detected.",
+    "fix": "Restart device and update related drivers or services."
+  },
+  {
+    "title": "Peripheral Initialization Failure",
+    "category": "hardware",
+    "keywords": [
+      "peripheral_initialization_failure"
+    ],
+    "cause": "Unexpected system or driver condition detected.",
+    "fix": "Restart device and update related drivers or services."
+  },
+  {
+    "title": "Peripheral Initialization Failure",
+    "category": "windows",
+    "keywords": [
+      "peripheral_initialization_failure"
+    ],
+    "cause": "Unexpected system or driver condition detected.",
+    "fix": "Restart device and update related drivers or services."
+  },
+  {
+    "title": "Kernel Resource Exhaustion",
+    "category": "network",
+    "keywords": [
+      "kernel_resource_exhaustion"
+    ],
+    "cause": "Unexpected system or driver condition detected.",
+    "fix": "Restart device and update related drivers or services."
+  },
+  {
+    "title": "System Configuration Mismatch",
+    "category": "hardware",
+    "keywords": [
+      "system_configuration_mismatch"
+    ],
+    "cause": "Unexpected system or driver condition detected.",
+    "fix": "Restart device and update related drivers or services."
+  },
+  {
+    "title": "Service Dependency Failure",
+    "category": "windows",
+    "keywords": [
+      "service_dependency_failure"
+    ],
+    "cause": "Unexpected system or driver condition detected.",
+    "fix": "Restart device and update related drivers or services."
+  },
+  {
+    "title": "Background Service Crash",
+    "category": "windows",
+    "keywords": [
+      "background_service_crash"
+    ],
+    "cause": "Unexpected system or driver condition detected.",
+    "fix": "Restart device and update related drivers or services."
+  },
+  {
+    "title": "Device Power State Conflict",
+    "category": "network",
+    "keywords": [
+      "device_power_state_conflict"
+    ],
+    "cause": "Unexpected system or driver condition detected.",
+    "fix": "Restart device and update related drivers or services."
+  },
+  {
+    "title": "Device Enumeration Failed",
+    "category": "printer",
+    "keywords": [
+      "device_enumeration_failed"
+    ],
+    "cause": "Unexpected system or driver condition detected.",
+    "fix": "Restart device and update related drivers or services."
+  },
+  {
+    "title": "Device Enumeration Failed",
+    "category": "hardware",
+    "keywords": [
+      "device_enumeration_failed"
+    ],
+    "cause": "Unexpected system or driver condition detected.",
+    "fix": "Restart device and update related drivers or services."
+  },
+  {
+    "title": "System Configuration Mismatch",
+    "category": "hardware",
+    "keywords": [
+      "system_configuration_mismatch"
+    ],
+    "cause": "Unexpected system or driver condition detected.",
+    "fix": "Restart device and update related drivers or services."
+  },
+  {
+    "title": "Device Power State Conflict",
+    "category": "windows",
+    "keywords": [
+      "device_power_state_conflict"
+    ],
+    "cause": "Unexpected system or driver condition detected.",
+    "fix": "Restart device and update related drivers or services."
+  },
+  {
+    "title": "Driver Communication Timeout",
+    "category": "network",
+    "keywords": [
+      "driver_communication_timeout"
+    ],
+    "cause": "Unexpected system or driver condition detected.",
+    "fix": "Restart device and update related drivers or services."
+  },
+  {
+    "title": "Device Power State Conflict",
+    "category": "windows",
+    "keywords": [
+      "device_power_state_conflict"
+    ],
+    "cause": "Unexpected system or driver condition detected.",
+    "fix": "Restart device and update related drivers or services."
+  },
+  {
+    "title": "Driver Initialization Error",
+    "category": "network",
+    "keywords": [
+      "driver_initialization_error"
+    ],
+    "cause": "Unexpected system or driver condition detected.",
+    "fix": "Restart device and update related drivers or services."
+  },
+  {
+    "title": "Driver Initialization Error",
+    "category": "printer",
+    "keywords": [
+      "driver_initialization_error"
+    ],
+    "cause": "Unexpected system or driver condition detected.",
+    "fix": "Restart device and update related drivers or services."
+  },
+  {
+    "title": "System Configuration Mismatch",
+    "category": "hardware",
+    "keywords": [
+      "system_configuration_mismatch"
+    ],
+    "cause": "Unexpected system or driver condition detected.",
+    "fix": "Restart device and update related drivers or services."
+  },
+  {
+    "title": "Service Dependency Failure",
+    "category": "network",
+    "keywords": [
+      "service_dependency_failure"
+    ],
+    "cause": "Unexpected system or driver condition detected.",
+    "fix": "Restart device and update related drivers or services."
+  },
+  {
+    "title": "Kernel Resource Exhaustion",
+    "category": "network",
+    "keywords": [
+      "kernel_resource_exhaustion"
+    ],
+    "cause": "Unexpected system or driver condition detected.",
+    "fix": "Restart device and update related drivers or services."
+  },
+  {
+    "title": "Driver Communication Timeout",
+    "category": "windows",
+    "keywords": [
+      "driver_communication_timeout"
+    ],
+    "cause": "Unexpected system or driver condition detected.",
+    "fix": "Restart device and update related drivers or services."
+  },
+  {
+    "title": "System Configuration Mismatch",
+    "category": "windows",
+    "keywords": [
+      "system_configuration_mismatch"
+    ],
+    "cause": "Unexpected system or driver condition detected.",
+    "fix": "Restart device and update related drivers or services."
+  },
+  {
+    "title": "Driver Communication Timeout",
+    "category": "network",
+    "keywords": [
+      "driver_communication_timeout"
+    ],
+    "cause": "Unexpected system or driver condition detected.",
+    "fix": "Restart device and update related drivers or services."
+  },
+  {
+    "title": "Device Power State Conflict",
+    "category": "hardware",
+    "keywords": [
+      "device_power_state_conflict"
+    ],
+    "cause": "Unexpected system or driver condition detected.",
+    "fix": "Restart device and update related drivers or services."
+  },
+  {
+    "title": "Peripheral Initialization Failure",
+    "category": "network",
+    "keywords": [
+      "peripheral_initialization_failure"
+    ],
+    "cause": "Unexpected system or driver condition detected.",
+    "fix": "Restart device and update related drivers or services."
+  },
+  {
+    "title": "Driver Initialization Error",
+    "category": "windows",
+    "keywords": [
+      "driver_initialization_error"
+    ],
+    "cause": "Unexpected system or driver condition detected.",
+    "fix": "Restart device and update related drivers or services."
+  },
+  {
+    "title": "Driver Initialization Error",
+    "category": "hardware",
+    "keywords": [
+      "driver_initialization_error"
+    ],
+    "cause": "Unexpected system or driver condition detected.",
+    "fix": "Restart device and update related drivers or services."
+  },
+  {
+    "title": "Kernel Resource Exhaustion",
+    "category": "windows",
+    "keywords": [
+      "kernel_resource_exhaustion"
+    ],
+    "cause": "Unexpected system or driver condition detected.",
+    "fix": "Restart device and update related drivers or services."
+  },
+  {
+    "title": "Service Dependency Failure",
+    "category": "printer",
+    "keywords": [
+      "service_dependency_failure"
+    ],
+    "cause": "Unexpected system or driver condition detected.",
+    "fix": "Restart device and update related drivers or services."
+  },
+  {
+    "title": "Background Service Crash",
+    "category": "hardware",
+    "keywords": [
+      "background_service_crash"
+    ],
+    "cause": "Unexpected system or driver condition detected.",
+    "fix": "Restart device and update related drivers or services."
+  },
+  {
+    "title": "Service Dependency Failure",
+    "category": "hardware",
+    "keywords": [
+      "service_dependency_failure"
+    ],
+    "cause": "Unexpected system or driver condition detected.",
+    "fix": "Restart device and update related drivers or services."
   }
-  {
-"title": "Blue Screen – ATTEMPTED_WRITE_TO_READONLY_MEMORY",
-"category": "windows",
-"keywords": ["attempted_write_to_readonly_memory","bsod"],
-"cause": "Driver attempted to write to protected memory.",
-"fix": "Update or uninstall the problematic driver."
-},
-{
-"title": "Blue Screen – KERNEL_DATA_INPAGE_ERROR",
-"category": "windows",
-"keywords": ["kernel_data_inpage_error","bsod"],
-"cause": "Hard drive or paging file corruption.",
-"fix": "Run chkdsk and check disk health."
-},
-{
-"title": "Blue Screen – NTFS_FILE_SYSTEM",
-"category": "windows",
-"keywords": ["ntfs_file_system","bsod"],
-"cause": "Corrupted NTFS file system.",
-"fix": "Run chkdsk /f and repair disk errors."
-},
-{
-"title": "Blue Screen – BAD_SYSTEM_CONFIG_INFO",
-"category": "windows",
-"keywords": ["bad_system_config_info"],
-"cause": "Incorrect system registry configuration.",
-"fix": "Restore system using System Restore."
-},
-{
-"title": "Blue Screen – THREAD_STUCK_IN_DEVICE_DRIVER",
-"category": "windows",
-"keywords": ["thread_stuck_in_device_driver"],
-"cause": "Graphics driver stuck in infinite loop.",
-"fix": "Update or reinstall graphics driver."
-},
-{
-"title": "Blue Screen – KERNEL_MODE_EXCEPTION_NOT_HANDLED",
-"category": "windows",
-"keywords": ["kernel_mode_exception_not_handled"],
-"cause": "Driver incompatibility or hardware issue.",
-"fix": "Update drivers and check hardware compatibility."
-},
-{
-"title": "System File Checker Failed",
-"category": "windows",
-"keywords": ["sfc failed"],
-"cause": "Severely corrupted system files.",
-"fix": "Run DISM /Online /Cleanup-Image /RestoreHealth."
-},
-{
-"title": "Windows Installer Error 0x80070643",
-"category": "windows",
-"keywords": ["0x80070643","installer error"],
-"cause": "Installation service failure.",
-"fix": "Restart Windows Installer service."
-},
-{
-"title": "Windows Update Error 0x80070020",
-"category": "windows",
-"keywords": ["0x80070020","update error"],
-"cause": "File in use during update process.",
-"fix": "Restart system and retry update."
-},
-{
-"title": "Windows Defender Scan Failed",
-"category": "windows",
-"keywords": ["defender scan failed"],
-"cause": "Corrupted security definitions.",
-"fix": "Update Windows Defender definitions."
-},
-{
-"title": "Ethernet Connected But No Network Access",
-"category": "network",
-"keywords": ["ethernet no access"],
-"cause": "Incorrect gateway configuration.",
-"fix": "Reset network adapter."
-},
-{
-"title": "WiFi Authentication Error",
-"category": "network",
-"keywords": ["wifi authentication error"],
-"cause": "Incorrect WiFi credentials.",
-"fix": "Reconnect using correct password."
-},
-{
-"title": "Network Adapter Driver Missing",
-"category": "network",
-"keywords": ["network driver missing"],
-"cause": "Driver removed after update.",
-"fix": "Download latest driver from manufacturer."
-},
-{
-"title": "Network Connection Limited",
-"category": "network",
-"keywords": ["limited network"],
-"cause": "DHCP server not assigning address.",
-"fix": "Release and renew IP configuration."
-},
-{
-"title": "Packet Loss Detected",
-"category": "network",
-"keywords": ["packet loss"],
-"cause": "Network congestion or faulty cable.",
-"fix": "Check network cables and router."
-},
-{
-"title": "Router Firmware Outdated",
-"category": "network",
-"keywords": ["router firmware"],
-"cause": "Old firmware causing instability.",
-"fix": "Update router firmware."
-},
-{
-"title": "Firewall Blocking Application",
-"category": "network",
-"keywords": ["firewall blocking"],
-"cause": "Firewall rule blocking connection.",
-"fix": "Allow application through firewall."
-},
-{
-"title": "Printer Printing Slowly",
-"category": "printer",
-"keywords": ["slow printing"],
-"cause": "Large print spool file.",
-"fix": "Reduce print quality or restart spooler."
-},
-{
-"title": "Printer Printing Garbled Text",
-"category": "printer",
-"keywords": ["garbled printing"],
-"cause": "Incorrect printer driver installed.",
-"fix": "Install correct printer driver."
-},
-{
-"title": "Printer Not Accepting Jobs",
-"category": "printer",
-"keywords": ["printer rejecting jobs"],
-"cause": "Printer memory full.",
-"fix": "Restart printer and clear queue."
-},
-{
-"title": "Printer Network Timeout",
-"category": "printer",
-"keywords": ["printer timeout"],
-"cause": "Weak network connection.",
-"fix": "Reconnect printer to network."
-},
-{
-"title": "Printer Color Misalignment",
-"category": "printer",
-"keywords": ["color misalignment"],
-"cause": "Printer calibration issue.",
-"fix": "Run printer calibration utility."
-},
-{
-"title": "Printer Paper Size Mismatch",
-"category": "printer",
-"keywords": ["paper size mismatch"],
-"cause": "Paper size different from driver settings.",
-"fix": "Match paper size settings."
-},
-{
-"title": "CPU Temperature Too High",
-"category": "windows",
-"keywords": ["cpu temperature high"],
-"cause": "Cooling fan blocked or dust buildup.",
-"fix": "Clean vents and ensure proper airflow."
-},
-{
-"title": "RAM Usage Extremely High",
-"category": "windows",
-"keywords": ["ram high usage"],
-"cause": "Memory leak in background process.",
-"fix": "Restart system and check Task Manager."
-},
-{
-"title": "System Fan Running Constantly",
-"category": "windows",
-"keywords": ["fan always running"],
-"cause": "High CPU load or overheating.",
-"fix": "Check running processes and cooling."
-},
-{
-"title": "Laptop Battery Not Charging",
-"category": "windows",
-"keywords": ["battery not charging"],
-"cause": "Faulty battery or power adapter.",
-"fix": "Check charger and battery health."
-},
-{
-"title": "Hard Disk SMART Error",
-"category": "windows",
-"keywords": ["smart error"],
-"cause": "Hard drive failure predicted.",
-"fix": "Backup data and replace drive."
-},
-{
-"title": "BIOS Boot Order Incorrect",
-"category": "windows",
-"keywords": ["boot order error"],
-"cause": "Incorrect boot priority.",
-"fix": "Change boot order in BIOS."
-},
-{
-"title": "System Time Not Synchronizing",
-"category": "windows",
-"keywords": ["time sync error"],
-"cause": "Windows Time service stopped.",
-"fix": "Restart Windows Time service."
-}
-  ,
-{
-"title":"Blue Screen – DATA_BUS_ERROR",
-"category":"windows",
-"keywords":["data_bus_error","bsod"],
-"cause":"Memory access failure caused by faulty RAM.",
-"fix":"Run Windows Memory Diagnostic and replace defective RAM."
-},
-{
-"title":"Blue Screen – DRIVER_CORRUPTED_EXPOOL",
-"category":"windows",
-"keywords":["driver_corrupted_expool"],
-"cause":"Driver attempted illegal memory access.",
-"fix":"Update or reinstall the affected driver."
-},
-{
-"title":"Blue Screen – DRIVER_CAUGHT_MODIFYING_FREED_POOL",
-"category":"windows",
-"keywords":["driver freed pool"],
-"cause":"Driver attempted to modify freed memory.",
-"fix":"Update drivers and uninstall problematic software."
-},
-{
-"title":"Blue Screen – MULTIPLE_IRP_COMPLETE_REQUESTS",
-"category":"windows",
-"keywords":["multiple_irp_complete_requests"],
-"cause":"Driver conflict handling I/O requests.",
-"fix":"Update storage and chipset drivers."
-},
-{
-"title":"Blue Screen – SESSION_HAS_VALID_POOL_ON_EXIT",
-"category":"windows",
-"keywords":["valid_pool_on_exit"],
-"cause":"Kernel memory leak caused by faulty driver.",
-"fix":"Update drivers and check recent installations."
-},
-{
-"title":"Windows Installer Error 1603",
-"category":"windows",
-"keywords":["error 1603","installer error"],
-"cause":"Installation process encountered a fatal error.",
-"fix":"Restart system and run installer as administrator."
-},
-{
-"title":"Windows Update Error 0x80070490",
-"category":"windows",
-"keywords":["0x80070490","update failed"],
-"cause":"Corrupted component store.",
-"fix":"Run DISM repair command."
-},
-{
-"title":"Windows Update Error 0x80073701",
-"category":"windows",
-"keywords":["0x80073701"],
-"cause":"Missing update files.",
-"fix":"Run Windows Update Troubleshooter."
-},
-{
-"title":"Windows Defender Error 0x800106ba",
-"category":"windows",
-"keywords":["defender error 0x800106ba"],
-"cause":"Windows Defender service stopped.",
-"fix":"Restart Windows Defender service."
-},
-{
-"title":"Windows Update Database Corrupted",
-"category":"windows",
-"keywords":["update database corrupted"],
-"cause":"Corrupt SoftwareDistribution folder.",
-"fix":"Reset Windows Update components."
-},
-
-{
-"title":"Network Adapter Driver Crash",
-"category":"network",
-"keywords":["network driver crash"],
-"cause":"Driver instability or outdated driver.",
-"fix":"Update network adapter drivers."
-},
-{
-"title":"Network Packet Fragmentation Error",
-"category":"network",
-"keywords":["packet fragmentation"],
-"cause":"Incorrect MTU configuration.",
-"fix":"Adjust MTU settings on router."
-},
-{
-"title":"DHCP Lease Expired",
-"category":"network",
-"keywords":["dhcp lease expired"],
-"cause":"Device failed to renew IP address.",
-"fix":"Renew IP configuration."
-},
-{
-"title":"Network Bridge Failure",
-"category":"network",
-"keywords":["network bridge error"],
-"cause":"Incorrect network bridge configuration.",
-"fix":"Remove and recreate network bridge."
-},
-{
-"title":"Network Interface Down",
-"category":"network",
-"keywords":["network interface down"],
-"cause":"Network interface disabled.",
-"fix":"Enable interface in network settings."
-},
-{
-"title":"Router Overloaded",
-"category":"network",
-"keywords":["router overloaded"],
-"cause":"Too many connected devices.",
-"fix":"Restart router and reduce connected devices."
-},
-{
-"title":"DNS Cache Overflow",
-"category":"network",
-"keywords":["dns cache overflow"],
-"cause":"Too many cached DNS entries.",
-"fix":"Flush DNS cache."
-},
-{
-"title":"Network Broadcast Storm",
-"category":"network",
-"keywords":["broadcast storm"],
-"cause":"Network loop or misconfigured switch.",
-"fix":"Identify loop and isolate affected device."
-},
-{
-"title":"LAN Port Disabled",
-"category":"network",
-"keywords":["lan port disabled"],
-"cause":"Port disabled on switch or router.",
-"fix":"Enable port on network device."
-},
-{
-"title":"Wireless Authentication Timeout",
-"category":"network",
-"keywords":["authentication timeout"],
-"cause":"WiFi authentication failed.",
-"fix":"Reconnect and verify credentials."
-},
-
-{
-"title":"Printer Maintenance Kit Required",
-"category":"printer",
-"keywords":["maintenance kit"],
-"cause":"Printer maintenance interval reached.",
-"fix":"Replace maintenance kit."
-},
-{
-"title":"Printer Drum Unit Error",
-"category":"printer",
-"keywords":["drum unit error"],
-"cause":"Drum unit worn out.",
-"fix":"Replace drum unit."
-},
-{
-"title":"Printer Fuser Error",
-"category":"printer",
-"keywords":["fuser error"],
-"cause":"Fuser assembly overheating.",
-"fix":"Restart printer and replace fuser if needed."
-},
-{
-"title":"Printer Calibration Failed",
-"category":"printer",
-"keywords":["calibration failed"],
-"cause":"Sensor unable to align print head.",
-"fix":"Run calibration procedure again."
-},
-{
-"title":"Printer Network Authentication Failed",
-"category":"printer",
-"keywords":["printer authentication"],
-"cause":"Printer not authorized on network.",
-"fix":"Reconnect printer to network."
-},
-{
-"title":"Printer Memory Full",
-"category":"printer",
-"keywords":["printer memory full"],
-"cause":"Document exceeds printer memory capacity.",
-"fix":"Reduce document size."
-},
-
-{
-"title":"CPU Thermal Throttling",
-"category":"windows",
-"keywords":["thermal throttling"],
-"cause":"CPU temperature exceeding limits.",
-"fix":"Clean cooling system and apply thermal paste."
-},
-{
-"title":"System Interrupts High CPU",
-"category":"windows",
-"keywords":["system interrupts"],
-"cause":"Hardware interrupt overload.",
-"fix":"Update device drivers."
-},
-{
-"title":"Motherboard Sensor Failure",
-"category":"windows",
-"keywords":["sensor failure"],
-"cause":"Faulty hardware monitoring sensor.",
-"fix":"Update BIOS firmware."
-},
-{
-"title":"GPU Driver Crash",
-"category":"windows",
-"keywords":["gpu driver crash"],
-"cause":"Graphics driver instability.",
-"fix":"Reinstall GPU driver."
-},
-{
-"title":"PCI Device Not Recognized",
-"category":"windows",
-"keywords":["pci device error"],
-"cause":"Missing chipset driver.",
-"fix":"Install chipset drivers."
-},
-{
-"title":"USB Controller Failure",
-"category":"windows",
-"keywords":["usb controller error"],
-"cause":"USB controller malfunction.",
-"fix":"Reinstall USB controller drivers."
-},
-{
-"title":"System Kernel Panic",
-"category":"windows",
-"keywords":["kernel panic"],
-"cause":"Critical kernel component failure.",
-"fix":"Boot in Safe Mode and repair system."
-},
-{
-"title":"Windows Boot Loop",
-"category":"windows",
-"keywords":["boot loop"],
-"cause":"Corrupt boot configuration.",
-"fix":"Repair boot using recovery environment."
-},
-{
-"title":"Secure Boot Violation",
-"category":"windows",
-"keywords":["secure boot violation"],
-"cause":"Unauthorized bootloader detected.",
-"fix":"Restore secure boot settings in BIOS."
-},
-{
-"title":"TPM Initialization Failed",
-"category":"windows",
-"keywords":["tpm error"],
-"cause":"TPM module initialization error.",
-"fix":"Reset TPM in BIOS."
-}
-[
-{
-"title": "Blue Screen – VIDEO_TDR_FAILURE",
-"category": "windows",
-"keywords": ["video_tdr_failure","bsod","0x00000116"],
-"cause": "Graphics driver failed to respond within timeout period.",
-"fix": "Update or reinstall graphics driver."
-},
-{
-"title": "Blue Screen – DPC_WATCHDOG_VIOLATION",
-"category": "windows",
-"keywords": ["dpc_watchdog_violation","bsod","0x00000133"],
-"cause": "Driver taking too long to complete operations.",
-"fix": "Update storage and chipset drivers."
-},
-{
-"title": "Blue Screen – SYSTEM_SERVICE_EXCEPTION",
-"category": "windows",
-"keywords": ["system_service_exception","bsod"],
-"cause": "Driver or system service conflict.",
-"fix": "Update drivers and uninstall recent software."
-},
-{
-"title": "Windows Login Screen Freezing",
-"category": "windows",
-"keywords": ["login freeze","windows login stuck"],
-"cause": "Corrupt user profile or startup service conflict.",
-"fix": "Boot into Safe Mode and disable problematic startup programs."
-},
-{
-"title": "Windows Clipboard Not Working",
-"category": "windows",
-"keywords": ["clipboard not working"],
-"cause": "Clipboard service malfunction.",
-"fix": "Restart Windows Explorer or clipboard service."
-},
-{
-"title": "Windows Cannot Detect Second Monitor",
-"category": "windows",
-"keywords": ["second monitor not detected"],
-"cause": "Display driver issue or incorrect display configuration.",
-"fix": "Update display drivers and detect displays manually."
-},
-
-{
-"title": "Network Latency Too High",
-"category": "network",
-"keywords": ["high latency","network lag"],
-"cause": "Congested network or routing issue.",
-"fix": "Test network path and restart router."
-},
-{
-"title": "ARP Table Conflict",
-"category": "network",
-"keywords": ["arp conflict"],
-"cause": "Incorrect MAC address mapping in ARP table.",
-"fix": "Clear ARP cache using arp -d command."
-},
-{
-"title": "NTP Time Synchronization Failed",
-"category": "network",
-"keywords": ["ntp sync failed"],
-"cause": "Time server unreachable.",
-"fix": "Change NTP server and verify network connectivity."
-},
-{
-"title": "Network Switch Port Error",
-"category": "network",
-"keywords": ["switch port error"],
-"cause": "Faulty port or cable on switch.",
-"fix": "Move cable to another switch port."
-},
-{
-"title": "Gateway Timeout",
-"category": "network",
-"keywords": ["gateway timeout","504 error"],
-"cause": "Gateway device not responding.",
-"fix": "Restart gateway or check upstream connection."
-},
-
-{
-"title": "Printer Firmware Outdated",
-"category": "printer",
-"keywords": ["printer firmware outdated"],
-"cause": "Old firmware causing compatibility issues.",
-"fix": "Update printer firmware from manufacturer."
-},
-{
-"title": "Printer Cannot Detect Paper Tray",
-"category": "printer",
-"keywords": ["paper tray not detected"],
-"cause": "Sensor malfunction or tray misalignment.",
-"fix": "Reinsert paper tray and clean sensor."
-},
-{
-"title": "Printer Duplex Unit Error",
-"category": "printer",
-"keywords": ["duplex error"],
-"cause": "Duplex printing module malfunction.",
-"fix": "Disable duplex printing or service unit."
-},
-{
-"title": "Printer Toner Cartridge Not Recognized",
-"category": "printer",
-"keywords": ["toner not recognized"],
-"cause": "Chip communication failure.",
-"fix": "Reinsert toner cartridge or replace it."
-},
-
-{
-"title": "RAM Slot Failure",
-"category": "hardware",
-"keywords": ["ram slot failure"],
-"cause": "Motherboard RAM slot malfunction.",
-"fix": "Test RAM in another slot or replace motherboard."
-},
-{
-"title": "GPU Overheating",
-"category": "hardware",
-"keywords": ["gpu overheating"],
-"cause": "Insufficient cooling or dust buildup.",
-"fix": "Clean GPU fans and ensure proper airflow."
-},
-{
-"title": "Power Supply Voltage Instability",
-"category": "hardware",
-"keywords": ["psu unstable","power supply voltage"],
-"cause": "Failing power supply unit.",
-"fix": "Replace PSU with compatible model."
-},
-{
-"title": "CMOS Battery Failure",
-"category": "hardware",
-"keywords": ["cmos battery failure"],
-"cause": "CMOS battery drained.",
-"fix": "Replace CMOS battery on motherboard."
-},
-{
-"title": "NVMe SSD Not Detected",
-"category": "hardware",
-"keywords": ["nvme not detected"],
-"cause": "Incorrect BIOS configuration or drive failure.",
-"fix": "Enable NVMe support in BIOS and reseat drive."
-}
-[
-{
-"title": "Blue Screen – SYSTEM_THREAD_EXCEPTION_NOT_HANDLED",
-"category": "windows",
-"keywords": ["system_thread_exception_not_handled","bsod"],
-"cause": "Driver generated an exception the system handler did not catch.",
-"fix": "Update or reinstall problematic drivers."
-},
-{
-"title": "Blue Screen – UNEXPECTED_KERNEL_MODE_TRAP",
-"category": "windows",
-"keywords": ["unexpected_kernel_mode_trap","bsod"],
-"cause": "CPU generated a trap due to hardware or driver error.",
-"fix": "Check RAM and update drivers."
-},
-{
-"title": "Blue Screen – MACHINE_CHECK_EXCEPTION",
-"category": "windows",
-"keywords": ["machine_check_exception","bsod"],
-"cause": "Critical hardware error detected by CPU.",
-"fix": "Check CPU, cooling system, and motherboard."
-},
-{
-"title": "Windows Explorer High Memory Usage",
-"category": "windows",
-"keywords": ["explorer high memory"],
-"cause": "Explorer memory leak caused by shell extension.",
-"fix": "Restart Explorer and disable problematic extensions."
-},
-{
-"title": "Windows Update Error 0x80240034",
-"category": "windows",
-"keywords": ["0x80240034"],
-"cause": "Update download interrupted.",
-"fix": "Restart update service and retry."
-},
-{
-"title": "Windows Defender Real-Time Protection Disabled",
-"category": "windows",
-"keywords": ["defender real-time protection disabled"],
-"cause": "Policy or antivirus conflict.",
-"fix": "Enable real-time protection in Windows Security."
-},
-{
-"title": "Windows Startup Repair Failed",
-"category": "windows",
-"keywords": ["startup repair failed"],
-"cause": "Boot configuration corruption.",
-"fix": "Run bootrec /fixmbr and bootrec /rebuildbcd."
-},
-{
-"title": "Windows File System Read-Only Error",
-"category": "windows",
-"keywords": ["filesystem read only"],
-"cause": "Drive mounted as read-only due to corruption.",
-"fix": "Run chkdsk and repair disk errors."
-},
-
-{
-"title": "DNS Resolution Timeout",
-"category": "network",
-"keywords": ["dns timeout"],
-"cause": "DNS server response delayed or unreachable.",
-"fix": "Change DNS server and flush cache."
-},
-{
-"title": "Network MTU Mismatch",
-"category": "network",
-"keywords": ["mtu mismatch"],
-"cause": "Incorrect MTU size causing packet fragmentation.",
-"fix": "Adjust MTU settings on router or adapter."
-},
-{
-"title": "Network Authentication Server Unreachable",
-"category": "network",
-"keywords": ["authentication server unreachable"],
-"cause": "Radius or authentication server offline.",
-"fix": "Verify authentication server status."
-},
-{
-"title": "IP Routing Loop Detected",
-"category": "network",
-"keywords": ["routing loop"],
-"cause": "Incorrect routing table configuration.",
-"fix": "Correct routing entries on router."
-},
-{
-"title": "Wireless Signal Too Weak",
-"category": "network",
-"keywords": ["weak wifi signal"],
-"cause": "Distance from access point or interference.",
-"fix": "Move closer to router or reposition access point."
-},
-{
-"title": "Network Port Security Violation",
-"category": "network",
-"keywords": ["port security violation"],
-"cause": "Unauthorized device connected to secured port.",
-"fix": "Reset port security settings on switch."
-},
-{
-"title": "DHCP Scope Exhausted",
-"category": "network",
-"keywords": ["dhcp scope exhausted"],
-"cause": "No available IP addresses in DHCP scope.",
-"fix": "Expand DHCP scope or release unused leases."
-},
-
-{
-"title": "Printer Unable to Detect Toner Level",
-"category": "printer",
-"keywords": ["toner level unknown"],
-"cause": "Sensor communication failure.",
-"fix": "Remove and reinstall toner cartridge."
-},
-{
-"title": "Printer Sleep Mode Not Waking",
-"category": "printer",
-"keywords": ["printer sleep mode"],
-"cause": "Firmware bug or power setting issue.",
-"fix": "Disable deep sleep mode or update firmware."
-},
-{
-"title": "Printer USB Communication Error",
-"category": "printer",
-"keywords": ["printer usb error"],
-"cause": "Faulty USB cable or port.",
-"fix": "Replace USB cable or change port."
-},
-{
-"title": "Printer Printhead Temperature Error",
-"category": "printer",
-"keywords": ["printhead temperature"],
-"cause": "Overheating printhead.",
-"fix": "Power off printer and allow cooling."
-},
-{
-"title": "Printer Scanner Lamp Failure",
-"category": "printer",
-"keywords": ["scanner lamp error"],
-"cause": "Scanner lamp burned out.",
-"fix": "Replace scanner lamp module."
-},
-
-{
-"title": "CPU Fan Not Detected",
-"category": "hardware",
-"keywords": ["cpu fan not detected"],
-"cause": "Fan disconnected or failed.",
-"fix": "Reconnect fan to motherboard header."
-},
-{
-"title": "GPU PCIe Slot Failure",
-"category": "hardware",
-"keywords": ["pcie slot failure"],
-"cause": "Motherboard PCIe slot damaged.",
-"fix": "Install GPU in another slot."
-},
-{
-"title": "Hard Drive Clicking Noise",
-"category": "hardware",
-"keywords": ["hard drive clicking"],
-"cause": "Mechanical disk failure.",
-"fix": "Backup data immediately and replace drive."
-},
-{
-"title": "Laptop Power Jack Loose",
-"category": "hardware",
-"keywords": ["power jack loose"],
-"cause": "Damaged charging port.",
-"fix": "Repair or replace DC power jack."
-},
-{
-"title": "Motherboard VRM Overheating",
-"category": "hardware",
-"keywords": ["vrm overheating"],
-"cause": "Poor airflow around voltage regulators.",
-"fix": "Improve cooling and airflow."
-}
-{
-"title": "Motherboard BIOS Firmware Corrupted",
-"category": "hardware",
-"keywords": ["bios firmware corrupted"],
-"cause": "BIOS update failed or firmware corrupted.",
-"fix": "Reflash BIOS using manufacturer recovery method."
-},
-{
-"title": "CPU Socket Contact Failure",
-"category": "hardware",
-"keywords": ["cpu socket error"],
-"cause": "Bent pins or poor CPU contact.",
-"fix": "Inspect CPU socket and reseat processor."
-},
-{
-"title": "RAM Timing Configuration Error",
-"category": "hardware",
-"keywords": ["ram timing error"],
-"cause": "Incorrect RAM timing settings in BIOS.",
-"fix": "Reset BIOS memory settings to default."
-},
-{
-"title": "GPU Fan Failure",
-"category": "hardware",
-"keywords": ["gpu fan failure"],
-"cause": "Graphics card cooling fan malfunction.",
-"fix": "Replace GPU fan or graphics card."
-},
-{
-"title": "PCIe Power Cable Not Connected",
-"category": "hardware",
-"keywords": ["pcie power cable"],
-"cause": "Graphics card missing required power connection.",
-"fix": "Connect PCIe power cable from PSU."
-},
-{
-"title": "Power Supply Fan Not Spinning",
-"category": "hardware",
-"keywords": ["psu fan failure"],
-"cause": "Power supply fan malfunction.",
-"fix": "Replace power supply unit."
-},
-{
-"title": "SSD Firmware Outdated",
-"category": "hardware",
-"keywords": ["ssd firmware outdated"],
-"cause": "Outdated firmware causing instability.",
-"fix": "Update SSD firmware using manufacturer tool."
-},
-{
-"title": "NVMe Drive Thermal Throttling",
-"category": "hardware",
-"keywords": ["nvme overheating"],
-"cause": "NVMe drive overheating under load.",
-"fix": "Install heatsink or improve airflow."
-},
-{
-"title": "Laptop Lid Sensor Failure",
-"category": "hardware",
-"keywords": ["lid sensor error"],
-"cause": "Magnetic lid sensor malfunction.",
-"fix": "Replace sensor or motherboard component."
-},
-{
-"title": "Motherboard USB Header Failure",
-"category": "hardware",
-"keywords": ["usb header failure"],
-"cause": "Front panel USB header damaged.",
-"fix": "Use alternate USB header or replace motherboard."
-},
-
-{
-"title": "Blue Screen – KMODE_EXCEPTION_NOT_HANDLED",
-"category": "windows",
-"keywords": ["kmode_exception_not_handled","bsod"],
-"cause": "Kernel-mode program generated an exception.",
-"fix": "Update drivers and check system memory."
-},
-{
-"title": "Blue Screen – SYSTEM_PTE_MISUSE",
-"category": "windows",
-"keywords": ["system_pte_misuse"],
-"cause": "Incorrect page table entry handling.",
-"fix": "Update drivers and run memory diagnostics."
-},
-{
-"title": "Blue Screen – PFN_LIST_CORRUPT",
-"category": "windows",
-"keywords": ["pfn_list_corrupt"],
-"cause": "Page frame number list corrupted.",
-"fix": "Test RAM and update system drivers."
-},
-{
-"title": "Blue Screen – INTERRUPT_EXCEPTION_NOT_HANDLED",
-"category": "windows",
-"keywords": ["interrupt_exception_not_handled"],
-"cause": "Interrupt exception not handled properly.",
-"fix": "Update chipset and hardware drivers."
-},
-{
-"title": "Blue Screen – MEMORY_IMAGE_CORRUPT",
-"category": "windows",
-"keywords": ["memory_image_corrupt"],
-"cause": "Corrupt memory image detected.",
-"fix": "Run memory diagnostics and reinstall drivers."
-},
-{
-"title": "Windows Update Error 0x800F0922",
-"category": "windows",
-"keywords": ["0x800f0922"],
-"cause": "Insufficient system reserved partition space.",
-"fix": "Increase reserved partition size."
-},
-{
-"title": "Windows Update Error 0x8024200D",
-"category": "windows",
-"keywords": ["0x8024200d"],
-"cause": "Incomplete update download.",
-"fix": "Clear Windows Update cache and retry."
-},
-{
-"title": "Windows Firewall Service Not Running",
-"category": "windows",
-"keywords": ["firewall service stopped"],
-"cause": "Firewall service disabled.",
-"fix": "Start Windows Firewall service."
-},
-{
-"title": "Windows Event Log Service Failure",
-"category": "windows",
-"keywords": ["event log service"],
-"cause": "Event log service not running.",
-"fix": "Restart Windows Event Log service."
-},
-{
-"title": "Windows Installer Service Disabled",
-"category": "windows",
-"keywords": ["installer service disabled"],
-"cause": "Windows Installer service disabled.",
-"fix": "Enable Windows Installer service."
-},
-
-{
-"title": "Network DNS Server Misconfigured",
-"category": "network",
-"keywords": ["dns misconfigured"],
-"cause": "Incorrect DNS server address.",
-"fix": "Configure valid DNS server address."
-},
-{
-"title": "Network Gateway Packet Loss",
-"category": "network",
-"keywords": ["gateway packet loss"],
-"cause": "Network congestion or router issue.",
-"fix": "Restart router or check network load."
-},
-{
-"title": "WiFi Channel Interference",
-"category": "network",
-"keywords": ["wifi interference"],
-"cause": "Multiple routers using same channel.",
-"fix": "Change WiFi channel."
-},
-{
-"title": "DHCP Address Conflict",
-"category": "network",
-"keywords": ["dhcp conflict"],
-"cause": "Two devices assigned same IP.",
-"fix": "Clear DHCP leases and renew address."
-},
-{
-"title": "Network Interface Driver Corrupted",
-"category": "network",
-"keywords": ["network driver corrupted"],
-"cause": "Driver files damaged.",
-"fix": "Reinstall network adapter driver."
-},
-{
-"title": "Router NAT Table Overflow",
-"category": "network",
-"keywords": ["nat overflow"],
-"cause": "Too many simultaneous connections.",
-"fix": "Restart router to clear NAT table."
-},
-{
-"title": "Wireless Authentication Server Timeout",
-"category": "network",
-"keywords": ["wifi auth timeout"],
-"cause": "Authentication server not responding.",
-"fix": "Reconnect network and verify credentials."
-},
-{
-"title": "Network VLAN Configuration Error",
-"category": "network",
-"keywords": ["vlan configuration"],
-"cause": "Incorrect VLAN tagging.",
-"fix": "Correct VLAN configuration on switch."
-},
-{
-"title": "Network Routing Table Corrupted",
-"category": "network",
-"keywords": ["routing table corrupted"],
-"cause": "Incorrect routing entries.",
-"fix": "Reset routing table."
-},
-{
-"title": "Network MTU Too Large",
-"category": "network",
-"keywords": ["mtu too large"],
-"cause": "MTU value exceeding network limit.",
-"fix": "Lower MTU size."
-},
-
-{
-"title": "Printer Waste Toner Container Full",
-"category": "printer",
-"keywords": ["waste toner full"],
-"cause": "Waste toner container reached capacity.",
-"fix": "Replace or empty waste toner container."
-},
-{
-"title": "Printer Roller Worn Out",
-"category": "printer",
-"keywords": ["printer roller worn"],
-"cause": "Paper feed rollers worn down.",
-"fix": "Replace paper feed rollers."
-},
-{
-"title": "Printer Internal Memory Error",
-"category": "printer",
-"keywords": ["printer memory error"],
-"cause": "Printer memory overflow.",
-"fix": "Restart printer and reduce document size."
-},
-{
-"title": "Printer Firmware Update Required",
-"category": "printer",
-"keywords": ["firmware update required"],
-"cause": "Firmware outdated for driver compatibility.",
-"fix": "Update printer firmware."
-},
-{
-"title": "Printer Carriage Jam",
-"category": "printer",
-"keywords": ["carriage jam"],
-"cause": "Printhead carriage blocked.",
-"fix": "Remove obstruction and restart printer."
-},
-{
-"title": "Printer Ink System Failure",
-"category": "printer",
-"keywords": ["ink system failure"],
-"cause": "Internal ink delivery malfunction.",
-"fix": "Reset printer and replace cartridges."
-},
-{
-"title": "Printer Sensor Calibration Error",
-"category": "printer",
-"keywords": ["sensor calibration"],
-"cause": "Sensor alignment failure.",
-"fix": "Run printer calibration procedure."
-},
-{
-"title": "Printer Output Tray Full",
-"category": "printer",
-"keywords": ["output tray full"],
-"cause": "Printed pages blocking sensor.",
-"fix": "Clear output tray."
-},
-{
-"title": "Printer Network Configuration Lost",
-"category": "printer",
-"keywords": ["printer network lost"],
-"cause": "Printer reset or network configuration cleared.",
-"fix": "Reconnect printer to network."
-},
-{
-"title": "Printer Duplex Motor Failure",
-"category": "printer",
-"keywords": ["duplex motor failure"],
-"cause": "Duplex printing motor malfunction.",
-"fix": "Disable duplex printing or service printer."
-}
-  {
-"title": "Blue Screen – WHEA_UNCORRECTABLE_ERROR",
-"category": "windows",
-"keywords": ["whea_uncorrectable_error","bsod","0x00000124"],
-"cause": "Serious hardware error reported by the CPU or motherboard.",
-"fix": "Check CPU, RAM, and motherboard components for hardware faults."
-},
-{
-"title": "Windows Credential Manager Corrupted",
-"category": "windows",
-"keywords": ["credential manager corrupted"],
-"cause": "Stored credentials database damaged.",
-"fix": "Clear stored credentials and restart Credential Manager service."
-},
-{
-"title": "Network ARP Cache Corruption",
-"category": "network",
-"keywords": ["arp cache corrupted"],
-"cause": "Invalid entries in ARP cache causing routing issues.",
-"fix": "Clear ARP cache using arp -d command."
-},
-{
-"title": "Printer Printhead Alignment Failed",
-"category": "printer",
-"keywords": ["printhead alignment failed"],
-"cause": "Printer unable to correctly align printhead.",
-"fix": "Run printhead alignment utility from printer software."
-},
-{
-"title": "Laptop Cooling Fan Obstructed",
-"category": "hardware",
-"keywords": ["fan obstructed","cooling blocked"],
-"cause": "Dust or debris blocking cooling fan.",
-"fix": "Clean internal fan and air vents."
-}
 ]
