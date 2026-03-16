@@ -83,7 +83,7 @@ const categoryFilter = document.getElementById("categoryFilter");
 const results = document.getElementById("results");
 
 // ✅ Robust JSON loader (works with custom domain)
-fetch("/errors.json")
+fetch("errors.json")
   .then(response => {
       if (!response.ok) {
           throw new Error("HTTP status " + response.status);
