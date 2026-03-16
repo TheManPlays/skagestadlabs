@@ -3,36 +3,51 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IT Tools – Skagestad Labs</title>
+
+<title>IT Support Tools – Skagestad Labs</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
 
 body{
-    background: linear-gradient(135deg,#0f172a,#111827);
-    color:#e2e8f0;
-    font-family:'Inter',sans-serif;
     margin:0;
-    padding:60px 20px;
+    font-family:'Inter',sans-serif;
+    background: radial-gradient(circle at top,#0f172a,#020617);
+    color:#e2e8f0;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    min-height:100vh;
 }
+
+/* main card */
 
 .container{
-    max-width:900px;
-    margin:auto;
+    width:100%;
+    max-width:720px;
 }
 
-/* header */
+.card{
+    background:#1e293b;
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 20px 60px rgba(0,0,0,.6);
+}
+
+/* title */
 
 h1{
-    font-size:30px;
+    font-size:24px;
     margin-bottom:6px;
 }
 
 .subtitle{
     color:#94a3b8;
     font-size:14px;
-    margin-bottom:30px;
+    margin-bottom:20px;
 }
 
 /* inputs */
@@ -40,75 +55,79 @@ h1{
 input,select{
     width:100%;
     padding:12px;
-    margin:10px 0;
+    margin-top:10px;
+
     border-radius:8px;
     border:1px solid #334155;
-    background:#1e293b;
+
+    background:#0f172a;
     color:white;
+
     font-size:14px;
     outline:none;
-    transition:all .2s;
+
+    transition:.2s;
 }
 
 input:focus,select:focus{
     border-color:#3b82f6;
-    box-shadow:0 0 0 2px rgba(59,130,246,0.2);
+    box-shadow:0 0 0 2px rgba(59,130,246,.2);
 }
 
 /* result cards */
 
-.card{
-    background:#1e293b;
-    padding:18px;
-    border-radius:12px;
-    margin-top:18px;
+.result{
+    background:#0f172a;
     border:1px solid #334155;
-    transition:all .25s ease;
+    padding:16px;
+    border-radius:10px;
+    margin-top:15px;
 }
 
-.card:hover{
-    border-color:#3b82f6;
-    transform:translateY(-2px);
-    box-shadow:0 8px 20px rgba(0,0,0,.4);
+.result strong{
+    font-size:15px;
 }
 
-.card strong{
-    font-size:16px;
+/* results container */
+
+#results{
+    margin-top:15px;
 }
 
-/* loading */
-
-.loading{
-    opacity:.6;
-}
-
-/* links */
-
-a{
-    color:#60a5fa;
-    text-decoration:none;
-}
-
-a:hover{
-    text-decoration:underline;
-}
-
-/* back link */
+/* back button */
 
 .back{
-    display:inline-block;
-    margin-top:25px;
-    font-size:14px;
+    display:block;
+    margin-top:20px;
+    padding:12px;
+    text-align:center;
+
+    border-radius:10px;
+    background:#334155;
+    color:#e2e8f0;
+    text-decoration:none;
+
+    transition:.2s;
+}
+
+.back:hover{
+    background:#475569;
 }
 
 /* footer */
 
 .footer{
-    text-align:center;
-    margin-top:60px;
-    font-size:13px;
+    position:fixed;
+    bottom:15px;
+    left:50%;
+    transform:translateX(-50%);
+    font-size:12px;
     color:#94a3b8;
-    opacity:.8;
+    opacity:.7;
+}
+
+.loading{
+    opacity:.6;
 }
 
 </style>
@@ -117,6 +136,8 @@ a:hover{
 <body>
 
 <div class="container">
+
+<div class="card">
 
 <h1>🖥️ IT Support Tools</h1>
 <div class="subtitle">
@@ -135,11 +156,17 @@ Search for common error codes and troubleshooting steps
 
 <div id="results" class="loading">Loading database...</div>
 
-<a class="back" href="index.html">← Back to Home</a>
+<a class="back" href="index.html">← Back to Skagestad Labs</a>
 
 </div>
 
-    <script>
+</div>
+
+<div class="footer">
+Skagestad Labs © 2026
+</div>
+
+<script>
 
 let errorDatabase = [];
 let databaseReady = false;
@@ -149,23 +176,17 @@ const categoryFilter = document.getElementById("categoryFilter");
 const results = document.getElementById("results");
 
 
-/* LOAD DATABASE ONCE */
 fetch("./errors.json")
 .then(res => {
-
     if(!res.ok){
         throw new Error("HTTP "+res.status);
     }
-
     return res.json();
-
 })
 .then(data => {
 
     errorDatabase = data;
     databaseReady = true;
-
-    console.log("Database loaded:", errorDatabase.length);
 
     results.classList.remove("loading");
     results.innerHTML = "";
@@ -176,12 +197,11 @@ fetch("./errors.json")
     console.error("Database load failed:",err);
 
     results.innerHTML =
-    "<div class='card'>Database failed to load.</div>";
+    "<div class='result'>Database failed to load.</div>";
 
 });
 
 
-/* SIMPLE SEARCH ENGINE */
 function searchErrors(){
 
     if(!databaseReady) return;
@@ -219,7 +239,7 @@ function searchErrors(){
     if(matches.length === 0){
 
         results.innerHTML =
-        "<div class='card'>No results found.</div>";
+        "<div class='result'>No results found.</div>";
 
         return;
 
@@ -228,7 +248,7 @@ function searchErrors(){
     matches.slice(0,10).forEach(e=>{
 
         results.innerHTML += `
-        <div class="card">
+        <div class="result">
         <strong>${e.title}</strong><br><br>
         <b>Cause:</b> ${e.cause}<br><br>
         <b>Resolution:</b> ${e.fix}
@@ -240,8 +260,6 @@ function searchErrors(){
 }
 
 
-/* LIVE SEARCH */
-
 let timeout;
 
 searchInput.addEventListener("input",()=>{
@@ -252,13 +270,8 @@ searchInput.addEventListener("input",()=>{
 });
 
 categoryFilter.addEventListener("change",searchErrors);
-    
+
 </script>
 
-<div class="footer">
-Skagestad Labs © 2026
-</div>
-
-    
 </body>
 </html>
