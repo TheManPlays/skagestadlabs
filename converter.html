@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Unit Converter – Skagestad Labs</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+    margin:0;
+    font-family:'Inter',sans-serif;
+    background: radial-gradient(circle at top,#0f172a,#020617);
+    color:#e2e8f0;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:100vh;
+}
+
+.container{
+    width:100%;
+    max-width:600px;
+}
+
+.card{
+    background:#1e293b;
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 20px 60px rgba(0,0,0,.6);
+}
+
+h1{
+    font-size:22px;
+    margin-bottom:5px;
+}
+
+.subtitle{
+    color:#94a3b8;
+    font-size:14px;
+    margin-bottom:20px;
+}
+
+input,select{
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+    border-radius:8px;
+    border:1px solid #334155;
+    background:#0f172a;
+    color:white;
+    font-size:14px;
+    outline:none;
+    box-sizing:border-box;
+}
+
+.result{
+    margin-top:20px;
+    padding:15px;
+    background:#0f172a;
+    border-radius:10px;
+    border:1px solid #334155;
+    font-size:15px;
+}
+
+.back-btn{
+    display:block;
+    width:100%;
+    margin-top:20px;
+    padding:14px;
+    text-align:center;
+    text-decoration:none;
+    border-radius:10px;
+    background:#334155;
+    color:#e2e8f0;
+    transition:.2s;
+}
+
+.back-btn:hover{
+    background:#475569;
+}
+
+.footer{
+    position:fixed;
+    bottom:15px;
+    left:50%;
+    transform:translateX(-50%);
+    font-size:12px;
+    color:#94a3b8;
+    opacity:.7;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<div class="card">
+
+<h1>📏 Unit Converter</h1>
+<div class="subtitle">Convert weight and length units</div>
+
+<select id="type">
+<option value="weight">Weight (kg)</option>
+<option value="length">Length (meters)</option>
+</select>
+
+<input type="number" id="value" placeholder="Enter value...">
+
+<select id="unit"></select>
+
+<div id="result" class="result">Enter a value to convert</div>
+
+<a class="back-btn" href="index.html">← Back to Skagestad Labs</a>
+
+</div>
+</div>
+
+<div class="footer">Skagestad Labs © 2026</div>
+
+<script>
+
+const type = document.getElementById("type");
+const value = document.getElementById("value");
+const unit = document.getElementById("unit");
+const result = document.getElementById("result");
+
+function updateUnits(){
+
+    unit.innerHTML = "";
+
+    if(type.value === "weight"){
+        unit.innerHTML = `
+        <option value="g">Grams</option>
+        <option value="lb">Pounds</option>
+        <option value="oz">Ounces</option>
+        `;
+    }else{
+        unit.innerHTML = `
+        <option value="cm">Centimeters</option>
+        <option value="mm">Millimeters</option>
+        <option value="ft">Feet</option>
+        <option value="in">Inches</option>
+        `;
+    }
+
+}
+
+function convert(){
+
+    const val = parseFloat(value.value);
+
+    if(!val){
+        result.innerHTML = "Enter a value";
+        return;
+    }
+
+    let output = "";
+
+    if(type.value === "weight"){
+
+        if(unit.value === "g") output = val * 1000 + " g";
+        if(unit.value === "lb") output = val * 2.20462 + " lb";
+        if(unit.value === "oz") output = val * 35.274 + " oz";
+
+    }else{
+
+        if(unit.value === "cm") output = val * 100 + " cm";
+        if(unit.value === "mm") output = val * 1000 + " mm";
+        if(unit.value === "ft") output = val * 3.28084 + " ft";
+        if(unit.value === "in") output = val * 39.3701 + " in";
+
+    }
+
+    result.innerHTML = output;
+
+}
+
+type.addEventListener("change",()=>{
+    updateUnits();
+    convert();
+});
+
+value.addEventListener("input",convert);
+unit.addEventListener("change",convert);
+
+updateUnits();
+
+</script>
+
+</body>
+</html>
