@@ -67,21 +67,19 @@ input,select{
     font-size:15px;
 }
 
-.back-btn{
-    display:block;
-    width:100%;
-    margin-top:20px;
-    padding:14px;
-    text-align:center;
-    text-decoration:none;
-    border-radius:10px;
-    background:#334155;
-    color:#e2e8f0;
-    transition:.2s;
-}
+.back-btn {
+    display: block;
+    width: 100%;
+    max-width: 520px;
+    margin: 25px auto 0;
+    padding: 14px;
+    border-radius: 10px;
+    background: #334155;
+    color: #e2e8f0;
+    text-decoration: none;
 
-.back-btn:hover{
-    background:#475569;
+    /* 👇 FIX */
+    width: calc(100% - 40px);
 }
 
 .footer{
