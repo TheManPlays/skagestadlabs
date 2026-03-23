@@ -96,22 +96,19 @@ input:focus,select:focus{
 
 /* back button */
 
-.back{
-    display:block;
-    margin-top:20px;
-    padding:12px;
-    text-align:center;
+.back-btn {
+    display: block;
+    width: 100%;
+    max-width: 520px;
+    margin: 25px auto 0;
+    padding: 14px;
+    border-radius: 10px;
+    background: #334155;
+    color: #e2e8f0;
+    text-decoration: none;
 
-    border-radius:10px;
-    background:#334155;
-    color:#e2e8f0;
-    text-decoration:none;
-
-    transition:.2s;
-}
-
-.back:hover{
-    background:#475569;
+    /* 👇 FIX */
+    width: calc(100% - 40px);
 }
 
 /* footer */
