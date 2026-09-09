@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Hourly Pay Calculator – Skagestad Labs</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+    margin:0;
+    font-family:'Inter',sans-serif;
+    background:radial-gradient(circle at top,#0f172a,#020617);
+    color:#e2e8f0;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    min-height:100vh;
+}
+
+.container{
+    width:100%;
+    max-width:720px;
+    padding:20px;
+    box-sizing:border-box;
+}
+
+.card{
+    background:#1e293b;
+    padding:35px;
+    border-radius:18px;
+    box-shadow:0 20px 60px rgba(0,0,0,.6);
+}
+
+h1{
+    font-size:24px;
+    margin-top:0;
+    margin-bottom:6px;
+}
+
+.subtitle{
+    color:#94a3b8;
+    font-size:14px;
+    margin-bottom:20px;
+}
+
+label{
+    display:block;
+    margin-top:15px;
+    margin-bottom:6px;
+    font-size:14px;
+    font-weight:600;
+}
+
+input,
+select{
+    width:100%;
+    padding:12px;
+
+    border-radius:8px;
+    border:1px solid #334155;
+
+    background:#0f172a;
+    color:white;
+
+    font-size:14px;
+    outline:none;
+
+    box-sizing:border-box;
+}
+
+input:focus,
+select:focus{
+    border-color:#3b82f6;
+    box-shadow:0 0 0 2px rgba(59,130,246,.2);
+}
+
+button{
+    width:100%;
+    margin-top:20px;
+    padding:14px;
+
+    border:none;
+    border-radius:10px;
+
+    background:#3b82f6;
+    color:white;
+
+    font-size:15px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:all .2s ease;
+}
+
+button:hover{
+    background:#2563eb;
+    transform:translateY(-1px);
+}
+
+.result{
+    margin-top:20px;
+    padding:18px;
+
+    background:#0f172a;
+    border:1px solid #334155;
+    border-radius:10px;
+
+    line-height:1.8;
+}
+
+.result-row{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.result-row strong{
+    color:white;
+}
+
+.total{
+    margin-top:10px;
+    padding-top:10px;
+    border-top:1px solid #334155;
+    font-size:17px;
+}
+
+.net{
+    color:#86efac;
+}
+
+.tax{
+    color:#fca5a5;
+}
+
+.back-btn{
+    display:block;
+    width:100%;
+    box-sizing:border-box;
+
+    margin-top:20px;
+    padding:14px;
+
+    background:#334155;
+    color:#e2e8f0;
+
+    text-align:center;
+    text-decoration:none;
+
+    border-radius:10px;
+
+    font-size:14px;
+    font-weight:500;
+
+    transition:all .2s ease;
+}
+
+.back-btn:hover{
+    background:#475569;
+    transform:translateY(-1px);
+}
+
+.footer{
+    position:fixed;
+    bottom:15px;
+    left:50%;
+    transform:translateX(-50%);
+
+    font-size:12px;
+    color:#94a3b8;
+    opacity:.7;
+}
+
+.note{
+    margin-top:12px;
+    font-size:12px;
+    color:#94a3b8;
+    line-height:1.5;
+}
+
+@media(max-width:600px){
+
+    .card{
+        padding:25px 20px;
+    }
+
+    h1{
+        font-size:21px;
+    }
+
+    .result-row{
+        gap:10px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h1>💵 Hourly Pay Calculator</h1>
+
+<div class="subtitle">
+Calculate hourly pay, overtime, tax and estimated net pay
+</div>
+
+
+<label for="hourlyRate">
+Hourly wage
+</label>
+
+<input
+type="number"
+id="hourlyRate"
+placeholder="Example: 250"
+min="0"
+step="0.01"
+>
+
+
+<label for="regularHours">
+Regular hours
+</label>
+
+<input
+type="number"
+id="regularHours"
+placeholder="Example: 37.5"
+min="0"
+step="0.01"
+>
+
+
+<label for="overtimeHours">
+Overtime hours
+</label>
+
+<input
+type="number"
+id="overtimeHours"
+placeholder="Example: 5"
+min="0"
+step="0.01"
+>
+
+
+<label for="overtimePercent">
+Overtime rate
+</label>
+
+<select id="overtimePercent">
+
+<option value="0">
+No overtime bonus
+</option>
+
+<option value="40">
+40%
+</option>
+
+<option value="50">
+50%
+</option>
+
+<option value="100">
+100%
+</option>
+
+</select>
+
+
+<label for="taxPercent">
+Tax rate (%)
+</label>
+
+<input
+type="number"
+id="taxPercent"
+placeholder="Example: 30"
+min="0"
+max="100"
+step="0.1"
+>
+
+
+<button onclick="calculatePay()">
+Calculate pay
+</button>
+
+
+<div id="result" class="result" style="display:none;">
+
+<div class="result-row">
+<span>Regular pay:</span>
+<strong id="regularPay">
+0 NOK
+</strong>
+</div>
+
+
+<div class="result-row">
+<span>Overtime pay:</span>
+<strong id="overtimePay">
+0 NOK
+</strong>
+</div>
+
+
+<div class="result-row total">
+<span>Total gross pay:</span>
+<strong id="totalPay">
+0 NOK
+</strong>
+</div>
+
+
+<div class="result-row">
+<span id="taxLabel">
+Tax:
+</span>
+
+<strong id="taxAmount" class="tax">
+0 NOK
+</strong>
+</div>
+
+
+<div class="result-row total">
+<span>Estimated net pay:</span>
+
+<strong id="netPay" class="net">
+0 NOK
+</strong>
+</div>
+
+
+<div class="result-row">
+<span>Effective hourly rate:</span>
+
+<strong id="effectiveRate">
+0 NOK
+</strong>
+</div>
+
+
+<div class="note">
+Tax is calculated as a simple percentage estimate and may differ from your actual tax deduction.
+</div>
+
+</div>
+
+
+<a href="forfun.html" class="back-btn">
+← Back to For Fun
+</a>
+
+</div>
+
+</div>
+
+
+<div class="footer">
+Skagestad Labs © 2026
+</div>
+
+
+<script>
+
+function formatNOK(value){
+
+    return new Intl.NumberFormat(
+        "nb-NO",
+        {
+            style:"currency",
+            currency:"NOK"
+        }
+    ).format(value);
+
+}
+
+
+function calculatePay(){
+
+    const hourlyRate =
+        parseFloat(
+            document.getElementById("hourlyRate").value
+        ) || 0;
+
+
+    const regularHours =
+        parseFloat(
+            document.getElementById("regularHours").value
+        ) || 0;
+
+
+    const overtimeHours =
+        parseFloat(
+            document.getElementById("overtimeHours").value
+        ) || 0;
+
+
+    const overtimePercent =
+        parseFloat(
+            document.getElementById("overtimePercent").value
+        ) || 0;
+
+
+    const taxPercent =
+        parseFloat(
+            document.getElementById("taxPercent").value
+        ) || 0;
+
+
+    const regularPay =
+        hourlyRate *
+        regularHours;
+
+
+    const overtimeMultiplier =
+        1 +
+        (overtimePercent / 100);
+
+
+    const overtimePay =
+        hourlyRate *
+        overtimeMultiplier *
+        overtimeHours;
+
+
+    const totalPay =
+        regularPay +
+        overtimePay;
+
+
+    const taxAmount =
+        totalPay *
+        (taxPercent / 100);
+
+
+    const netPay =
+        totalPay -
+        taxAmount;
+
+
+    const totalHours =
+        regularHours +
+        overtimeHours;
+
+
+    const effectiveRate =
+        totalHours > 0
+        ? totalPay / totalHours
+        : 0;
+
+
+    document.getElementById(
+        "regularPay"
+    ).textContent =
+        formatNOK(regularPay);
+
+
+    document.getElementById(
+        "overtimePay"
+    ).textContent =
+        formatNOK(overtimePay);
+
+
+    document.getElementById(
+        "totalPay"
+    ).textContent =
+        formatNOK(totalPay);
+
+
+    document.getElementById(
+        "taxLabel"
+    ).textContent =
+        `Tax (${taxPercent}%):`;
+
+
+    document.getElementById(
+        "taxAmount"
+    ).textContent =
+        "-" + formatNOK(taxAmount);
+
+
+    document.getElementById(
+        "netPay"
+    ).textContent =
+        formatNOK(netPay);
+
+
+    document.getElementById(
+        "effectiveRate"
+    ).textContent =
+        formatNOK(effectiveRate);
+
+
+    document.getElementById(
+        "result"
+    ).style.display =
+        "block";
+}
+
+
+/* Allow Enter key to calculate */
+
+document.addEventListener(
+    "keydown",
+    function(event){
+
+        if(event.key === "Enter"){
+            calculatePay();
+        }
+
+    }
+);
+
+</script>
+
+</body>
+</html>
