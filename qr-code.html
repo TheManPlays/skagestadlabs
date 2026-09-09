@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>QR Code Generator – Skagestad Labs</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+<style>
+
+body{
+    margin:0;
+    font-family:'Inter',sans-serif;
+    background:radial-gradient(circle at top,#0f172a,#020617);
+    color:#e2e8f0;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    min-height:100vh;
+}
+
+.container{
+    width:100%;
+    max-width:620px;
+    padding:20px;
+    box-sizing:border-box;
+}
+
+.card{
+    background:#1e293b;
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 20px 60px rgba(0,0,0,.6);
+}
+
+h1{
+    font-size:22px;
+    margin-top:0;
+    margin-bottom:5px;
+}
+
+.subtitle{
+    color:#94a3b8;
+    font-size:14px;
+    margin-bottom:20px;
+}
+
+label{
+    display:block;
+    margin-top:15px;
+    margin-bottom:6px;
+
+    font-size:14px;
+    font-weight:600;
+}
+
+select,
+textarea{
+    width:100%;
+    padding:12px;
+
+    border-radius:8px;
+    border:1px solid #334155;
+
+    background:#0f172a;
+    color:white;
+
+    font-family:'Inter',sans-serif;
+    font-size:14px;
+
+    outline:none;
+    box-sizing:border-box;
+}
+
+textarea{
+    min-height:110px;
+    resize:vertical;
+}
+
+select:focus,
+textarea:focus{
+    border-color:#3b82f6;
+    box-shadow:0 0 0 2px rgba(59,130,246,.2);
+}
+
+button{
+    width:100%;
+    margin-top:20px;
+    padding:14px;
+
+    border:none;
+    border-radius:10px;
+
+    background:#3b82f6;
+    color:white;
+
+    font-size:15px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:all .2s ease;
+}
+
+button:hover{
+    background:#2563eb;
+    transform:translateY(-1px);
+}
+
+.qr-box{
+    display:none;
+
+    margin-top:20px;
+    padding:20px;
+
+    background:#0f172a;
+    border:1px solid #334155;
+    border-radius:10px;
+
+    text-align:center;
+}
+
+#qrcode{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+#qrcode img,
+#qrcode canvas{
+    background:white;
+    padding:10px;
+    border-radius:8px;
+}
+
+.note{
+    margin-top:12px;
+    font-size:12px;
+    color:#94a3b8;
+}
+
+.back-btn{
+    display:block;
+
+    width:calc(100% - 40px);
+    max-width:520px;
+
+    margin:25px auto 0;
+    padding:14px;
+
+    border-radius:10px;
+
+    background:#334155;
+    color:#e2e8f0;
+
+    text-align:center;
+    text-decoration:none;
+
+    transition:all .2s ease;
+}
+
+.back-btn:hover{
+    background:#475569;
+}
+
+.footer{
+    position:fixed;
+
+    bottom:15px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    font-size:12px;
+    color:#94a3b8;
+
+    opacity:.7;
+}
+
+@media(max-width:600px){
+
+    .card{
+        padding:25px 20px;
+    }
+
+    h1{
+        font-size:21px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h1>📱 QR Code Generator</h1>
+
+<div class="subtitle">
+Create QR codes for links, text, Wi-Fi, email and more
+</div>
+
+
+<label for="qrType">
+QR Code Type
+</label>
+
+<select id="qrType">
+    <option value="url">🌐 Website / URL</option>
+    <option value="text">📝 Text</option>
+    <option value="wifi">📶 Wi-Fi</option>
+    <option value="email">📧 Email</option>
+    <option value="phone">📞 Phone Number</option>
+    <option value="sms">💬 SMS</option>
+    <option value="contact">👤 Contact / vCard</option>
+</select>
+
+
+<label for="qrText" id="inputLabel">
+Website URL
+</label>
+
+<textarea
+id="qrText"
+placeholder="Example: https://skagestadlabs.no"
+></textarea>
+
+
+<button onclick="generateQR()">
+Generate QR Code
+</button>
+
+
+<div id="qrBox" class="qr-box">
+
+<div id="qrcode"></div>
+
+<div class="note" id="qrNote">
+Scan the QR code with your phone camera
+</div>
+
+</div>
+
+
+<a class="back-btn" href="index.html">
+← Back to Skagestad Labs
+</a>
+
+</div>
+
+</div>
+
+
+<div class="footer">
+Skagestad Labs © 2026
+</div>
+
+
+<script>
+
+const qrType =
+    document.getElementById("qrType");
+
+const qrText =
+    document.getElementById("qrText");
+
+const inputLabel =
+    document.getElementById("inputLabel");
+
+const qrNote =
+    document.getElementById("qrNote");
+
+
+function updateInput(){
+
+    qrText.value = "";
+
+    if(qrType.value === "url"){
+
+        inputLabel.textContent =
+            "Website URL";
+
+        qrText.placeholder =
+            "Example: https://skagestadlabs.no";
+
+    }
+
+    else if(qrType.value === "text"){
+
+        inputLabel.textContent =
+            "Text";
+
+        qrText.placeholder =
+            "Enter any text...";
+
+    }
+
+    else if(qrType.value === "wifi"){
+
+        inputLabel.textContent =
+            "Wi-Fi information";
+
+        qrText.placeholder =
+            "Enter Wi-Fi information...";
+
+    }
+
+    else if(qrType.value === "email"){
+
+        inputLabel.textContent =
+            "Email address";
+
+        qrText.placeholder =
+            "Example: support@example.com";
+
+    }
+
+    else if(qrType.value === "phone"){
+
+        inputLabel.textContent =
+            "Phone number";
+
+        qrText.placeholder =
+            "Example: +47 123 45 678";
+
+    }
+
+    else if(qrType.value === "sms"){
+
+        inputLabel.textContent =
+            "SMS information";
+
+        qrText.placeholder =
+            "Enter phone number or SMS text...";
+
+    }
+
+    else if(qrType.value === "contact"){
+
+        inputLabel.textContent =
+            "Contact information";
+
+        qrText.placeholder =
+            "Enter name, phone, email or contact information...";
+
+    }
+
+}
+
+
+function generateQR(){
+
+    let text =
+        qrText.value.trim();
+
+    const qrCode =
+        document.getElementById("qrcode");
+
+    const qrBox =
+        document.getElementById("qrBox");
+
+
+    if(!text){
+
+        alert("Please enter information.");
+        return;
+
+    }
+
+
+    if(qrType.value === "url"){
+
+        if(
+            !text.startsWith("http://") &&
+            !text.startsWith("https://")
+        ){
+
+            text =
+                "https://" + text;
+
+        }
+
+        qrNote.textContent =
+            "Scan to open website";
+
+    }
+
+
+    else if(qrType.value === "text"){
+
+        qrNote.textContent =
+            "Scan to view text";
+
+    }
+
+
+    else if(qrType.value === "email"){
+
+        text =
+            "mailto:" + text;
+
+        qrNote.textContent =
+            "Scan to send email";
+
+    }
+
+
+    else if(qrType.value === "phone"){
+
+        text =
+            "tel:" + text.replace(/\s/g,"");
+
+        qrNote.textContent =
+            "Scan to call phone number";
+
+    }
+
+
+    else if(qrType.value === "sms"){
+
+        qrNote.textContent =
+            "Scan to open SMS information";
+
+    }
+
+
+    else if(qrType.value === "wifi"){
+
+        qrNote.textContent =
+            "Scan to view Wi-Fi information";
+
+    }
+
+
+    else if(qrType.value === "contact"){
+
+        qrNote.textContent =
+            "Scan to view contact information";
+
+    }
+
+
+    qrCode.innerHTML = "";
+
+
+    new QRCode(
+        qrCode,
+        {
+            text:text,
+            width:220,
+            height:220,
+            correctLevel:QRCode.CorrectLevel.H
+        }
+    );
+
+
+    qrBox.style.display =
+        "block";
+
+}
+
+
+qrType.addEventListener(
+    "change",
+    updateInput
+);
+
+
+qrText.addEventListener(
+    "keydown",
+    function(event){
+
+        if(
+            event.key === "Enter" &&
+            !event.shiftKey
+        ){
+
+            event.preventDefault();
+            generateQR();
+
+        }
+
+    }
+);
+
+
+updateInput();
+
+</script>
+
+</body>
+</html>
