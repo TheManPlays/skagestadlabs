@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Percentage Calculator – Skagestad Labs</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+    margin:0;
+    font-family:'Inter',sans-serif;
+    background:radial-gradient(circle at top,#0f172a,#020617);
+    color:#e2e8f0;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    min-height:100vh;
+}
+
+.container{
+    width:100%;
+    max-width:620px;
+    padding:20px;
+    box-sizing:border-box;
+}
+
+.card{
+    background:#1e293b;
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 20px 60px rgba(0,0,0,.6);
+}
+
+h1{
+    font-size:22px;
+    margin-top:0;
+    margin-bottom:5px;
+}
+
+.subtitle{
+    color:#94a3b8;
+    font-size:14px;
+    margin-bottom:20px;
+}
+
+label{
+    display:block;
+    margin-top:15px;
+    margin-bottom:6px;
+    font-size:14px;
+    font-weight:600;
+}
+
+input,
+select{
+    width:100%;
+    padding:12px;
+
+    border-radius:8px;
+    border:1px solid #334155;
+
+    background:#0f172a;
+    color:white;
+
+    font-size:14px;
+    outline:none;
+    box-sizing:border-box;
+}
+
+input:focus,
+select:focus{
+    border-color:#3b82f6;
+    box-shadow:0 0 0 2px rgba(59,130,246,.2);
+}
+
+button{
+    width:100%;
+    margin-top:20px;
+    padding:14px;
+
+    border:none;
+    border-radius:10px;
+
+    background:#3b82f6;
+    color:white;
+
+    font-size:15px;
+    font-weight:600;
+
+    cursor:pointer;
+}
+
+button:hover{
+    background:#2563eb;
+}
+
+.result{
+    margin-top:20px;
+    padding:16px;
+
+    background:#0f172a;
+    border:1px solid #334155;
+    border-radius:10px;
+
+    font-size:16px;
+    line-height:1.6;
+}
+
+.back-btn{
+    display:block;
+    width:calc(100% - 40px);
+    max-width:520px;
+
+    margin:25px auto 0;
+    padding:14px;
+
+    border-radius:10px;
+
+    background:#334155;
+    color:#e2e8f0;
+
+    text-align:center;
+    text-decoration:none;
+}
+
+.back-btn:hover{
+    background:#475569;
+}
+
+.footer{
+    position:fixed;
+    bottom:15px;
+    left:50%;
+    transform:translateX(-50%);
+    font-size:12px;
+    color:#94a3b8;
+    opacity:.7;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h1>📊 Percentage Calculator</h1>
+
+<div class="subtitle">
+Quickly calculate percentages and percentage changes
+</div>
+
+<label for="mode">
+Calculation type
+</label>
+
+<select id="mode">
+    <option value="percentOf">What is X% of Y?</option>
+    <option value="whatPercent">X is what percent of Y?</option>
+    <option value="change">Percentage change from X to Y</option>
+</select>
+
+<label for="value1" id="label1">
+Percentage (%)
+</label>
+
+<input
+type="number"
+id="value1"
+placeholder="Example: 25"
+step="any"
+>
+
+<label for="value2" id="label2">
+Value
+</label>
+
+<input
+type="number"
+id="value2"
+placeholder="Example: 200"
+step="any"
+>
+
+<button onclick="calculatePercentage()">
+Calculate
+</button>
+
+<div id="result" class="result">
+Enter values to calculate
+</div>
+
+<a class="back-btn" href="index.html">
+← Back to Skagestad Labs
+</a>
+
+</div>
+
+</div>
+
+<div class="footer">
+Skagestad Labs © 2026
+</div>
+
+<script>
+
+const mode = document.getElementById("mode");
+const value1 = document.getElementById("value1");
+const value2 = document.getElementById("value2");
+const label1 = document.getElementById("label1");
+const label2 = document.getElementById("label2");
+const result = document.getElementById("result");
+
+
+function updateLabels(){
+
+    if(mode.value === "percentOf"){
+
+        label1.textContent = "Percentage (%)";
+        label2.textContent = "Value";
+
+        value1.placeholder = "Example: 25";
+        value2.placeholder = "Example: 200";
+
+    }
+
+    else if(mode.value === "whatPercent"){
+
+        label1.textContent = "Part";
+        label2.textContent = "Total";
+
+        value1.placeholder = "Example: 50";
+        value2.placeholder = "Example: 200";
+
+    }
+
+    else if(mode.value === "change"){
+
+        label1.textContent = "Original value";
+        label2.textContent = "New value";
+
+        value1.placeholder = "Example: 100";
+        value2.placeholder = "Example: 125";
+
+    }
+
+    result.textContent = "Enter values to calculate";
+}
+
+
+function formatNumber(number){
+
+    return new Intl.NumberFormat(
+        "nb-NO",
+        {
+            maximumFractionDigits:2
+        }
+    ).format(number);
+
+}
+
+
+function calculatePercentage(){
+
+    const a = parseFloat(value1.value);
+    const b = parseFloat(value2.value);
+
+    if(isNaN(a) || isNaN(b)){
+
+        result.textContent = "Please enter both values.";
+        return;
+    }
+
+
+    if(mode.value === "percentOf"){
+
+        const answer = (a / 100) * b;
+
+        result.innerHTML =
+            `<strong>${formatNumber(a)}%</strong> of
+             <strong>${formatNumber(b)}</strong> is
+             <strong>${formatNumber(answer)}</strong>`;
+
+    }
+
+
+    else if(mode.value === "whatPercent"){
+
+        if(b === 0){
+
+            result.textContent = "Total cannot be 0.";
+            return;
+        }
+
+        const answer = (a / b) * 100;
+
+        result.innerHTML =
+            `<strong>${formatNumber(a)}</strong> is
+             <strong>${formatNumber(answer)}%</strong> of
+             <strong>${formatNumber(b)}</strong>`;
+
+    }
+
+
+    else if(mode.value === "change"){
+
+        if(a === 0){
+
+            result.textContent = "Original value cannot be 0.";
+            return;
+        }
+
+        const answer = ((b - a) / a) * 100;
+
+        const type =
+            answer >= 0
+            ? "increase"
+            : "decrease";
+
+        result.innerHTML =
+            `Percentage ${type}:
+             <strong>${formatNumber(Math.abs(answer))}%</strong>`;
+
+    }
+
+}
+
+
+mode.addEventListener("change",updateLabels);
+
+value1.addEventListener("keydown",function(event){
+    if(event.key === "Enter"){
+        calculatePercentage();
+    }
+});
+
+value2.addEventListener("keydown",function(event){
+    if(event.key === "Enter"){
+        calculatePercentage();
+    }
+});
+
+updateLabels();
+
+</script>
+
+</body>
+</html>
