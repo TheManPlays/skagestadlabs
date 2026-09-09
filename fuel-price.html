@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Fuel Calculator – Skagestad Labs</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+    margin:0;
+    font-family:'Inter',sans-serif;
+    background:radial-gradient(circle at top,#0f172a,#020617);
+    color:#e2e8f0;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    min-height:100vh;
+}
+
+.container{
+    width:100%;
+    max-width:620px;
+    padding:20px;
+    box-sizing:border-box;
+}
+
+.card{
+    background:#1e293b;
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 20px 60px rgba(0,0,0,.6);
+}
+
+h1{
+    font-size:22px;
+    margin-top:0;
+    margin-bottom:5px;
+}
+
+.subtitle{
+    color:#94a3b8;
+    font-size:14px;
+    margin-bottom:20px;
+}
+
+label{
+    display:block;
+    margin-top:15px;
+    margin-bottom:6px;
+    font-size:14px;
+    font-weight:600;
+}
+
+select,
+input{
+    width:100%;
+    padding:12px;
+
+    border-radius:8px;
+    border:1px solid #334155;
+
+    background:#0f172a;
+    color:white;
+
+    font-family:'Inter',sans-serif;
+    font-size:14px;
+
+    outline:none;
+    box-sizing:border-box;
+}
+
+select:focus,
+input:focus{
+    border-color:#3b82f6;
+    box-shadow:0 0 0 2px rgba(59,130,246,.2);
+}
+
+button{
+    width:100%;
+    margin-top:20px;
+    padding:14px;
+
+    border:none;
+    border-radius:10px;
+
+    background:#3b82f6;
+    color:white;
+
+    font-size:15px;
+    font-weight:600;
+
+    cursor:pointer;
+}
+
+button:hover{
+    background:#2563eb;
+}
+
+.result{
+    margin-top:20px;
+    padding:18px;
+
+    background:#0f172a;
+    border:1px solid #334155;
+    border-radius:10px;
+
+    text-align:center;
+}
+
+.result-label{
+    color:#94a3b8;
+    font-size:13px;
+    margin-bottom:6px;
+}
+
+.result-value{
+    font-size:24px;
+    font-weight:700;
+    color:white;
+}
+
+.back-btn{
+    display:block;
+    width:calc(100% - 40px);
+    max-width:520px;
+
+    margin:25px auto 0;
+    padding:14px;
+
+    border-radius:10px;
+
+    background:#334155;
+    color:#e2e8f0;
+
+    text-align:center;
+    text-decoration:none;
+}
+
+.back-btn:hover{
+    background:#475569;
+}
+
+.footer{
+    position:fixed;
+    bottom:15px;
+    left:50%;
+    transform:translateX(-50%);
+
+    font-size:12px;
+    color:#94a3b8;
+    opacity:.7;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h1>⛽ Fuel Calculator</h1>
+
+<div class="subtitle">
+Calculate fuel cost or how many liters you can fill
+</div>
+
+<label for="mode">
+Calculation type
+</label>
+
+<select id="mode">
+    <option value="litersToPrice">Liters → Price</option>
+    <option value="budgetToLiters">Budget → Liters</option>
+</select>
+
+
+<div id="inputArea">
+
+<label id="firstLabel" for="firstValue">
+Liters to fill
+</label>
+
+<input
+type="number"
+id="firstValue"
+placeholder="Example: 45"
+min="0"
+step="0.01"
+>
+
+<label for="price">
+Price per liter
+</label>
+
+<input
+type="number"
+id="price"
+placeholder="Example: 21.79"
+min="0"
+step="0.01"
+>
+
+</div>
+
+
+<button onclick="calculateFuel()">
+Calculate
+</button>
+
+
+<div id="result" class="result">
+
+<div class="result-label" id="resultLabel">
+Total cost
+</div>
+
+<div class="result-value" id="resultValue">
+0 kr
+</div>
+
+</div>
+
+
+<a class="back-btn" href="index.html">
+← Back to Skagestad Labs
+</a>
+
+</div>
+
+</div>
+
+
+<div class="footer">
+Skagestad Labs © 2026
+</div>
+
+
+<script>
+
+const mode =
+    document.getElementById("mode");
+
+const firstValue =
+    document.getElementById("firstValue");
+
+const price =
+    document.getElementById("price");
+
+const firstLabel =
+    document.getElementById("firstLabel");
+
+const resultLabel =
+    document.getElementById("resultLabel");
+
+const resultValue =
+    document.getElementById("resultValue");
+
+
+function formatNOK(value){
+
+    return new Intl.NumberFormat(
+        "nb-NO",
+        {
+            style:"currency",
+            currency:"NOK"
+        }
+    ).format(value);
+
+}
+
+
+function updateMode(){
+
+    firstValue.value = "";
+    price.value = "";
+
+    if(mode.value === "litersToPrice"){
+
+        firstLabel.textContent =
+            "Liters to fill";
+
+        firstValue.placeholder =
+            "Example: 45";
+
+        resultLabel.textContent =
+            "Total cost";
+
+        resultValue.textContent =
+            "0 kr";
+
+    }
+
+    else{
+
+        firstLabel.textContent =
+            "Amount to spend";
+
+        firstValue.placeholder =
+            "Example: 500";
+
+        resultLabel.textContent =
+            "You can fill";
+
+        resultValue.textContent =
+            "0 liters";
+
+    }
+
+}
+
+
+function calculateFuel(){
+
+    const value =
+        parseFloat(firstValue.value);
+
+    const pricePerLiter =
+        parseFloat(price.value);
+
+
+    if(
+        isNaN(value) ||
+        isNaN(pricePerLiter) ||
+        pricePerLiter <= 0
+    ){
+
+        resultValue.textContent =
+            "Enter valid values";
+
+        return;
+
+    }
+
+
+    if(mode.value === "litersToPrice"){
+
+        const total =
+            value * pricePerLiter;
+
+        resultLabel.textContent =
+            "Total cost";
+
+        resultValue.textContent =
+            formatNOK(total);
+
+    }
+
+
+    else{
+
+        const liters =
+            value / pricePerLiter;
+
+        resultLabel.textContent =
+            "You can fill";
+
+        resultValue.textContent =
+            liters.toFixed(2) + " liters";
+
+    }
+
+}
+
+
+mode.addEventListener(
+    "change",
+    updateMode
+);
+
+
+firstValue.addEventListener(
+    "keydown",
+    function(event){
+
+        if(event.key === "Enter"){
+            calculateFuel();
+        }
+
+    }
+);
+
+
+price.addEventListener(
+    "keydown",
+    function(event){
+
+        if(event.key === "Enter"){
+            calculateFuel();
+        }
+
+    }
+);
+
+
+updateMode();
+
+</script>
+
+</body>
+</html>
