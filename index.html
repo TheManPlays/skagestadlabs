@@ -1,171 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Skagestad Labs</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
-    
-<style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-body {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    background: linear-gradient(135deg, #0f172a, #111827);
-    color: white;
-    text-align: center;
-    padding: 60px 20px;
-}
+    <title>Skagestad Labs</title>
 
-h1 {
-    font-size: 34px;
-    margin-bottom: 10px;
-}
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-.subtitle {
-    color: #94a3b8;
-    font-size: 14px;
-}
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
 
-/* sections */
+    <style>
 
-.section {
-    margin-top: 40px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0f172a, #111827);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
 
-.section-title {
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #94a3b8;
-    margin-bottom: 12px;
-}
+        h1 {
+            font-size: 34px;
+            margin-bottom: 10px;
+        }
 
-/* card grid */
+        .subtitle {
+            color: #94a3b8;
+            font-size: 14px;
+        }
 
-.menu {
-    display: grid;
-    gap: 18px;
-    max-width: 520px;
-    margin-left: auto;
-    margin-right: auto;
-}
+        /* sections */
 
-/* cards */
+        .section {
+            margin-top: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-.card {
-    background: #1e293b;
-    padding: 22px;
-    border-radius: 14px;
-    text-decoration: none;
-    color: white;
-    border: 1px solid #1f2937;
-    transition: all 0.25s ease;
-}
+        .section-title {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #94a3b8;
+            margin-bottom: 12px;
+        }
 
-.card:hover {
-    background: #334155;
-    border-color: #3b82f6;
-    transform: translateY(-4px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-}
+        /* card grid */
 
-.card-title {
-    font-size: 16px;
-    font-weight: 600;
-    margin-bottom: 6px;
-}
+        .menu {
+            display: grid;
+            gap: 18px;
+            max-width: 520px;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-.card-desc {
-    font-size: 13px;
-    color: #cbd5e1;
-}
+        /* cards */
 
-/* about box */
+        .card {
+            background: #1e293b;
+            padding: 22px;
+            border-radius: 14px;
+            text-decoration: none;
+            color: white;
+            border: 1px solid #1f2937;
+            transition: all 0.25s ease;
+        }
 
-.about-box {
-    background: #1e293b;
-    padding: 25px;
-    border-radius: 14px;
-    border: 1px solid #1f2937;
-    font-size: 14px;
-    line-height: 1.6;
-    color: #cbd5e1;
-}
+        .card:hover {
+            background: #334155;
+            border-color: #3b82f6;
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+        }
 
-/* footer */
+        .card-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
 
-.footer {
-    margin-top: 70px;
-    font-size: 13px;
-    opacity: 0.6;
-}
+        .card-desc {
+            font-size: 13px;
+            color: #cbd5e1;
+        }
 
-</style>
+        /* about box */
+
+        .about-box {
+            background: #1e293b;
+            padding: 25px;
+            border-radius: 14px;
+            border: 1px solid #1f2937;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #cbd5e1;
+        }
+
+        /* social / contact links */
+
+        .connect-links {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid #334155;
+
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .connect-links a {
+            color: #93c5fd;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .connect-links a:hover {
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* footer */
+
+        .footer {
+            margin-top: 70px;
+            font-size: 13px;
+            opacity: 0.6;
+        }
+
+    </style>
+
 </head>
 
 <body>
 
-<h1>Skagestad Labs</h1>
-<div class="subtitle">
-Small tools, experiments and projects by an IT support nerd.
-</div>
+    <h1>Skagestad Labs</h1>
 
-<!-- Useful IT Tools -->
+    <div class="subtitle">
+        Small tools, experiments and projects by an IT support nerd.
+    </div>
 
-<div class="section">
-<div class="section-title">Useful IT Tools</div>
 
-<div class="menu">
+    <!-- Useful IT Tools -->
 
-<a href="tools-it.html" class="card">
-    <div class="card-title">🖥️ Useful IT Tools</div>
-    <div class="card-desc">Troubleshooting, password tools and utilities</div>
-</a>
+    <div class="section">
 
-<a href="fun.html" class="card">
-    <div class="card-title">🎮 For Fun</div>
-    <div class="card-desc">Small tools, experiments and random stuff</div>
-</a>
+        <div class="section-title">Useful IT Tools</div>
 
-<a href="web.html" class="card">
-    <div class="card-title">🌐 Web Pages</div>
-    <div class="card-desc">Other projects and websites</div>
-</a>
+        <div class="menu">
 
-</div>
-    
-</div>
+            <a href="tools-it.html" class="card">
+                <div class="card-title">🖥️ Useful IT Tools</div>
+                <div class="card-desc">
+                    Troubleshooting, password tools and utilities
+                </div>
+            </a>
 
-<!-- About -->
+            <a href="fun.html" class="card">
+                <div class="card-title">🎮 For Fun</div>
+                <div class="card-desc">
+                    Small tools, experiments and random stuff
+                </div>
+            </a>
 
-<div class="section">
-<div class="section-title">About</div>
+            <a href="web.html" class="card">
+                <div class="card-title">🌐 Web Pages</div>
+                <div class="card-desc">
+                    Other projects and websites
+                </div>
+            </a>
 
-<div class="about-box">
-Skagestad Labs started as a small personal project where I could experiment with web development and build useful tools from scratch.
-<br><br>
-What started with a few simple utilities has gradually grown into a collection of IT tools, calculators and experimental projects.
-<br><br>
-Most of the tools here are built because I needed them myself, wanted to learn how something worked, or simply thought it would be useful or fun to create.
-<br><br>
-The project is continuously evolving as I experiment with new ideas, learn new technologies and improve the existing tools.
-<br><br>
-Everything is built with a focus on being simple, fast and easy to use — without unnecessary complexity.
-<br><br>
-Built for learning. Built for solving problems. Built for fun.
-</div>
+        </div>
 
-</div>
+    </div>
 
-<div class="footer">
-Skagestad Labs © 2026
-</div>
+
+    <!-- About -->
+
+    <div class="section">
+
+        <div class="section-title">About</div>
+
+        <div class="about-box">
+
+            Skagestad Labs started as a small personal project where I could
+            experiment with web development and build useful tools from scratch.
+
+            <br><br>
+
+            What started with a few simple utilities has gradually grown into a
+            collection of IT tools, calculators and experimental projects.
+
+            <br><br>
+
+            Most of the tools here are built because I needed them myself,
+            wanted to learn how something worked, or simply thought it would
+            be useful or fun to create.
+
+            <br><br>
+
+            The project is continuously evolving as I experiment with new ideas,
+            learn new technologies and improve the existing tools.
+
+            <br><br>
+
+            Everything is built with a focus on being simple, fast and easy
+            to use — without unnecessary complexity.
+
+            <br><br>
+
+            Built for learning. Built for solving problems. Built for fun.
+
+
+            <!-- LinkedIn -->
+
+            <div class="connect-links">
+
+                <a href="https://www.linkedin.com/in/karl-skagestad-3aba15ab/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    💼 LinkedIn
+                </a>
+
+                <a href="mailto:karl.skagestad@gmail.com">
+                ✉️ Email
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Footer -->
+
+    <div class="footer">
+        Skagestad Labs © 2026
+    </div>
 
 </body>
+
 </html>
