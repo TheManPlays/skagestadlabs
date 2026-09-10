@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+Trip Cost Calculator – Skagestad Labs
+</title>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+rel="stylesheet">
+
+<style>
+
+body{
+    margin:0;
+    font-family:'Inter',sans-serif;
+    background:
+        radial-gradient(circle at top,#0f172a,#020617);
+    color:#e2e8f0;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.container{
+    width:100%;
+    max-width:700px;
+    padding:20px;
+    box-sizing:border-box;
+}
+
+.card{
+    background:#1e293b;
+    padding:30px;
+    border-radius:18px;
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.6);
+}
+
+h1{
+    font-size:24px;
+    margin:0 0 6px;
+}
+
+.subtitle{
+    color:#94a3b8;
+    font-size:14px;
+    margin-bottom:25px;
+}
+
+.section-title{
+    font-weight:700;
+    font-size:15px;
+    margin-top:25px;
+    margin-bottom:8px;
+}
+
+label{
+    display:block;
+    margin-top:14px;
+    margin-bottom:6px;
+    font-size:14px;
+    font-weight:600;
+}
+
+input,
+select{
+    width:100%;
+    padding:12px;
+    border-radius:8px;
+    border:1px solid #334155;
+    background:#0f172a;
+    color:white;
+    font-size:14px;
+    outline:none;
+    box-sizing:border-box;
+}
+
+input:focus,
+select:focus{
+    border-color:#3b82f6;
+    box-shadow:
+        0 0 0 2px rgba(59,130,246,.2);
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:
+        1fr 1fr;
+    gap:15px;
+}
+
+.hint{
+    color:#94a3b8;
+    font-size:12px;
+    margin-top:5px;
+}
+
+button{
+    width:100%;
+    padding:14px;
+    margin-top:25px;
+    border:none;
+    border-radius:10px;
+    background:#3b82f6;
+    color:white;
+    font-size:15px;
+    font-weight:600;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#2563eb;
+}
+
+button:disabled{
+    opacity:.6;
+    cursor:not-allowed;
+}
+
+.result{
+    display:none;
+    margin-top:25px;
+    padding:18px;
+    border-radius:12px;
+    border:1px solid #334155;
+    background:#0f172a;
+}
+
+.result-row{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    padding:6px 0;
+}
+
+.result-row span:first-child{
+    color:#94a3b8;
+}
+
+.result-row strong{
+    color:white;
+    text-align:right;
+}
+
+.divider{
+    height:1px;
+    background:#334155;
+    margin:12px 0;
+}
+
+.total{
+    font-size:19px;
+}
+
+.total span,
+.total strong{
+    color:white !important;
+}
+
+.error{
+    color:#fca5a5;
+}
+
+.back-btn{
+    display:block;
+    width:calc(100% - 40px);
+    max-width:520px;
+    margin:25px auto 0;
+    padding:14px;
+    border-radius:10px;
+    background:#334155;
+    color:#e2e8f0;
+    text-decoration:none;
+    text-align:center;
+    box-sizing:border-box;
+}
+
+.back-btn:hover{
+    background:#475569;
+}
+
+.footer{
+    margin-top:20px;
+    text-align:center;
+    font-size:12px;
+    color:#94a3b8;
+    opacity:.7;
+}
+
+@media(max-width:600px){
+
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h1>
+🚗 Trip Cost Calculator
+</h1>
+
+<div class="subtitle">
+Calculate tolls, fuel and estimated vehicle wear
+</div>
+
+
+<div class="section-title">
+📍 Route
+</div>
+
+
+<label for="from">
+From
+</label>
+
+<input
+type="text"
+id="from"
+placeholder="Example: Kristiansand"
+>
+
+
+<label for="to">
+To
+</label>
+
+<input
+type="text"
+id="to"
+placeholder="Example: Oslo"
+>
+
+
+<div class="grid">
+
+
+<div>
+
+<label for="autopass">
+AutoPASS
+</label>
+
+<select id="autopass">
+
+<option value="yes">
+Yes
+</option>
+
+<option value="no">
+No
+</option>
+
+</select>
+
+</div>
+
+
+<div>
+
+<label for="tripType">
+Trip type
+</label>
+
+<select id="tripType">
+
+<option value="1">
+One way
+</option>
+
+<option value="2">
+Round trip
+</option>
+
+</select>
+
+</div>
+
+
+</div>
+
+
+<div class="section-title">
+⛽ Fuel
+</div>
+
+
+<div class="grid">
+
+
+<div>
+
+<label for="fuelConsumption">
+Fuel consumption
+</label>
+
+<input
+type="number"
+id="fuelConsumption"
+value="0.65"
+min="0"
+step="0.01"
+>
+
+<div class="hint">
+Liters per 10 km
+</div>
+
+</div>
+
+
+<div>
+
+<label for="fuelPrice">
+Fuel price
+</label>
+
+<input
+type="number"
+id="fuelPrice"
+value="21.50"
+min="0"
+step="0.01"
+>
+
+<div class="hint">
+NOK per liter
+</div>
+
+</div>
+
+
+</div>
+
+
+<div class="section-title">
+🔧 Vehicle wear
+</div>
+
+
+<label for="wearRate">
+Estimated vehicle wear
+</label>
+
+<input
+type="number"
+id="wearRate"
+value="1.50"
+min="0"
+step="0.10"
+>
+
+<div class="hint">
+NOK per km – estimate for tires, maintenance,
+repairs and depreciation
+</div>
+
+
+<button
+id="calculateBtn"
+onclick="calculateTrip()">
+
+Calculate trip
+
+</button>
+
+
+<div
+id="result"
+class="result">
+
+
+<div class="result-row">
+
+<span>
+Route
+</span>
+
+<strong id="routeResult">
+-
+</strong>
+
+</div>
+
+
+<div class="result-row">
+
+<span>
+Distance
+</span>
+
+<strong id="distanceResult">
+-
+</strong>
+
+</div>
+
+
+<div class="result-row">
+
+<span>
+Driving time
+</span>
+
+<strong id="durationResult">
+-
+</strong>
+
+</div>
+
+
+<div class="result-row">
+
+<span>
+Toll crossings
+</span>
+
+<strong id="tollCountResult">
+-
+</strong>
+
+</div>
+
+
+<div class="divider"></div>
+
+
+<div class="result-row">
+
+<span>
+🚧 Toll
+</span>
+
+<strong id="tollResult">
+-
+</strong>
+
+</div>
+
+
+<div class="result-row">
+
+<span>
+⛽ Fuel used
+</span>
+
+<strong id="fuelUsedResult">
+-
+</strong>
+
+</div>
+
+
+<div class="result-row">
+
+<span>
+⛽ Fuel cost
+</span>
+
+<strong id="fuelCostResult">
+-
+</strong>
+
+</div>
+
+
+<div class="result-row">
+
+<span>
+🔧 Vehicle wear
+</span>
+
+<strong id="wearResult">
+-
+</strong>
+
+</div>
+
+
+<div class="divider"></div>
+
+
+<div class="result-row total">
+
+<span>
+Total trip cost
+</span>
+
+<strong id="totalResult">
+-
+</strong>
+
+</div>
+
+
+</div>
+
+
+<a
+class="back-btn"
+href="index.html">
+
+← Back to Skagestad Labs
+
+</a>
+
+
+</div>
+
+
+<div class="footer">
+
+Skagestad Labs © 2026
+
+</div>
+
+
+</div>
+
+
+<script>
+
+const API_URL =
+"https://skagestad-trip-cost.karl-skagestad.workers.dev";
+
+
+function formatNOK(value){
+
+    return new Intl.NumberFormat(
+        "nb-NO",
+        {
+            style:"currency",
+            currency:"NOK"
+        }
+    ).format(value);
+
+}
+
+
+function formatNumber(value, decimals = 1){
+
+    return new Intl.NumberFormat(
+        "nb-NO",
+        {
+            minimumFractionDigits:decimals,
+            maximumFractionDigits:decimals
+        }
+    ).format(value);
+
+}
+
+
+function formatDuration(minutes){
+
+    minutes =
+        Math.round(minutes);
+
+    const hours =
+        Math.floor(minutes / 60);
+
+    const mins =
+        minutes % 60;
+
+
+    if(hours === 0){
+
+        return mins + " min";
+
+    }
+
+
+    return hours + " h " +
+        mins + " min";
+
+}
+
+
+async function calculateTrip(){
+
+    const from =
+        document.getElementById(
+            "from"
+        ).value.trim();
+
+
+    const to =
+        document.getElementById(
+            "to"
+        ).value.trim();
+
+
+    const autopass =
+        document.getElementById(
+            "autopass"
+        ).value;
+
+
+    const multiplier =
+        Number(
+            document.getElementById(
+                "tripType"
+            ).value
+        );
+
+
+    const consumption =
+        Number(
+            document.getElementById(
+                "fuelConsumption"
+            ).value
+        );
+
+
+    const fuelPrice =
+        Number(
+            document.getElementById(
+                "fuelPrice"
+            ).value
+        );
+
+
+    const wearRate =
+        Number(
+            document.getElementById(
+                "wearRate"
+            ).value
+        );
+
+
+    const button =
+        document.getElementById(
+            "calculateBtn"
+        );
+
+
+    const result =
+        document.getElementById(
+            "result"
+        );
+
+
+    if(!from || !to){
+
+        alert(
+            "Please enter both locations."
+        );
+
+        return;
+
+    }
+
+
+    button.disabled = true;
+
+    button.textContent =
+        "Calculating...";
+
+
+    try{
+
+
+        const response =
+            await fetch(
+
+                API_URL +
+
+                "?from=" +
+                encodeURIComponent(from) +
+
+                "&to=" +
+                encodeURIComponent(to)
+
+            );
+
+
+        const data =
+            await response.json();
+
+
+        if(!response.ok){
+
+            throw new Error(
+                data.error ||
+                "Could not calculate route"
+            );
+
+        }
+
+
+        const oneWayDistance =
+            Number(data.distanceKm);
+
+
+        if(
+            !Number.isFinite(
+                oneWayDistance
+            ) ||
+            oneWayDistance <= 0
+        ){
+
+            throw new Error(
+                "No valid route distance returned."
+            );
+
+        }
+
+
+        const distance =
+            oneWayDistance *
+            multiplier;
+
+
+        const duration =
+            Number(
+                data.durationMin || 0
+            ) *
+            multiplier;
+
+
+        const tollCount =
+            Number(
+                data.tollCount || 0
+            ) *
+            multiplier;
+
+
+        let oneWayToll = 0;
+
+
+        if(autopass === "yes"){
+
+            oneWayToll =
+                Number(
+                    data.toll?.autopass || 0
+                );
+
+        }
+
+        else{
+
+            oneWayToll =
+                Number(
+                    data.toll?.noDiscount || 0
+                );
+
+        }
+
+
+        const tollCost =
+            oneWayToll *
+            multiplier;
+
+
+        const fuelUsed =
+            (distance / 10) *
+            consumption;
+
+
+        const fuelCost =
+            fuelUsed *
+            fuelPrice;
+
+
+        const wearCost =
+            distance *
+            wearRate;
+
+
+        const totalCost =
+            tollCost +
+            fuelCost +
+            wearCost;
+
+
+        document.getElementById(
+            "routeResult"
+        ).textContent =
+
+            data.from.name +
+            " → " +
+            data.to.name;
+
+
+        document.getElementById(
+            "distanceResult"
+        ).textContent =
+
+            formatNumber(
+                distance,
+                1
+            ) +
+            " km";
+
+
+        document.getElementById(
+            "durationResult"
+        ).textContent =
+
+            formatDuration(
+                duration
+            );
+
+
+        document.getElementById(
+            "tollCountResult"
+        ).textContent =
+
+            tollCount;
+
+
+        document.getElementById(
+            "tollResult"
+        ).textContent =
+
+            formatNOK(
+                tollCost
+            );
+
+
+        document.getElementById(
+            "fuelUsedResult"
+        ).textContent =
+
+            formatNumber(
+                fuelUsed,
+                2
+            ) +
+            " L";
+
+
+        document.getElementById(
+            "fuelCostResult"
+        ).textContent =
+
+            formatNOK(
+                fuelCost
+            );
+
+
+        document.getElementById(
+            "wearResult"
+        ).textContent =
+
+            formatNOK(
+                wearCost
+            );
+
+
+        document.getElementById(
+            "totalResult"
+        ).textContent =
+
+            formatNOK(
+                totalCost
+            );
+
+
+        result.style.display =
+            "block";
+
+
+    }
+
+    catch(error){
+
+
+        result.innerHTML =
+
+            "<div class='error'>" +
+            error.message +
+            "</div>";
+
+
+        result.style.display =
+            "block";
+
+
+    }
+
+    finally{
+
+
+        button.disabled = false;
+
+        button.textContent =
+            "Calculate trip";
+
+
+    }
+
+}
+
+</script>
+
+
+</body>
+
+</html>
