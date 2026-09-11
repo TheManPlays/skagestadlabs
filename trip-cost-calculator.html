@@ -17,7 +17,7 @@ href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=sw
 rel="stylesheet">
 
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
-    
+
 <style>
 
 body{
@@ -95,8 +95,7 @@ select:focus{
 
 .grid{
     display:grid;
-    grid-template-columns:
-        1fr 1fr;
+    grid-template-columns:1fr 1fr;
     gap:15px;
 }
 
@@ -126,6 +125,26 @@ button:hover{
 button:disabled{
     opacity:.6;
     cursor:not-allowed;
+}
+
+.reset-btn{
+    margin-top:10px;
+    background:#334155;
+    color:#e2e8f0;
+}
+
+.reset-btn:hover{
+    background:#475569;
+}
+
+.error-message{
+    display:none;
+    margin-top:15px;
+    padding:14px 16px;
+    border-radius:10px;
+    border:1px solid #7f1d1d;
+    background:#0f172a;
+    color:#fca5a5;
 }
 
 .result{
@@ -168,8 +187,8 @@ button:disabled{
     color:white !important;
 }
 
-.error{
-    color:#fca5a5;
+.ferry-row{
+    display:none;
 }
 
 .back-btn{
@@ -221,12 +240,12 @@ button:disabled{
 </h1>
 
 <div class="subtitle">
-Calculate tolls, fuel and estimated vehicle wear
+Calculate tolls, fuel, ferry and estimated vehicle wear
 </div>
 
 
 <div class="section-title">
-📍 Route (write place or address)
+📍 Route
 </div>
 
 
@@ -237,7 +256,7 @@ From
 <input
 type="text"
 id="from"
-placeholder="Example: Kristiansand"
+placeholder="Example: Solås 15, 4519 Holum, Norway"
 >
 
 
@@ -248,12 +267,11 @@ To
 <input
 type="text"
 id="to"
-placeholder="Example: Oslo"
+placeholder="Example: Hirtshals, Denmark"
 >
 
 
 <div class="grid">
-
 
 <div>
 
@@ -296,7 +314,6 @@ Round trip
 
 </div>
 
-
 </div>
 
 
@@ -306,7 +323,6 @@ Round trip
 
 
 <div class="grid">
-
 
 <div>
 
@@ -349,7 +365,6 @@ NOK per liter
 
 </div>
 
-
 </div>
 
 
@@ -371,8 +386,30 @@ step="0.10"
 >
 
 <div class="hint">
-NOK per km – estimate for tires, maintenance,
+NOK per driven km – estimate for tires, maintenance,
 repairs and depreciation
+</div>
+
+
+<div class="section-title">
+⛴️ Ferry
+</div>
+
+
+<label for="ferryPrice">
+Ferry ticket cost
+</label>
+
+<input
+type="number"
+id="ferryPrice"
+value="0"
+min="0"
+step="1"
+>
+
+<div class="hint">
+Enter the one-way ferry ticket price in NOK. For round trips this will be doubled automatically.
 </div>
 
 
@@ -383,6 +420,23 @@ onclick="calculateTrip()">
 Calculate trip
 
 </button>
+
+
+<button
+id="resetBtn"
+class="reset-btn"
+type="button"
+onclick="resetTrip()">
+
+Reset
+
+</button>
+
+
+<div
+id="errorMessage"
+class="error-message">
+</div>
 
 
 <div
@@ -403,10 +457,13 @@ Route
 </div>
 
 
+<div class="divider"></div>
+
+
 <div class="result-row">
 
 <span>
-Distance
+🗺️ Total route distance
 </span>
 
 <strong id="distanceResult">
@@ -419,10 +476,25 @@ Distance
 <div class="result-row">
 
 <span>
-Driving time
+🚗 Driving distance
 </span>
 
-<strong id="durationResult">
+<strong id="drivingDistanceResult">
+-
+</strong>
+
+</div>
+
+
+<div
+class="result-row ferry-row"
+id="ferryDistanceRow">
+
+<span>
+⛴️ Ferry distance
+</span>
+
+<strong id="ferryDistanceResult">
 -
 </strong>
 
@@ -432,10 +504,40 @@ Driving time
 <div class="result-row">
 
 <span>
-Toll crossings
+⏱️ Total travel time
 </span>
 
-<strong id="tollCountResult">
+<strong id="durationResult">
+-
+</strong>
+
+</div>
+
+
+<div
+class="result-row ferry-row"
+id="ferryDurationRow">
+
+<span>
+⛴️ Ferry time
+</span>
+
+<strong id="ferryDurationResult">
+-
+</strong>
+
+</div>
+
+
+<div
+class="result-row ferry-row"
+id="ferryDetectedRow">
+
+<span>
+⛴️ Ferry detected
+</span>
+
+<strong id="ferryDetectedResult">
 -
 </strong>
 
@@ -448,7 +550,20 @@ Toll crossings
 <div class="result-row">
 
 <span>
-🚧 Toll
+🚧 Toll crossings
+</span>
+
+<strong id="tollCountResult">
+-
+</strong>
+
+</div>
+
+
+<div class="result-row">
+
+<span>
+🚧 Toll cost
 </span>
 
 <strong id="tollResult">
@@ -491,6 +606,21 @@ Toll crossings
 </span>
 
 <strong id="wearResult">
+-
+</strong>
+
+</div>
+
+
+<div
+class="result-row"
+id="ferryCostRow">
+
+<span>
+⛴️ Ferry ticket
+</span>
+
+<strong id="ferryCostResult">
 -
 </strong>
 
@@ -573,10 +703,14 @@ function formatNumber(value, decimals = 1){
 function formatDuration(minutes){
 
     minutes =
-        Math.round(minutes);
+        Math.round(
+            Number(minutes) || 0
+        );
 
     const hours =
-        Math.floor(minutes / 60);
+        Math.floor(
+            minutes / 60
+        );
 
     const mins =
         minutes % 60;
@@ -589,8 +723,10 @@ function formatDuration(minutes){
     }
 
 
-    return hours + " h " +
-        mins + " min";
+    return hours +
+        " h " +
+        mins +
+        " min";
 
 }
 
@@ -598,65 +734,85 @@ function formatDuration(minutes){
 async function calculateTrip(){
 
     const from =
-        document.getElementById(
-            "from"
-        ).value.trim();
+        document
+        .getElementById("from")
+        .value
+        .trim();
 
 
     const to =
-        document.getElementById(
-            "to"
-        ).value.trim();
+        document
+        .getElementById("to")
+        .value
+        .trim();
 
 
     const autopass =
-        document.getElementById(
-            "autopass"
-        ).value;
+        document
+        .getElementById("autopass")
+        .value;
 
 
     const multiplier =
         Number(
-            document.getElementById(
-                "tripType"
-            ).value
+            document
+            .getElementById("tripType")
+            .value
         );
 
 
     const consumption =
         Number(
-            document.getElementById(
-                "fuelConsumption"
-            ).value
+            document
+            .getElementById("fuelConsumption")
+            .value
         );
 
 
     const fuelPrice =
         Number(
-            document.getElementById(
-                "fuelPrice"
-            ).value
+            document
+            .getElementById("fuelPrice")
+            .value
         );
 
 
     const wearRate =
         Number(
-            document.getElementById(
-                "wearRate"
-            ).value
+            document
+            .getElementById("wearRate")
+            .value
+        );
+
+
+    const oneWayFerryPrice =
+        Number(
+            document
+            .getElementById("ferryPrice")
+            .value
         );
 
 
     const button =
-        document.getElementById(
-            "calculateBtn"
-        );
+        document
+        .getElementById("calculateBtn");
 
 
     const result =
-        document.getElementById(
-            "result"
-        );
+        document
+        .getElementById("result");
+
+
+    const errorMessage =
+        document
+        .getElementById("errorMessage");
+
+
+    errorMessage.style.display =
+        "none";
+
+    errorMessage.textContent =
+        "";
 
 
     if(!from || !to){
@@ -670,7 +826,8 @@ async function calculateTrip(){
     }
 
 
-    button.disabled = true;
+    button.disabled =
+        true;
 
     button.textContent =
         "Calculating...";
@@ -707,15 +864,31 @@ async function calculateTrip(){
         }
 
 
-        const oneWayDistance =
-            Number(data.distanceKm);
+        const oneWayTotalDistance =
+            Number(
+                data.distanceKm || 0
+            );
+
+
+        const oneWayDrivingDistance =
+            Number(
+                data.drivingDistanceKm ??
+                data.distanceKm ??
+                0
+            );
+
+
+        const oneWayFerryDistance =
+            Number(
+                data.ferryDistanceKm || 0
+            );
 
 
         if(
             !Number.isFinite(
-                oneWayDistance
+                oneWayTotalDistance
             ) ||
-            oneWayDistance <= 0
+            oneWayTotalDistance <= 0
         ){
 
             throw new Error(
@@ -725,14 +898,31 @@ async function calculateTrip(){
         }
 
 
-        const distance =
-            oneWayDistance *
+        const totalDistance =
+            oneWayTotalDistance *
+            multiplier;
+
+
+        const drivingDistance =
+            oneWayDrivingDistance *
+            multiplier;
+
+
+        const ferryDistance =
+            oneWayFerryDistance *
             multiplier;
 
 
         const duration =
             Number(
                 data.durationMin || 0
+            ) *
+            multiplier;
+
+
+        const ferryDuration =
+            Number(
+                data.ferryDurationMin || 0
             ) *
             multiplier;
 
@@ -744,14 +934,16 @@ async function calculateTrip(){
             multiplier;
 
 
-        let oneWayToll = 0;
+        let oneWayToll =
+            0;
 
 
         if(autopass === "yes"){
 
             oneWayToll =
                 Number(
-                    data.toll?.autopass || 0
+                    data.toll?.autopass ||
+                    0
                 );
 
         }
@@ -760,7 +952,8 @@ async function calculateTrip(){
 
             oneWayToll =
                 Number(
-                    data.toll?.noDiscount || 0
+                    data.toll?.noDiscount ||
+                    0
                 );
 
         }
@@ -772,7 +965,7 @@ async function calculateTrip(){
 
 
         const fuelUsed =
-            (distance / 10) *
+            (drivingDistance / 10) *
             consumption;
 
 
@@ -782,64 +975,94 @@ async function calculateTrip(){
 
 
         const wearCost =
-            distance *
+            drivingDistance *
             wearRate;
+
+
+        const ferryCost =
+            oneWayFerryPrice *
+            multiplier;
 
 
         const totalCost =
             tollCost +
             fuelCost +
-            wearCost;
+            wearCost +
+            ferryCost;
 
 
-        document.getElementById(
+        document
+        .getElementById(
             "routeResult"
-        ).textContent =
+        )
+        .textContent =
 
             data.from.name +
             " → " +
             data.to.name;
 
 
-        document.getElementById(
+        document
+        .getElementById(
             "distanceResult"
-        ).textContent =
+        )
+        .textContent =
 
             formatNumber(
-                distance,
+                totalDistance,
                 1
             ) +
             " km";
 
 
-        document.getElementById(
+        document
+        .getElementById(
+            "drivingDistanceResult"
+        )
+        .textContent =
+
+            formatNumber(
+                drivingDistance,
+                1
+            ) +
+            " km";
+
+
+        document
+        .getElementById(
             "durationResult"
-        ).textContent =
+        )
+        .textContent =
 
             formatDuration(
                 duration
             );
 
 
-        document.getElementById(
+        document
+        .getElementById(
             "tollCountResult"
-        ).textContent =
-
+        )
+        .textContent =
             tollCount;
 
 
-        document.getElementById(
+        document
+        .getElementById(
             "tollResult"
-        ).textContent =
+        )
+        .textContent =
 
             formatNOK(
                 tollCost
             );
 
 
-        document.getElementById(
+        document
+        .getElementById(
             "fuelUsedResult"
-        ).textContent =
+        )
+        .textContent =
 
             formatNumber(
                 fuelUsed,
@@ -848,35 +1071,120 @@ async function calculateTrip(){
             " L";
 
 
-        document.getElementById(
+        document
+        .getElementById(
             "fuelCostResult"
-        ).textContent =
+        )
+        .textContent =
 
             formatNOK(
                 fuelCost
             );
 
 
-        document.getElementById(
+        document
+        .getElementById(
             "wearResult"
-        ).textContent =
+        )
+        .textContent =
 
             formatNOK(
                 wearCost
             );
 
 
-        document.getElementById(
+        document
+        .getElementById(
+            "ferryCostResult"
+        )
+        .textContent =
+
+            formatNOK(
+                ferryCost
+            );
+
+
+        document
+        .getElementById(
             "totalResult"
-        ).textContent =
+        )
+        .textContent =
 
             formatNOK(
                 totalCost
             );
 
 
+        const hasFerry =
+            data.hasFerry === true ||
+            ferryDistance > 0;
+
+
+        const ferryRows =
+            document
+            .querySelectorAll(
+                ".ferry-row"
+            );
+
+
+        ferryRows.forEach(
+            row => {
+
+                row.style.display =
+                    hasFerry
+                    ? "flex"
+                    : "none";
+
+            }
+        );
+
+
+        if(hasFerry){
+
+            document
+            .getElementById(
+                "ferryDistanceResult"
+            )
+            .textContent =
+
+                formatNumber(
+                    ferryDistance,
+                    1
+                ) +
+                " km";
+
+
+            document
+            .getElementById(
+                "ferryDurationResult"
+            )
+            .textContent =
+
+                formatDuration(
+                    ferryDuration
+                );
+
+
+            document
+            .getElementById(
+                "ferryDetectedResult"
+            )
+            .textContent =
+                "Yes";
+
+        }
+
+
         result.style.display =
             "block";
+
+
+        errorMessage.style.display =
+            "none";
+
+
+        errorMessage.textContent =
+            "";
 
 
     }
@@ -884,14 +1192,15 @@ async function calculateTrip(){
     catch(error){
 
 
-        result.innerHTML =
-
-            "<div class='error'>" +
-            error.message +
-            "</div>";
-
-
         result.style.display =
+            "none";
+
+
+        errorMessage.textContent =
+            error.message;
+
+
+        errorMessage.style.display =
             "block";
 
 
@@ -900,7 +1209,9 @@ async function calculateTrip(){
     finally{
 
 
-        button.disabled = false;
+        button.disabled =
+            false;
+
 
         button.textContent =
             "Calculate trip";
@@ -910,8 +1221,173 @@ async function calculateTrip(){
 
 }
 
-</script>
 
+function resetTrip(){
+
+    document
+    .getElementById("from")
+    .value = "";
+
+
+    document
+    .getElementById("to")
+    .value = "";
+
+
+    document
+    .getElementById("autopass")
+    .value = "yes";
+
+
+    document
+    .getElementById("tripType")
+    .value = "1";
+
+
+    document
+    .getElementById("fuelConsumption")
+    .value = "0";
+
+
+    document
+    .getElementById("fuelPrice")
+    .value = "0";
+
+
+    document
+    .getElementById("wearRate")
+    .value = "1.50";
+
+
+    document
+    .getElementById("ferryPrice")
+    .value = "0";
+
+
+    document
+    .getElementById("routeResult")
+    .textContent = "-";
+
+
+    document
+    .getElementById("distanceResult")
+    .textContent = "-";
+
+
+    document
+    .getElementById("drivingDistanceResult")
+    .textContent = "-";
+
+
+    document
+    .getElementById("ferryDistanceResult")
+    .textContent = "-";
+
+
+    document
+    .getElementById("durationResult")
+    .textContent = "-";
+
+
+    document
+    .getElementById("ferryDurationResult")
+    .textContent = "-";
+
+
+    document
+    .getElementById("ferryDetectedResult")
+    .textContent = "-";
+
+
+    document
+    .getElementById("tollCountResult")
+    .textContent = "-";
+
+
+    document
+    .getElementById("tollResult")
+    .textContent = "-";
+
+
+    document
+    .getElementById("fuelUsedResult")
+    .textContent = "-";
+
+
+    document
+    .getElementById("fuelCostResult")
+    .textContent = "-";
+
+
+    document
+    .getElementById("wearResult")
+    .textContent = "-";
+
+
+    document
+    .getElementById("ferryCostResult")
+    .textContent = "-";
+
+
+    document
+    .getElementById("totalResult")
+    .textContent = "-";
+
+
+    document
+    .getElementById("result")
+    .style.display = "none";
+
+
+    document
+    .querySelectorAll(
+        ".ferry-row"
+    )
+    .forEach(
+        row => {
+            row.style.display =
+                "none";
+        }
+    );
+
+
+    const errorMessage =
+        document
+        .getElementById(
+            "errorMessage"
+        );
+
+
+    errorMessage.textContent =
+        "";
+
+
+    errorMessage.style.display =
+        "none";
+
+
+    const button =
+        document
+        .getElementById(
+            "calculateBtn"
+        );
+
+
+    button.disabled =
+        false;
+
+
+    button.textContent =
+        "Calculate trip";
+
+
+    document
+    .getElementById("from")
+    .focus();
+
+}
+
+</script>
 
 </body>
 
